@@ -101,7 +101,7 @@ function HomePage() {
             <p className="flex flex-col justify-between">
               <div></div>
               <a
-                href="https://github.com/Ranger-NF/personal-website"
+                href="https://github.com/FahadLive/personal-website"
                 className="flex justify-center font-light text-xs items-end "
               >
                 MADE OPENLY BY FAHAD

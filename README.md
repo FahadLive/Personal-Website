@@ -1,4 +1,3 @@
-
 <p align="center">
     <img src="docs/new-design.png" width="auto" height="400">
 </p>
@@ -11,7 +10,6 @@ I made this site to be fast, minimal, and easy to explore. No clutter, no fancy 
 
 > 🏗 Made using [Vite React](https://vite.dev/)
 
-
 ## Guide
 
 ### How to view / run the website locally?
@@ -19,7 +17,7 @@ I made this site to be fast, minimal, and easy to explore. No clutter, no fancy 
 1. Clone this repository
 
 ```
-git clone https://github.com/Ranger-NF/Breakthrough
+git clone https://github.com/FahadLive/Breakthrough
 ```
 
 2. In the directory root, run
@@ -27,6 +25,7 @@ git clone https://github.com/Ranger-NF/Breakthrough
    ```
    npm i
    ```
+
 3. To view the site, run
 
    ```

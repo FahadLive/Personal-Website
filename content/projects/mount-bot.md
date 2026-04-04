@@ -4,9 +4,10 @@ date: 2024-09-03T09:40:00+05:30
 tags: ["Discord.js", "bot"]
 isPrivate: true
 summary: 🤖 A discord bot made for entertainment purposes. It is made using discord.js and sapphire.
-githubLink: https://github.com/Ranger-NF/Mount-JS
+githubLink: https://github.com/FahadLive/Mount-JS
 author: Ranger
 ---
+
 A discord bot made for entertainment purposes. It is made using **discord.js** and **sapphire**. Initially it was written in pure javascript but recently I rewrote it to use typescript instead.
 
 ## 👨‍⚖️ Commands available

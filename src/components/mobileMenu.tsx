@@ -75,7 +75,7 @@ const MobileMenu: React.FC = () => {
               </a>
               <PageDirectButton
                 text="github"
-                link="https://github.com/Ranger-NF"
+                link="https://github.com/FahadLive"
               />
             </div>
           </div>
