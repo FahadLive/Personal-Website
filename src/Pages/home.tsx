@@ -98,7 +98,7 @@ function HomePage() {
             <NavLinks indexNum="02" text="Blogs" link="/blogs" />
           </div>
           {typeof window !== "undefined" && (
-            <p className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between">
               <div></div>
               <a
                 href="https://github.com/FahadLive/personal-website"
@@ -106,7 +106,7 @@ function HomePage() {
               >
                 MADE OPENLY BY FAHAD
               </a>
-            </p>
+            </div>
           )}
         </div>
       </div>
