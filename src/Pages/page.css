@@ -275,37 +275,41 @@
     fill: none;
 }
 
-.timeline-dot {
-    fill: var(--tertiary);
-    r: 5;
-}
-
 .timeline-year {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     color: var(--tertiary);
     font-family: var(--font-sans);
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .timeline-year {
+        font-size: 14px;
+    }
 }
 
 .timeline-label {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text);
     font-family: var(--font-sans);
+    line-height: 1.4;
 }
 
 @media (min-width: 768px) {
     .timeline-label {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
 
 .timeline-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--tertiary);
+    flex-shrink: 0;
 }
 
 /* ── End Timeline ── */
