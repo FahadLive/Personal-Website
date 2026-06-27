@@ -7,7 +7,7 @@ tags: ["Game", "Godot"]
 githubLink: https://github.com/FahadLive/BlastOff
 imagesFolder: /images/projects/blastoff/
 cover:
-  image: "images/projects/blastoff-title.svg"
+    image: "images/projects/blastoff-banner.png"
 ---
 
 BlastOff is a casual endless runner with an emphasize on vector graphics. Available for [web and android](https://FahadLive.itch.io/blastoff). It is built using **Godot v4.2.2**.
@@ -25,11 +25,11 @@ The best part is that its open-sourced on [GitHub](https://github.com/FahadLive/
 ## 👨‍💻 Controls
 
 - Touch/Mouse controls:
-  - **Touch/Press on the right side** to move to right
-  - **Touch/Press on the left side** to move to left
-  - **Double tap** to activate/deactivate PowerUp
+    - **Touch/Press on the right side** to move to right
+    - **Touch/Press on the left side** to move to left
+    - **Double tap** to activate/deactivate PowerUp
 
 - Keyboard controls:
-  - Press **a** to move to right
-  - Press **d** to move to left
-  - Press **space** to activate/deactivate PowerUp
+    - Press **a** to move to right
+    - Press **d** to move to left
+    - Press **space** to activate/deactivate PowerUp

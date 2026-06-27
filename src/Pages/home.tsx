@@ -44,7 +44,7 @@ function HomePage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.35, duration: 0.5 }}
                     >
-                        ✦ Thought-driven
+                        ✦ Thought-driven developer
                     </motion.div>
 
                     {/* Handwritten note */}
