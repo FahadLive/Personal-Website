@@ -9,6 +9,7 @@ interface ProjectItemProps {
   projectTags?: string[];
   slug?: string;
   coverImage?: string | null;
+  summary?: string | null;
 }
 
 function MaskingTape() {
@@ -29,77 +30,84 @@ function MaskingTape() {
   );
 }
 
+const polaroidVariants = [
+    { rotate: -2.5, x: 0, y: -12 },
+    { rotate: 3, x: 10, y: -6 },
+    { rotate: -3.5, x: -6, y: 0 },
+    { rotate: 2, x: 6, y: -16 },
+    { rotate: -1.5, x: -10, y: 0 },
+    { rotate: 4, x: 0, y: -10 },
+];
+
 const ProjectItem: React.FC<ProjectItemProps> = ({
   indexNum,
   projectName,
   projectTags = [],
   slug,
   coverImage,
+  summary,
 }) => {
   const tagCount = projectTags?.length;
   const [imgError, setImgError] = useState(false);
+  const cardIndex = parseInt(indexNum) - 1;
+  const v = polaroidVariants[cardIndex % polaroidVariants.length];
 
   const path = useLocation();
   const navigate = useNavigate();
+  const showImage = coverImage && !imgError;
 
   return (
     <div
       onClick={() => navigate("/project/" + slug, { state: { from: path } })}
-      className="paper-card p-5 md:p-6"
+      className="paper-card p-5"
     >
       <MaskingTape />
 
-      {/* cover image — polaroid style */}
-      {coverImage && !imgError && (
-        <div className="card-image-wrapper">
-          <img
-            src={`/${coverImage}`}
-            alt={`Cover for ${projectName}`}
-            className="card-image"
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        </div>
-      )}
+      <div className="flex flex-col gap-3">
+        {showImage && (
+          <div
+            className="card-image-wrapper"
+            style={{
+              "--pop-x": `${v.x}px`,
+              "--pop-rotate": `${v.rotate}deg`,
+              "--pop-y": `${v.y}px`,
+            } as React.CSSProperties}
+          >
+            <img
+              src={`/${coverImage}`}
+              alt={`Cover for ${projectName}`}
+              className="card-image"
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          </div>
+        )}
 
-      {/* desktop view */}
-      <div className="hidden md:flex md:flex-col gap-3">
-        <div className="project-num text-[var(--tertiary)] text-sm">
-          PROJECT /{indexNum}
-        </div>
-        <div className="project-name text-[var(--text)] text-2xl">
-          {projectName.toUpperCase()}.
-        </div>
-        <div className="flex items-center justify-between">
-          <div className="project-tags flex gap-2 text-xs text-[var(--tertiary)]">
-            {projectTags?.map((tag, index) => (
-              <span key={index}>
-                {tag.toUpperCase()}
-                {index < tagCount - 1 && " •"}
-              </span>
-            ))}
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between">
+            <div className="project-num text-[var(--tertiary)] text-xs">
+              PROJECT /{indexNum}
+            </div>
+            <div className="project-tags flex gap-1 text-xs text-[var(--tertiary)]">
+              {projectTags?.map((tag, index) => (
+                <span key={index}>
+                  {tag.toUpperCase()}
+                  {index < tagCount - 1 && " •"}
+                </span>
+              ))}
+            </div>
           </div>
-          <IconArrowRight className="text-[var(--tertiary)] w-6 h-6 group-hover:scale-125 transition" />
-        </div>
-      </div>
-
-      {/* mobile view */}
-      <div className="flex flex-col gap-2 md:hidden">
-        <div className="flex items-center justify-between">
-          <div className="project-num text-[var(--tertiary)] text-xs">
-            PROJECT /{indexNum}
+          <div className="project-name text-[var(--text)] text-xl">
+            {projectName.toUpperCase()}.
           </div>
-          <div className="project-tags flex gap-1 text-xs text-[var(--tertiary)]">
-            {projectTags?.map((tag, index) => (
-              <span key={index}>
-                {tag.toUpperCase()}
-                {index < tagCount - 1 && " •"}
-              </span>
-            ))}
+          {!showImage && summary && (
+            <div className="project-summary text-xs text-[var(--text)]/60 mt-1 line-clamp-2">
+              {summary}
+            </div>
+          )}
+          <div className="flex items-center justify-end mt-1">
+            <IconArrowRight className="text-[var(--tertiary)] w-5 h-5 transition" />
           </div>
-        </div>
-        <div className="project-name text-[var(--text)] text-xl">
-          {projectName.toUpperCase()}.
         </div>
       </div>
     </div>

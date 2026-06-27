@@ -16,38 +16,10 @@ interface ProjectsDataType {
   coverImage: string | null;
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
 const rotations = [-0.8, 0.8, -0.5, 0.5, -0.8, 0.8];
 
 const ProjectsListPage: React.FC = () => {
   const [projects, setProjects] = useState<ProjectsDataType[]>([]);
-  const [isDesktop, setIsDesktop] = useState(
-    typeof window !== "undefined" ? window.innerWidth >= 768 : false,
-  );
-
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 768);
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   const processProjectsData = async () => {
     setProjects(await getProjectList());
@@ -64,20 +36,15 @@ const ProjectsListPage: React.FC = () => {
         pageDescription="List of projects made by Fahad"
       />
       <div className="relative min-h-dvh p-8 pt-28">
-        <motion.div
-          className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
+        <div className="columns-1 md:columns-2 xl:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8 [&>*]:break-inside-avoid">
           {projects.map((project, index) => (
             <motion.div
               key={project.slug}
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
               style={
-                isDesktop
-                  ? { transform: `rotate(${rotations[index % rotations.length]}deg)` }
-                  : {}
+                { transform: `rotate(${rotations[index % rotations.length]}deg)` }
               }
             >
               <ProjectItem
@@ -86,10 +53,11 @@ const ProjectsListPage: React.FC = () => {
                 projectName={project.title}
                 slug={project.slug}
                 coverImage={project.coverImage}
+                summary={project.summary}
               />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <Cat
           className="absolute right-4 bottom-4"

@@ -255,45 +255,45 @@
 /* ── Polaroid Image Styles ── */
 
 .card-image-wrapper {
+    --pop-x: 0px;
+    --pop-rotate: -1deg;
+    --pop-y: 0px;
+
     background: #fff;
-    padding: 6px;
-    border-radius: 4px;
-    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.10);
-    margin-bottom: 16px;
-    transform: rotate(-1deg);
+    padding: 4px;
+    border-radius: 3px;
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.10);
+    margin-top: var(--pop-y);
+    transform: translateX(var(--pop-x)) rotate(var(--pop-rotate));
     transition:
         transform 0.25s ease-out,
-        box-shadow 0.25s ease-out,
-        translate 0.25s ease-out;
+        box-shadow 0.25s ease-out;
     line-height: 0;
+    width: 100%;
 }
 
 .card-image {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 2px;
     display: block;
 }
 
 @media (hover: hover) {
     .paper-card:hover .card-image-wrapper,
     .sticky-note:hover .card-image-wrapper {
-        transform: rotate(1deg) translateY(-8px) scale(1.02);
+        transform: translateX(var(--pop-x)) rotate(calc(var(--pop-rotate) + 2deg)) translateY(-8px) scale(1.05);
         box-shadow: 4px 12px 32px rgba(0, 0, 0, 0.18);
     }
 }
 
 .paper-card:active .card-image-wrapper,
 .sticky-note:active .card-image-wrapper {
-    transform: rotate(0deg) translateY(-4px) scale(1.01);
+    transform: translateX(var(--pop-x)) rotate(calc(var(--pop-rotate) + 1deg)) translateY(-4px) scale(1.02);
     box-shadow: 3px 8px 24px rgba(0, 0, 0, 0.14);
     transition-duration: 0.1s;
 }
 
 @media (prefers-reduced-motion: reduce) {
     .card-image-wrapper {
-        transform: none !important;
         transition: none !important;
     }
 }

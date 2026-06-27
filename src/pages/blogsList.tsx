@@ -6,95 +6,67 @@ import BlogItem from "../components/blogItem";
 import Snail from "../components/creatures/snail";
 
 interface BlogsDataType {
-  slug: string;
-  title: string;
-  date: string;
-  summary: string;
-  tags: string[];
-  coverImage: string | null;
+    slug: string;
+    title: string;
+    date: string;
+    summary: string;
+    tags: string[];
+    coverImage: string | null;
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const rotations = [1.2, -0.8, 0.5, -1, 0.8, -0.5];
+const rotations = [0.2, -0.4, 0.6, -0.1, 0.5, -0.5];
 
 const BlogsListPage: React.FC = () => {
-  const [blogs, setBlogs] = useState<BlogsDataType[]>([]);
-  const [isDesktop, setIsDesktop] = useState(
-    typeof window !== "undefined" ? window.innerWidth >= 768 : false,
-  );
+    const [blogs, setBlogs] = useState<BlogsDataType[]>([]);
 
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 768);
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+    const processBlogssData = async () => {
+        setBlogs(await getBlogList());
+    };
 
-  const processBlogssData = async () => {
-    setBlogs(await getBlogList());
-  };
+    useEffect(() => {
+        processBlogssData();
+    }, []);
 
-  useEffect(() => {
-    processBlogssData();
-  }, []);
+    return (
+        <>
+            <MetaComponent
+                pageTitle="Blogs"
+                pageDescription="List of blogs made by Fahad"
+            />
+            <div className="relative min-h-dvh p-8 pt-28">
+                <div className="columns-1 md:columns-2 xl:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8 [&>*]:break-inside-avoid">
+                    {blogs.map((blog, index) => (
+                        <motion.div
+                            key={blog.slug}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: "easeOut",
+                                delay: index * 0.05,
+                            }}
+                            style={{
+                                transform: `rotate(${rotations[index % rotations.length]}deg)`,
+                            }}
+                        >
+                            <BlogItem
+                                indexNum={(index + 1)
+                                    .toString()
+                                    .padStart(2, "0")}
+                                blogTags={blog.tags}
+                                blogTitle={blog.title}
+                                slug={blog.slug}
+                                coverImage={blog.coverImage}
+                                summary={blog.summary}
+                            />
+                        </motion.div>
+                    ))}
+                </div>
 
-  return (
-    <>
-      <MetaComponent
-        pageTitle="Blogs"
-        pageDescription="List of blogs made by Fahad"
-      />
-      <div className="relative min-h-dvh p-8 pt-28">
-        <motion.div
-          className="grid gap-6 md:grid-cols-2 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
-          {blogs.map((blog, index) => (
-            <motion.div
-              key={blog.slug}
-              variants={itemVariants}
-              style={
-                isDesktop
-                  ? { transform: `rotate(${rotations[index % rotations.length]}deg)` }
-                  : {}
-              }
-            >
-              <BlogItem
-                indexNum={(index + 1).toString().padStart(2, "0")}
-                blogTags={blog.tags}
-                blogTitle={blog.title}
-                slug={blog.slug}
-                coverImage={blog.coverImage}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <Snail
-          className="absolute right-4 bottom-4"
-        />
-      </div>
-    </>
-  );
+                <Snail className="absolute right-4 bottom-4" />
+            </div>
+        </>
+    );
 };
 
 export default BlogsListPage;

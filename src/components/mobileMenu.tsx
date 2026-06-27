@@ -92,7 +92,7 @@ const MobileMenu: React.FC = () => {
                                 />
                             </div>
                             <div className="font-hand text-sm opacity-60">
-                                ← based in Kerala
+                                # based in Kerala
                             </div>
                         </div>
                     </div>
