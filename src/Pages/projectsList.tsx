@@ -3,6 +3,7 @@ import ProjectItem from "../components/projectItem";
 import { getProjectList } from "../utils/markdownParser";
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
+import Cat from "../components/creatures/cat";
 
 interface ProjectsDataType {
   slug: string;
@@ -62,7 +63,7 @@ const ProjectsListPage: React.FC = () => {
         pageTitle="Projects"
         pageDescription="List of projects made by Fahad"
       />
-      <div className="min-h-dvh p-8 pt-28">
+      <div className="relative min-h-dvh p-8 pt-28">
         <motion.div
           className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8"
           variants={containerVariants}
@@ -88,6 +89,10 @@ const ProjectsListPage: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <Cat
+          className="absolute right-4 bottom-4"
+        />
       </div>
     </>
   );

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import NavLinks from "../components/navLinks";
 import TextTransition from "../components/transitionText";
 import MetaComponent from "../components/meta";
+import Bird from "../components/creatures/bird";
 
 function HomePage() {
     return (
@@ -12,7 +13,12 @@ function HomePage() {
                 pageTitle="Home"
                 pageDescription="Hi, I'm Mohammed Fahad, a passionate student who loves turning ideas into impactful digital experiences."
             />
-            <div className="flex flex-col min-h-dvh p-8 pt-28">
+            <div className="relative flex flex-col min-h-dvh p-8 pt-28">
+                <Bird
+                    className="absolute"
+                    style={{ top: "12px", right: "12px" }}
+                />
+
                 {/* ── Mobile Layout ── */}
                 <div className="flex h-full flex-col md:hidden">
                     {/* Name */}

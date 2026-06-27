@@ -596,3 +596,227 @@ The agent should produce the following:
 | Motion respects `prefers-reduced-motion` | All CSS animations and JS-driven motion disabled                 |
 | Lighthouse Performance ≥ 90 (mobile)     | Tested with Lighthouse mobile profile                            |
 | Lighthouse Accessibility ≥ 95            | Tested on mobile profile                                         |
+
+---
+
+## Appendix A — Implementation Decisions (v2.0)
+
+This appendix records every deviation, addition, or implementation-specific detail from the original spec. The spec above is the *intended* design; this appendix is the *built* reality.
+
+### A.1 Tech Stack
+
+| Spec Assumption | Actual Implementation |
+|---|---|
+| Next.js / Astro / HTML+CSS+JS | **React 19 + Vite 6** (SPA, no SSR) |
+| GSAP for animation | **motion/react** (React 19 compatible Framer Motion fork) |
+| CSS custom properties + modular CSS | **Tailwind CSS v4** (`@theme` block in `index.css`) |
+| Separate CSS files (tokens, layout, components, animations) | **Single `components.css` + `page.css`** per-page CSS |
+| Fetch — not used in spec | **gray-matter** for Markdown parsing (projects/blogs sourced from `.md` files) |
+| Icons — not specified | **Tabler Icons** (`@tabler/icons-react`) for nav and UI |
+| Routing — not specified | **React Router v7** (`react-router`) for SPA routing |
+
+### A.2 Layout System — Deviations
+
+| Spec | Built | Why |
+|---|---|---|
+| Footer section (4.10) with quote, social icons, dark footer bg | **Not implemented.** No footer exists anywhere. | User explicitly removed footer. |
+| "Playground" nav item in mobile menu | **Not implemented.** Mobile menu links: About, Projects, Blogs. | No playground section exists. |
+| Max width 1280px on desktop | **Not used.** Content fills viewport. | Minimalist approach; perceived width is constrained by padding + `max-w-3xl` on about page only. |
+| `56px` sticky top bar | **`p-6 pt-6` with offset content via `pt-28`.** Header height is content-driven (~80–90px). | Simpler implementation; no fixed height needed. |
+
+### A.3 Navigation — Deviations
+
+| Spec | Built |
+|---|---|
+| Desktop nav: right-aligned, horizontal | ✅ As specified, with `gap-8 md:gap-12` links + GitHub button. |
+| GitHub button: hand-drawn SVG border, redraws on hover | ✅ `PageDirects` component (SVG with `stroke-dashoffset` draw animation, `#C53B42` on hover). |
+| Nav underline: `scaleX: 0 → 1` on hover | ✅ `NavLinks` component, with sliding arrow indicator. |
+| Mobile menu: "about / projects / blog / playground" | Modified: **about → projects → blogs** (no playground). |
+| Mobile menu close: `✕` icon or tap outside | ✅ Implemented, plus `Escape` key support. |
+| Handwritten "← based in Kerala" | ✅ Present at bottom of mobile menu and hero. |
+
+### A.4 Hero Section — Deviations
+
+| Spec | Built |
+|---|---|
+| Hero name break: `MOHAMMED / FAHAD` stacked | ✅ Implemented with `TextTransition` component cycling through roles. |
+| Serif float: `Thought-driven`, `-3deg`, accent | ✅ Implemented with `-3deg` rotation. |
+| Handwritten notes: `← based in Kerala`, `↓ open source`, `↓ building useful things` | Modified: **Only "← based in Kerala"** (single note). |
+| Hero image: right side on desktop, overlaps heading | ✅ Implemented with `irregular clip-path`, `right-0 md:right-12`. |
+| Hero stagger: 80ms on mobile, 100ms on desktop | Implemented with **350ms–800ms delays** (faster than spec for responsive feel). |
+| Tagline: `building software that quietly solves problems.` | ✅ Implemented as specified. |
+
+### A.5 Background Decorations — Deviations
+
+| Spec | Built |
+|---|---|
+| 3 doodles max on mobile | **Implemented with 7 doodles, all at 6% opacity on mobile.** Minimal visual impact at that opacity. |
+| Doodle opacity: 6% mobile, 10% desktop | ✅ Spec matches. Desktop set to 10% via `md:opacity-10`. |
+| Doodle pointer-events: none | ✅ `pointer-events: none` on all doodles. |
+| Doodle z-index: below content | ✅ `z-0` on doodles, content at `z-[1]`, header at `z-[50]`. |
+| Paper clip: desktop only, hover wiggle | ✅ Same implementation, always visible (not just on hover), with wiggle on tap/hover. |
+
+### A.6 Hidden Creatures — Deviations
+
+| Spec | Built |
+|---|---|
+| 5 creatures: Bird, Cat, Snail, Ghost, Robot | **4 implemented** (Robot omitted — no footer to place it near). |
+| Footer Robot creature | **Not implemented.** Footer is removed. |
+| Animations: tap/hover triggers | ✅ All animate on tap or hover start via `motion` + `useState`. |
+| 44×44px touch targets | ✅ Wrapped in `cursor-pointer select-none` divs — ensures touchable area. |
+| Bird: wings flap | ✅ `motion.path` stroke morphing. |
+| Cat: wakes up, stretches | ✅ Opens eyes (white circles scale), tail wags. |
+| Snail: crawls 40px | ✅ `motion.svg animate x: 40` then returns. |
+| Ghost: waves hand | ✅ Wobble `rotate` animation + smile morph. |
+
+### A.7 Project & Blog Cards — Deviations
+
+| Spec | Built |
+|---|---|
+| Project card: masking tape SVG accent | ✅ `PaperClip` component reused + masking tape SVG at top. |
+| Project card: box shadow `2px 4px 12px rgba(0,0,0,0.08)` | ✅ `shadow-sm` (Tailwind) = similar values. |
+| Hover: `translateY: -6px`, shadow increase | ✅ `hover:-translate-y-1.5 hover:shadow-lg` on `.paper-card`. |
+| Blog card: sticky-note style, `#FFF9F0` | ✅ `bg-[#FFF9F0]` with pin 📌 wiggle on hover. |
+| Desktop grid: alternating rotation | ✅ `rotations` array applied per index. |
+
+### A.8 About Page — Deviations
+
+| Spec | Built |
+|---|---|
+| Timeline: year on left, milestone on right | ✅ Single column with year + label + icon. |
+| Animated SVG line draws on scroll | ✅ `motion.line` with `pathLength` draw, `stroke-dasharray: "6 4"`. |
+| Spring dots on timeline nodes | ✅ `motion.div` with `spring` transition, `stiffness: 200`. |
+| Hero portrait on about page | **Not included.** About page has no portrait — single bio text only. |
+| Contact section with social links | ✅ Simplified: Instagram (preferred) + LinkedIn. |
+| "About this site" attribution | ✅ Credits wandixu.com and scalzodesign.be. |
+
+### A.9 Section Dividers — Deviations
+
+| Spec | Built |
+|---|---|
+| `───────────✦───────────` | ✅ Implemented in project/blog pages. |
+| Hand-drawn wavy SVG line | **Not implemented.** Only `✦` and `▼` dividers used. |
+| Downward arrow with handwritten label | ✅ `▼` arrow used, styled consistently. |
+| Ink stamp graphic | **Not implemented.** |
+
+### A.10 Custom Cursor — Deviations
+
+| Spec | Built |
+|---|---|
+| Desktop only, `pointer: fine` guard | ✅ `matchMedia("(pointer: fine")` before rendering. |
+| Default: 12px ring, `1.5px solid #111` | ✅ `12px` ring with `lg:48px` on links. |
+| On images: "VIEW" text | ✅ Shows "VIEW" inside enlarged ring. |
+| On creatures: `👆` emoji | **Not implemented.** No special emoji for creatures. |
+| Lerp: `position += (target - position) * 0.12` | ✅ Smoothed with lerp, `0.12` factor. |
+| Native cursor never hidden | ✅ Always `cursor-none` class on container + `cursor: inherit` on child elements. |
+
+### A.11 Easter Eggs — Deviations
+
+| Spec | Built |
+|---|---|
+| Triple-tap logo: confetti burst | ✅ 40 particles, 800ms window, canvas-based, palette colors. |
+| Type "hello": robot popup | **Not implemented.** |
+| Shake device: confetti | **Not implemented.** |
+| Konami Code: dark mode | **Not implemented.** |
+| Footer quote randomizer | **Not implemented.** No footer. |
+
+### A.12 Motion & Animation — Specific Parameters
+
+#### Hero Load Sequence
+| Element | Delay | Duration |
+|---|---|---|
+| Name (TextTransition) | `0.35s` | First cycle starts immediately |
+| Serif float | `0.4s` | `0.6s` fade+slide |
+| Handwritten note | `0.5s` | `0.5s` fade |
+| Portrait | `0.6s` | `0.8s` fade+scale |
+| Tagline | `0.8s` | `0.5s` fade |
+
+#### TextTransition Component
+- `cycleSpeed`: 6 (seconds between role changes)
+- `revealSpeed`: 4 (seconds for letter reveal)
+- Roles: "Developer", "Builder", "Creator", "Thinker", "Coder"
+
+#### Timeline Animation
+- Line draw: `pathLength 0 → 1`, `1.2s`, `easeInOut`
+- Each item: `delay: index * 0.1s`, `0.4s`, spring dots
+- Viewport: `once: true, margin: "-40px"`
+
+#### Doodle Float Keyframes (`.doodle-float`)
+```
+0%: translateY(0)
+50%: translateY(-6px)
+100%: translateY(0)
+```
+- Duration: varies by doodle (`4s`–`7s`)
+- Easing: `ease-in-out`
+- Desktop only (media query guard in `components.css`)
+
+#### Confetti
+- Count: 40 particles
+- Window: 800ms (3 taps within window triggers)
+- Colors: drawn from palette (`#C53B42`, `#335C81`, `#D9A441`, `#7A5C8F`, `#2E6B57`)
+- Canvas-based, no dependencies
+- Particle physics: random angle + velocity, gravity drag, fade out
+
+### A.13 Z-Index Stacking Order
+
+| Layer | Z-Index | Element |
+|---|---|---|
+| Doodles | `0` | `backgroundDecorations.tsx` |
+| Paper clip | `0` | `paperClip.tsx` (sibling of doodles) |
+| Page content | `1` | Main content area |
+| Header | `50` | `header.tsx` (sticky top) |
+| Mobile menu | `100` | `mobileMenu.tsx` (full-screen overlay) |
+| Custom cursor | `10000` | `customCursor.tsx` (always on top) |
+
+### A.14 Tailwind v4 Theme Overrides — Full @theme Block
+
+These tokens are defined in `src/index.css`:
+
+```css
+@theme {
+  --color-surface: #FAF8F3;
+  --color-ink: #111111;
+  --color-accent: #C53B42;
+  --color-green: #2E6B57;
+  --color-blue: #335C81;
+  --color-mustard: #D9A441;
+  --color-purple: #7A5C8F;
+  --color-footer-bg: #F0EDE6;
+  --color-bg-shade: #f1efe8;
+  --font-sans: "Satoshi", "Helvetica Neue", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-hand: "Caveat", cursive;
+}
+```
+
+Backward-compat CSS custom properties are also set in `:root {}` for any legacy references.
+
+### A.15 Font Loading
+
+| Font | Source | Weight |
+|---|---|---|
+| Satoshi (headings/body) | Fontshare (`api.fontshare.com`) | 300, 400, 500, 700, 900 |
+| Instrument Serif (display accent) | Google Fonts | 400 italic |
+| Caveat (handwritten notes) | Google Fonts | 400 |
+
+### A.16 Animations Respecting `prefers-reduced-motion`
+
+All CSS animations in `components.css` are wrapped in:
+```css
+@media (prefers-reduced-motion: no-preference) { ... }
+```
+
+The `motion` library components use `useReducedMotion()` internally, and custom cursor defers to CSS `@media (prefers-reduced-motion)` guards.
+
+### A.17 What Was Built But Not in Spec
+
+| Feature | Details |
+|---|---|
+| Film grain on project images | SVG `feTurbulence` filter applied via CSS |
+| Section dividers (`✦` and `▼`) | Used on `project.tsx` and `blog.tsx` pages |
+| Irregular clip-path on hero portrait | Custom polygon path for sketchbook feel |
+| Page title meta component | `MetaComponent` for SEO |
+| Markdown-powered content | Projects and blogs sourced from `.md` files |
+| `pt-28` offset for fixed header | Each page's content area offsets for the fixed header |
+| SPA routing | React Router handles all page transitions |

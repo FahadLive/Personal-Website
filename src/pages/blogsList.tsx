@@ -3,6 +3,7 @@ import { getBlogList } from "../utils/markdownParser";
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
 import BlogItem from "../components/blogItem";
+import Snail from "../components/creatures/snail";
 
 interface BlogsDataType {
   slug: string;
@@ -60,7 +61,7 @@ const BlogsListPage: React.FC = () => {
         pageTitle="Blogs"
         pageDescription="List of blogs made by Fahad"
       />
-      <div className="min-h-dvh p-8 pt-28">
+      <div className="relative min-h-dvh p-8 pt-28">
         <motion.div
           className="grid gap-6 md:grid-cols-2 md:gap-8"
           variants={containerVariants}
@@ -86,6 +87,10 @@ const BlogsListPage: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <Snail
+          className="absolute right-4 bottom-4"
+        />
       </div>
     </>
   );

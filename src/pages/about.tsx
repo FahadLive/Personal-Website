@@ -2,6 +2,7 @@ import "./page.css";
 
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
+import Ghost from "../components/creatures/ghost";
 
 const timeline = [
     {
@@ -44,7 +45,12 @@ function AboutPage() {
                 pageTitle="About"
                 pageDescription="All about Fahad - A passionate developer"
             />
-            <div className="min-h-dvh p-8 pt-28 max-w-3xl mx-auto">
+            <div className="relative min-h-dvh p-8 pt-28 max-w-3xl mx-auto">
+                <Ghost
+                    className="absolute"
+                    style={{ bottom: "24px", right: "24px" }}
+                />
+
                 {/* Bio section — single column */}
                 <div className="pb-16">
                     <h1 className="about-head">
