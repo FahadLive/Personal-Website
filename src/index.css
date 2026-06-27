@@ -1,28 +1,47 @@
 @import "tailwindcss";
 
+@theme {
+    --font-sans: "Satoshi", "IBM Plex Sans", sans-serif;
+    --font-serif: "Instrument Serif", Georgia, serif;
+    --font-hand: "Caveat", cursive;
+
+    --color-surface: #faf8f3;
+    --color-ink: #111111;
+    --color-accent: #c53b42;
+    --color-green: #2e6b57;
+    --color-blue: #335c81;
+    --color-mustard: #d9a441;
+    --color-purple: #7a5c8f;
+    --color-footer-bg: #f0ede6;
+    --color-bg-shade: rgba(250, 248, 243, 0.9);
+}
+
+@custom-media --tablet (min-width: 768px);
+@custom-media --desktop (min-width: 1024px);
+@custom-media --wide (min-width: 1280px);
+
 :root {
-    --main: #f2f2f2;
-    --text: #151515;
-    --tertiary: #d42537;
+    --main: #faf8f3;
+    --text: #111111;
+    --tertiary: #c53b42;
+    --bg-shade: rgba(250, 248, 243, 0.9);
 
-    --bg-shade: rgba(242, 242, 242, 0.9);
-
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 400;
 
-    color-scheme: light dark;
+    color-scheme: light;
     color: var(--text);
     background-color: var(--main);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiase;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     min-width: 320px;
-    min-height: 100vh; /* Fallback */
+    min-height: 100vh;
     min-height: 100dvh;
 }
 
@@ -37,13 +56,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: var(--text);
-        background-color: var(--main);
-    }
 }
 
 p {

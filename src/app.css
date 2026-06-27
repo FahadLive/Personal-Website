@@ -1,5 +1,5 @@
 #root {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: var(--font-sans);
     display: flex;
     height: 100vh;
     height: 100dvh;
