@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MobileMenu from "./mobileMenu";
+import { triggerConfetti } from "../lib/confetti";
 import PageDirectButton from "./pageDirects";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IconArrowLeft } from "@tabler/icons-react";
@@ -8,6 +9,22 @@ import { motion, AnimatePresence } from "motion/react";
 const Header: React.FC = () => {
     const [isHomePage, setIsHomePage] = useState<boolean>(true);
     const [isScrolled, setIsScrolled] = useState(false);
+    const tapCount = useRef(0);
+    const tapTimer = useRef<ReturnType<typeof setTimeout>>();
+
+    const handleLogoClick = () => {
+        tapCount.current++;
+        if (tapCount.current >= 3) {
+            tapCount.current = 0;
+            clearTimeout(tapTimer.current);
+            triggerConfetti();
+            return;
+        }
+        clearTimeout(tapTimer.current);
+        tapTimer.current = setTimeout(() => {
+            tapCount.current = 0;
+        }, 800);
+    };
 
     useEffect(() => {
         const onScroll = () => {
@@ -48,7 +65,7 @@ const Header: React.FC = () => {
 
                     <div
                         className="flex hover:cursor-pointer items-center p-2"
-                        onClick={() => navigate("/")}
+                        onClick={() => { handleLogoClick(); navigate("/"); }}
                     >
                         <img
                             src="/logo.svg"
