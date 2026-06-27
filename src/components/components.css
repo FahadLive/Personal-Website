@@ -88,6 +88,109 @@
     }
 }
 
+/* ── Animation Keyframes ── */
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes float-slow {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(3px);
+    }
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-4deg);
+    }
+}
+
+@keyframes draw-border {
+    0% {
+        stroke-dashoffset: 240;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ── Doodle Animations ── */
+
+@media (prefers-reduced-motion: no-preference) {
+    .doodle-float {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .doodle-float-slow {
+        animation: float-slow 6s ease-in-out infinite;
+    }
+
+    .doodle-wiggle {
+        animation: wiggle 0.3s ease-in-out;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .doodle-float,
+    .doodle-float-slow {
+        animation: none;
+    }
+}
+
+/* ── Nav Underline Hover ── */
+
+.nav-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tertiary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.group:hover .nav-underline::after {
+    transform: scaleX(1);
+}
+
+/* ── SVG Border ── */
+
+.doodle-btn-border {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    transition: stroke-dashoffset 0.7s ease;
+}
+
+.group:hover .doodle-btn-border {
+    stroke-dashoffset: 0;
+}
+
 @media only screen and (max-width: 370px) {
     .name-role-text {
         font-weight: bold;

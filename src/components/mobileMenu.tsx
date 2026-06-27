@@ -66,27 +66,34 @@ const MobileMenu: React.FC = () => {
                             />
                             <NavLinks
                                 indexNum="02"
-                                text="Blogs"
-                                link="/blogs"
+                                text="Projects"
+                                link="/projects"
+                                onClick={handleLinkClick}
                             />
                             <NavLinks
                                 indexNum="03"
-                                text="About"
-                                link="/about"
+                                text="Blogs"
+                                link="/blogs"
+                                onClick={handleLinkClick}
                             />
                         </div>
-                        <div className="page-directs flex justify-between items-center">
-                            <a
-                                className="nav-bar-item"
-                                target="_blank"
-                                href="https://linkedin.com/in/just-fahad/"
-                            >
-                                linkedin
-                            </a>
-                            <PageDirectButton
-                                text="github"
-                                link="https://github.com/FahadLive"
-                            />
+                        <div className="flex flex-col gap-6">
+                            <div className="page-directs flex justify-between items-center">
+                                <a
+                                    className="nav-bar-item"
+                                    target="_blank"
+                                    href="https://linkedin.com/in/just-fahad/"
+                                >
+                                    linkedin
+                                </a>
+                                <PageDirectButton
+                                    text="github"
+                                    link="https://github.com/FahadLive"
+                                />
+                            </div>
+                            <div className="font-hand text-sm opacity-60">
+                                ← based in Kerala
+                            </div>
                         </div>
                     </div>
                 </div>

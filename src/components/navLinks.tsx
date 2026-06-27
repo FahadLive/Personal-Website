@@ -25,7 +25,7 @@ const NavLinks: React.FC<NavLinksProp> = ({
             <span className="text-[var(--tertiary)] font-bold text-xl xl:text-2xl">
                 {indexNum}
             </span>
-            <span className="text-[var(--text)] font-semibold transition text-xl xl:text-2xl">
+            <span className="nav-underline text-[var(--text)] font-semibold transition text-xl xl:text-2xl">
                 {text}
             </span>
             <IconArrowDownRight className="font-semibold group-hover:-rotate-45 group-hover:bg-[var(--tertiary))] group-hover:text-[var(--main))] rounded-4xl transition" />
