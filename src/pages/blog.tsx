@@ -1,7 +1,7 @@
 import "./page.css";
 
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import { getBlogData } from "../utils/markdownParser";
 
 import MetaComponent from "../components/meta";
@@ -17,11 +17,25 @@ interface ProjectsDataType {
   coverImage: string | null;
 }
 
-const ProjectPage: React.FC = () => {
+function estimateReadingTime(text: string): number {
+  const plain = text.replace(/[#*`\[\]]/g, " ");
+  const words = plain.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
+const BlogPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const path = useLocation();
   const navigate = useNavigate();
-  const [blog, setProject] = useState<ProjectsDataType | null>(null);
+  const [blog, setBlog] = useState<ProjectsDataType | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -38,7 +52,7 @@ const ProjectPage: React.FC = () => {
           navigate("/blogs");
           return;
         }
-        setProject(blogData);
+        setBlog(blogData);
       } catch (error) {
         console.error(`Failed to load blog: ${slug}`, error);
         navigate("/blogs");
@@ -62,6 +76,8 @@ const ProjectPage: React.FC = () => {
     return <div>Blog not found</div>;
   }
 
+  const readingTime = estimateReadingTime(blog.content);
+
   return (
     <>
       <MetaComponent
@@ -69,20 +85,49 @@ const ProjectPage: React.FC = () => {
         pageDescription={blog.summary}
         pagePreview={blog.coverImage ? blog.coverImage : null}
       />
-      <div className="max-w-4xl mx-auto pt-28 px-8 md:px-10 pb-16">
-        <div className="flex flex-col gap-3 pb-6">
-          <div className="text-sm opacity-50 font-sans">{blog.date.toDateString().split(" ").slice(1).join(" ")}</div>
-          <h1 className="font-serif text-3xl md:text-4xl leading-tight">
-            {blog.title}.
-          </h1>
+      <article className="max-w-3xl mx-auto pt-28 px-8 md:px-10 pb-24">
+        {/* Back link */}
+        <Link
+          to="/blogs"
+          className="inline-block text-sm text-[var(--tertiary)]/60 hover:text-[var(--tertiary)] transition-colors mb-8 font-sans"
+        >
+          ← back to blogs
+        </Link>
+
+        {/* Cover image */}
+        {blog.coverImage && (
+          <div className="relative mb-10 rounded-sm overflow-hidden grain">
+            <img
+              src={`/${blog.coverImage}`}
+              alt=""
+              className="w-full h-auto object-cover"
+              loading="eager"
+            />
+          </div>
+        )}
+
+        {/* Title */}
+        <h1 className="font-serif text-3xl md:text-5xl leading-tight mb-4">
+          {blog.title}.
+        </h1>
+
+        {/* Meta row */}
+        <div className="flex items-center gap-3 text-sm font-sans text-[var(--text)]/50 mb-10">
+          <time dateTime={blog.date.toISOString()}>{formatDate(blog.date)}</time>
+          <span aria-hidden="true">·</span>
+          <span>{readingTime} min read</span>
         </div>
-        <hr className="border-[var(--tertiary)]/20" />
-        <div className="blog-content pt-6">
+
+        {/* Divider */}
+        <div className="section-divider mb-10">✦</div>
+
+        {/* Content */}
+        <div className="blog-content">
           <Markdown>{blog.content}</Markdown>
         </div>
-      </div>
+      </article>
     </>
   );
 };
 
-export default ProjectPage;
+export default BlogPage;
