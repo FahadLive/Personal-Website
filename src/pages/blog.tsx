@@ -69,13 +69,15 @@ const ProjectPage: React.FC = () => {
         pageDescription={blog.summary}
         pagePreview={blog.coverImage ? blog.coverImage : null}
       />
-      <div className="max-w-4xl mx-auto pt-28 px-10">
-        <div className="flex flex-col gap-2 pb-4">
-          <div>{blog.date.toDateString().split(" ").slice(1).join(" ")}</div>
-          <div className="blog-title">{blog.title.toUpperCase()}.</div>
+      <div className="max-w-4xl mx-auto pt-28 px-8 md:px-10 pb-16">
+        <div className="flex flex-col gap-3 pb-6">
+          <div className="text-sm opacity-50 font-sans">{blog.date.toDateString().split(" ").slice(1).join(" ")}</div>
+          <h1 className="font-serif text-3xl md:text-4xl leading-tight">
+            {blog.title}.
+          </h1>
         </div>
-        <hr />
-        <div className="blog-content">
+        <hr className="border-[var(--tertiary)]/20" />
+        <div className="blog-content pt-6">
           <Markdown>{blog.content}</Markdown>
         </div>
       </div>

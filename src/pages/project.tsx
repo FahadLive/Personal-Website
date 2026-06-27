@@ -184,6 +184,11 @@ const ProjectPage: React.FC = () => {
           </div>
         </div>
 
+        {/* Section divider */}
+        <div className="section-divider my-6">
+          <span>✦</span>
+        </div>
+
         {/* Scrollable content */}
         <div className="flex-1 overflow-y-auto">
           {/* Images - Moved to the bottom and conditionally rendered */}
@@ -220,7 +225,7 @@ const ProjectPage: React.FC = () => {
                         >
                           <img
                             src={projectImg}
-                            className="h-full object-contain rounded-md shadow-lg"
+                            className="h-full object-contain rounded-md shadow-lg grain"
                             style={{ width: "auto", height: "100%" }}
                             alt={`Image ${index + 1} for ${project.title}`}
                           />
@@ -230,7 +235,7 @@ const ProjectPage: React.FC = () => {
                         <SwiperSlide key={index} className="!w-auto">
                           <img
                             src={projectImg}
-                            className="h-full object-contain rounded-md"
+                            className="h-full object-contain rounded-md grain"
                             style={{ width: "auto", height: "100%" }}
                             alt={`Image ${index + 1} for ${project.title}`}
                           />
@@ -239,6 +244,11 @@ const ProjectPage: React.FC = () => {
                 </Swiper>
               </div>
             </motion.div>
+          )}
+          {project.content && (
+            <div className="section-divider my-4">
+              <span>▼</span>
+            </div>
           )}
           <AnimatePresence>
             {project.content && showContent && (

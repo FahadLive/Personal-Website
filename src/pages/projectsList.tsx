@@ -34,8 +34,19 @@ const itemVariants = {
   },
 };
 
+const rotations = [-0.8, 0.8, -0.5, 0.5, -0.8, 0.8];
+
 const ProjectsListPage: React.FC = () => {
   const [projects, setProjects] = useState<ProjectsDataType[]>([]);
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 768 : false,
+  );
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const processProjectsData = async () => {
     setProjects(await getProjectList());
@@ -51,17 +62,24 @@ const ProjectsListPage: React.FC = () => {
         pageTitle="Projects"
         pageDescription="List of projects made by Fahad"
       />
-      <div className="grid gap-12 p-8 pt-24">
+      <div className="min-h-dvh p-8 pt-28">
         <motion.div
-          className="grid w-full h-full"
+          className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="show"
         >
           {projects.map((project, index) => (
-            <motion.div key={project.slug} variants={itemVariants}>
+            <motion.div
+              key={project.slug}
+              variants={itemVariants}
+              style={
+                isDesktop
+                  ? { transform: `rotate(${rotations[index % rotations.length]}deg)` }
+                  : {}
+              }
+            >
               <ProjectItem
-                key={index}
                 indexNum={(index + 1).toString().padStart(2, "0")}
                 projectTags={project.tags}
                 projectName={project.title}

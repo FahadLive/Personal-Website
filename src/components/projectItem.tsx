@@ -10,6 +10,24 @@ interface ProjectItemProps {
   slug?: string;
 }
 
+function MaskingTape() {
+  return (
+    <svg
+      width="32"
+      height="18"
+      viewBox="0 0 32 18"
+      aria-hidden="true"
+      className="card-tape hidden md:block"
+    >
+      <path
+        d="M2 5 Q3 2 8 3 L22 2 Q26 3 28 5 L30 11 Q29 14 24 13 L8 14 Q4 14 3 12 Z"
+        fill="#111"
+        opacity="0.15"
+      />
+    </svg>
+  );
+}
+
 const ProjectItem: React.FC<ProjectItemProps> = ({
   indexNum,
   projectName,
@@ -22,62 +40,52 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col">
-      <div
-        onClick={() => navigate("/project/" + slug, { state: { from: path } })}
-        className="group items-center py-4 hover:cursor-pointer"
-      >
-        {/* desktop view */}
-        <div className="hidden md:grid md:grid-cols-[0.5fr_1.5fr_1fr_0.5fr] items-center">
-          <div className="project-num text-[var(--tertiary)] transition">
-            PROJECT /{indexNum}
-          </div>
-          <div className="project-name text-[var(--text)] group-hover:scale-105 transition ">
-            {projectName.toUpperCase()}.
-          </div>
-          <div className="project-tags flex justify-end gap-1">
-            {projectTags?.map((tag, index) => {
-              return (
-                <div
-                  key={index}
-                  className="project-tag text-[var(--tertiary)] "
-                >
-                  {tag.toUpperCase()} {index == tagCount - 1 ? " " : "•"}
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex justify-end p-4">
-            <IconArrowRight className="text-[var(--tertiary)] w-10 h-10 group-hover:scale-125 transition" />
-          </div>
-        </div>
+    <div
+      onClick={() => navigate("/project/" + slug, { state: { from: path } })}
+      className="paper-card p-5 md:p-6"
+    >
+      <MaskingTape />
 
-        {/* mobile view */}
-        <div className="grid grid-rows-[1fr_3fr] md:hidden items-center">
-          {/* top texts */}
-          <div className="grid grid-cols-[1fr_3fr]">
-            <div className="project-num text-[var(--tertiary)] transition">
-              PROJECT /{indexNum}
-            </div>
-            <div className="project-tags flex justify-end gap-1">
-              {projectTags?.map((tag, index) => {
-                return (
-                  <div className="project-tag text-[var(--tertiary)]">
-                    {tag.toUpperCase()} {index == tagCount - 1 ? " " : "•"}
-                  </div>
-                );
-              })}
-            </div>
+      {/* desktop view */}
+      <div className="hidden md:flex md:flex-col gap-3">
+        <div className="project-num text-[var(--tertiary)] text-sm">
+          PROJECT /{indexNum}
+        </div>
+        <div className="project-name text-[var(--text)] text-2xl">
+          {projectName.toUpperCase()}.
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="project-tags flex gap-2 text-xs text-[var(--tertiary)]">
+            {projectTags?.map((tag, index) => (
+              <span key={index}>
+                {tag.toUpperCase()}
+                {index < tagCount - 1 && " •"}
+              </span>
+            ))}
           </div>
-          {/* Bottom text */}
-          <div className="grid grid-cols-[3fr_1fr] pt-1">
-            <div className="project-name text-[var(--text)] group-hover:scale-105 transition ">
-              {projectName.toUpperCase()} .
-            </div>
-          </div>
+          <IconArrowRight className="text-[var(--tertiary)] w-6 h-6 group-hover:scale-125 transition" />
         </div>
       </div>
-      <hr className="w-full" />
+
+      {/* mobile view */}
+      <div className="flex flex-col gap-2 md:hidden">
+        <div className="flex items-center justify-between">
+          <div className="project-num text-[var(--tertiary)] text-xs">
+            PROJECT /{indexNum}
+          </div>
+          <div className="project-tags flex gap-1 text-xs text-[var(--tertiary)]">
+            {projectTags?.map((tag, index) => (
+              <span key={index}>
+                {tag.toUpperCase()}
+                {index < tagCount - 1 && " •"}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="project-name text-[var(--text)] text-xl">
+          {projectName.toUpperCase()}.
+        </div>
+      </div>
     </div>
   );
 };

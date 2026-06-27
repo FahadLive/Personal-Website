@@ -179,6 +179,79 @@
     transform: scaleX(1);
 }
 
+/* ── Card Styles ── */
+
+.paper-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+}
+
+.paper-card:active {
+    transform: scale(1.02);
+}
+
+@media (hover: hover) {
+    .paper-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 4px 16px 32px rgba(0, 0, 0, 0.14);
+    }
+}
+
+.sticky-note {
+    background: #fff9f0;
+    border-radius: 8px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.07);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.sticky-note:active {
+    transform: scale(1.02);
+}
+
+@media (hover: hover) {
+    .sticky-note:hover {
+        box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.12);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .pin-wiggle {
+        animation: pin-wiggle 0.3s ease-in-out;
+    }
+}
+
+@keyframes pin-wiggle {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-6deg);
+    }
+    75% {
+        transform: rotate(6deg);
+    }
+}
+
+.card-tape {
+    position: absolute;
+    top: -6px;
+    right: 12px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
 /* ── SVG Border ── */
 
 .doodle-btn-border {

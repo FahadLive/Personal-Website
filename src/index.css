@@ -25,6 +25,7 @@
     --text: #111111;
     --tertiary: #c53b42;
     --bg-shade: rgba(250, 248, 243, 0.9);
+    --blue: #335c81;
 
     font-family: var(--font-sans);
     font-weight: 400;

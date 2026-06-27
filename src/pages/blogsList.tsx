@@ -32,8 +32,19 @@ const itemVariants = {
   },
 };
 
+const rotations = [1.2, -0.8, 0.5, -1, 0.8, -0.5];
+
 const BlogsListPage: React.FC = () => {
   const [blogs, setBlogs] = useState<BlogsDataType[]>([]);
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 768 : false,
+  );
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const processBlogssData = async () => {
     setBlogs(await getBlogList());
@@ -49,17 +60,24 @@ const BlogsListPage: React.FC = () => {
         pageTitle="Blogs"
         pageDescription="List of blogs made by Fahad"
       />
-      <div className="grid gap-12 p-8 pt-24">
+      <div className="min-h-dvh p-8 pt-28">
         <motion.div
-          className="grid w-full h-full"
+          className="grid gap-6 md:grid-cols-2 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="show"
         >
           {blogs.map((blog, index) => (
-            <motion.div key={blog.slug} variants={itemVariants}>
+            <motion.div
+              key={blog.slug}
+              variants={itemVariants}
+              style={
+                isDesktop
+                  ? { transform: `rotate(${rotations[index % rotations.length]}deg)` }
+                  : {}
+              }
+            >
               <BlogItem
-                key={index}
                 indexNum={(index + 1).toString().padStart(2, "0")}
                 blogTags={blog.tags}
                 blogTitle={blog.title}
