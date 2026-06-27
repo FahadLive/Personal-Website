@@ -1,12 +1,14 @@
 .project-tags,
 .project-num {
-    font-weight: normal;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-family: var(--font-hand);
 }
 
 .project-name {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 2.3em;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.6em;
+    line-height: 1.2;
 }
 
 .navlinks {
@@ -53,9 +55,10 @@
 }
 
 .blog-title {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.7em;
-    font-weight: lighter;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.35em;
+    line-height: 1.2;
 }
 
 @media only screen and (max-width: 768px) {
@@ -242,6 +245,14 @@
     75% {
         transform: rotate(6deg);
     }
+}
+
+.card-summary {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: var(--text);
+    opacity: 0.55;
+    line-height: 1.4;
 }
 
 .card-tape {

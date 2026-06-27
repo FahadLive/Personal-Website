@@ -17,7 +17,7 @@ const timeline = [
     },
     {
         year: "Sep 2024",
-        label: "Joined GEC Sreekrishnapuram, B. Tech CSE",
+        label: "Joined GEC Palakkad, B. Tech CSE",
         icon: "📚",
     },
     {
@@ -57,17 +57,31 @@ function AboutPage() {
                         A little bit{" "}
                         <span className="about-me">about me .</span>
                     </h1>
-                    <p className="pt-6">
-                        I'm a student currently pursuing a bachelors in computer
-                        science & engineering at GEC Palakkad. I'm a self taught
-                        developer who loves to build things that actually
-                        matters!
-                    </p>
-                    <br />
-                    <p>
-                        Honestly, I love what I do. And this site is a product
-                        of my passion :D
-                    </p>
+
+                    <div className="about-bio pt-6 space-y-4 text-base leading-relaxed">
+                        <p>
+                            I'm Mohammed Fahad — a self-taught developer and
+                            B.Tech CSE student at GEC Palakkad. I love building
+                            things that bridge the gap between ideas and impact:
+                            web apps, Discord bots, hardware tinkerings, even a
+                            Godot game or two.
+                        </p>
+                        <p>
+                            I work across the stack — React, TypeScript, Python,
+                            Dart, Next.js, Django, and a handful of IoT chips.
+                            Recently shipped <strong>StockFlow</strong>, a full
+                            B2B order management platform, and I served as the
+                            campus lead for{" "}
+                            <strong>TinkerHub GEC Palakkad</strong> in the year
+                            2025-26, helping build a tech culture on campus.
+                        </p>
+                        <p>
+                            I'm also a FOSS enthusiast, a hardware tinkerer, and
+                            someone who genuinely believes the web should be
+                            weird, personal, and handmade. This site is that
+                            belief in action.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Timeline section */}

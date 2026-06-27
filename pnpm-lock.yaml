@@ -42,8 +42,8 @@ importers:
         specifier: ^1.0.11
         version: 1.0.11(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       swiper:
-        specifier: ^11.2.6
-        version: 11.2.10
+        specifier: ^14.0.0
+        version: 14.0.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.21.0
@@ -1569,8 +1569,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  swiper@11.2.10:
-    resolution: {integrity: sha512-RMeVUUjTQH+6N3ckimK93oxz6Sn5la4aDlgPzB+rBrG/smPdCTicXyhxa+woIpopz+jewEloiEE3lKo1h9w2YQ==}
+  swiper@14.0.0:
+    resolution: {integrity: sha512-F6DXjC+GKt8WGvutu+35FIZO9iZkde+XxDwFqfw0tlFijDwfG7DikHYUiFQKqIYEp25q8TQSqI3Nh2+bHxs2uA==}
     engines: {node: '>= 4.7.0'}
 
   tailwindcss@4.3.1:
@@ -3235,7 +3235,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  swiper@11.2.10: {}
+  swiper@14.0.0: {}
 
   tailwindcss@4.3.1: {}
 

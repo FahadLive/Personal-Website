@@ -180,13 +180,14 @@ const ProjectPage: React.FC = () => {
                             <div className="w-full max-w-screen-xl">
                                 <Swiper
                                     slidesPerView="auto"
-                                    spaceBetween={30}
+                                    spaceBetween={4}
                                     loop={true}
-                                    speed={4000}
+                                    speed={6000}
                                     autoplay={{
-                                        delay: 0,
-                                        disableOnInteraction: false,
-                                        pauseOnMouseEnter: false,
+                                        delay: 500,
+                                        disableOnInteraction: true,
+                                        pauseOnMouseEnter: true,
+                                        stopOnLastSlide: false,
                                     }}
                                     modules={[Autoplay]}
                                     className="w-full h-full"

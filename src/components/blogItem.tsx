@@ -98,8 +98,8 @@ const BlogItem: React.FC<BlogItemProps> = ({
                     <div className="blog-title text-[var(--text)] text-lg">
                         {blogTitle}.
                     </div>
-                    {!showImage && summary && (
-                        <div className="project-summary text-xs text-[var(--text)]/60 mt-1 line-clamp-2">
+                    {summary && (
+                        <div className="card-summary text-sm text-[var(--text)]/55 mt-0.5 line-clamp-2 leading-snug">
                             {summary}
                         </div>
                     )}
