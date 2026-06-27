@@ -252,6 +252,54 @@
     pointer-events: none;
 }
 
+/* ── Polaroid Image Styles ── */
+
+.card-image-wrapper {
+    background: #fff;
+    padding: 6px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.10);
+    margin-bottom: 16px;
+    transform: rotate(-1deg);
+    transition:
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out,
+        translate 0.25s ease-out;
+    line-height: 0;
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+}
+
+@media (hover: hover) {
+    .paper-card:hover .card-image-wrapper,
+    .sticky-note:hover .card-image-wrapper {
+        transform: rotate(1deg) translateY(-8px) scale(1.02);
+        box-shadow: 4px 12px 32px rgba(0, 0, 0, 0.18);
+    }
+}
+
+.paper-card:active .card-image-wrapper,
+.sticky-note:active .card-image-wrapper {
+    transform: rotate(0deg) translateY(-4px) scale(1.01);
+    box-shadow: 3px 8px 24px rgba(0, 0, 0, 0.14);
+    transition-duration: 0.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-image-wrapper {
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ── End Polaroid ── */
+
 /* ── SVG Border ── */
 
 .doodle-btn-border {

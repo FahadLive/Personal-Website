@@ -85,6 +85,7 @@ const ProjectsListPage: React.FC = () => {
                 projectTags={project.tags}
                 projectName={project.title}
                 slug={project.slug}
+                coverImage={project.coverImage}
               />
             </motion.div>
           ))}

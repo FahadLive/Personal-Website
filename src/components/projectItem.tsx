@@ -1,6 +1,6 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import "./components.css";
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface ProjectItemProps {
@@ -8,6 +8,7 @@ interface ProjectItemProps {
   projectName: string;
   projectTags?: string[];
   slug?: string;
+  coverImage?: string | null;
 }
 
 function MaskingTape() {
@@ -33,8 +34,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   projectName,
   projectTags = [],
   slug,
+  coverImage,
 }) => {
   const tagCount = projectTags?.length;
+  const [imgError, setImgError] = useState(false);
 
   const path = useLocation();
   const navigate = useNavigate();
@@ -45,6 +48,19 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
       className="paper-card p-5 md:p-6"
     >
       <MaskingTape />
+
+      {/* cover image — polaroid style */}
+      {coverImage && !imgError && (
+        <div className="card-image-wrapper">
+          <img
+            src={`/${coverImage}`}
+            alt={`Cover for ${projectName}`}
+            className="card-image"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
+        </div>
+      )}
 
       {/* desktop view */}
       <div className="hidden md:flex md:flex-col gap-3">

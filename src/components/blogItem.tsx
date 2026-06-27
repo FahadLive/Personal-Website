@@ -8,6 +8,7 @@ interface BlogItemProps {
   blogTitle: string;
   blogTags?: string[];
   slug?: string;
+  coverImage?: string | null;
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({
@@ -15,9 +16,11 @@ const BlogItem: React.FC<BlogItemProps> = ({
   blogTitle,
   blogTags = [],
   slug,
+  coverImage,
 }) => {
   const tagCount = blogTags?.length;
   const [wiggling, setWiggling] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const path = useLocation();
   const navigate = useNavigate();
@@ -43,6 +46,19 @@ const BlogItem: React.FC<BlogItemProps> = ({
       >
         📌
       </div>
+
+      {/* cover image — polaroid style */}
+      {coverImage && !imgError && (
+        <div className="card-image-wrapper">
+          <img
+            src={`/${coverImage}`}
+            alt={`Cover for ${blogTitle}`}
+            className="card-image"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
+        </div>
+      )}
 
       {/* desktop view */}
       <div className="hidden md:flex md:flex-col gap-3 pt-3">

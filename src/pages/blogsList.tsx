@@ -83,6 +83,7 @@ const BlogsListPage: React.FC = () => {
                 blogTags={blog.tags}
                 blogTitle={blog.title}
                 slug={blog.slug}
+                coverImage={blog.coverImage}
               />
             </motion.div>
           ))}
