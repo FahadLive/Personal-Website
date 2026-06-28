@@ -49,15 +49,15 @@ Finally, Im obliged to talk about the awesome leads, each and every one of them 
 
 ![Campus Leads Class of 2025](../images/blogs/life-is-good/class-of-25.webp)
 
-**Sabari Vijayan** - The lead of RIT Kottayam. I got to know more about him during IndiaFOSS, we went there together. It was through him that I got to know that I love philosophy, our conversations were always different. Whenever I talked to him, my brain switched to hardcore thinking - this isn't normal for me.
+[Sabari](https://www.linkedin.com/in/sabari-vijayan-a07107308/) - The lead of RIT Kottayam. I got to know more about him during IndiaFOSS, we went there together. It was through him that I got to know that I love philosophy, our conversations were always different. Whenever I talked to him, my brain switched to hardcore thinking - this isn't normal for me.
 
-**Salha** was a familiar face for me. I never expected to see her in person after 12th. I know her via NSS (mentioned earlier). I'm always proud to say that I vouched her into the community (She might have heard it hundreds of times, lol). She started a new chapter in her campus this year, and moreover it was arts & science college - yet, she got the emerging campus of the year - congrats Salha! Happy for you :)
+[Salha](https://linkedin.com/in/salha-m-khalfan) was a familiar face for me. I never expected to see her in person after 12th. I know her via NSS (mentioned earlier). I'm always proud to say that I vouched her into the community (She might have heard it hundreds of times, lol). She started a new chapter in her campus this year, and moreover it was arts & science college - yet, she got the emerging campus of the year - congrats Salha! Happy for you :)
 
-**Abhijith** - everyone in the campus community and its related area knows about him. His take on community is what I believe everyone should be looking onto. His commitment to things is truly admirable. Being the campus lead of CE Karunagapally, he fit that role perfectly.
+[Abhijith](https://linkedin.com/in/abhi-jithb) - everyone in the campus community and its related area knows about him. His take on community is what I believe everyone should be looking onto. His commitment to things is truly admirable. Being the campus lead of CE Karunagapally, he fit that role perfectly.
 
 ![Campus leads together](../images/blogs/life-is-good/nadikar-sangam.webp)
 
-**Lakshmi** was one of the few leads that I got to know towards the end of the tenure. Her character was different. Truly humble person she is. conversations flows smoothly with her. Her campus is one of the few ones that I used to look into for inspirations. And funnily enough, most of the posters I used to make were inspired by theirs.
+[Lakshmi](https://www.linkedin.com/in/lakshmi-sankar-mp-631642326) was one of the few leads that I got to know towards the end of the tenure. Her character was different. Truly humble person she is. conversations flows smoothly with her. Her campus is one of the few ones that I used to look into for inspirations. And funnily enough, most of the posters I used to make were inspired by theirs.
 
 There are many many many more awesome leads - I may have to create seperate blogs for each, haha.
 
@@ -68,3 +68,5 @@ Lastly, to the folks at **TinkerHub Foundation** - Aswathi (It was hard to sched
 As a summary, my one year as a campus lead wasn't smooth and it definitely wasn't full of successes. But the community, the people and the camps truly made it special.
 
 **PS:** I couldn't resist my urge to write this blog - because these are things that hold a special value for me. And I wish everyone get to experience something similar.
+
+_Cover image credits: Athul & Jual_
