@@ -49,7 +49,7 @@ Finally, Im obliged to talk about the awesome leads, each and every one of them 
 
 ![Campus Leads Class of 2025](../images/blogs/life-is-good/class-of-25.webp)
 
-[Sabari](https://www.linkedin.com/in/sabari-vijayan-a07107308/) - The lead of RIT Kottayam. I got to know more about him during IndiaFOSS, we went there together. It was through him that I got to know that I love philosophy, our conversations were always different. Whenever I talked to him, my brain switched to hardcore thinking - this isn't normal for me.
+[Sabari](https://github.com/Sabari-Vijayan) - The lead of RIT Kottayam. I got to know more about him during IndiaFOSS, we went there together. It was through him that I got to know that I love philosophy, our conversations were always different. Whenever I talked to him, my brain switched to hardcore thinking - this isn't normal for me.
 
 [Salha](https://linkedin.com/in/salha-m-khalfan) was a familiar face for me. I never expected to see her in person after 12th. I know her via NSS (mentioned earlier). I'm always proud to say that I vouched her into the community (She might have heard it hundreds of times, lol). She started a new chapter in her campus this year, and moreover it was arts & science college - yet, she got the emerging campus of the year - congrats Salha! Happy for you :)
 
