@@ -89,6 +89,7 @@ const ProjectPage: React.FC = () => {
             <MetaComponent
                 pageTitle={project.title}
                 pageDescription={project.summary}
+                pagePreview={project.coverImage || project.images?.[0] || null}
             />
             <div className="flex flex-col gap-6 min-h-screen overflow-x-hidden justify-center px-4 pt-28">
                 {/* Content - Moved to the top */}

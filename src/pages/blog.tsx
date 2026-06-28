@@ -7,6 +7,7 @@ import { getBlogData } from "../utils/markdownParser";
 import MetaComponent from "../components/meta";
 import Markdown from "react-markdown";
 import SelectionShare from "../components/selectionShare";
+import Giscus from "@giscus/react";
 
 interface ProjectsDataType {
     slug: string;
@@ -86,45 +87,64 @@ const BlogPage: React.FC = () => {
                 pageDescription={blog.summary}
                 pagePreview={blog.coverImage ? blog.coverImage : null}
             />
-            <article className="max-w-3xl mx-auto pt-28 px-8 md:px-10 pb-24">
-                {/* Cover image */}
-                {blog.coverImage && (
-                    <div className="relative mb-10 rounded-sm overflow-hidden grain">
-                        <img
-                            src={`/${blog.coverImage}`}
-                            alt=""
-                            className="w-full h-auto object-cover"
-                            loading="eager"
-                        />
+            <div className="max-w-3xl mx-auto pt-28 px-8 md:px-10 pb-24">
+                <article>
+                    {/* Cover image */}
+                    {blog.coverImage && (
+                        <div className="relative mb-10 rounded-sm overflow-hidden grain">
+                            <img
+                                src={`/${blog.coverImage}`}
+                                alt=""
+                                className="w-full h-auto object-cover"
+                                loading="eager"
+                            />
+                        </div>
+                    )}
+
+                    {/* Title */}
+                    <h1 className="font-serif text-3xl md:text-5xl leading-tight mb-4">
+                        {blog.title}.
+                    </h1>
+
+                    {/* Meta row */}
+                    <div className="flex items-center gap-3 text-sm font-sans text-[var(--text)]/50 mb-10">
+                        <time dateTime={blog.date.toISOString()}>
+                            {formatDate(blog.date)}
+                        </time>
+                        <span aria-hidden="true">·</span>
+                        <span>{readingTime} min read</span>
                     </div>
-                )}
 
-                {/* Title */}
-                <h1 className="font-serif text-3xl md:text-5xl leading-tight mb-4">
-                    {blog.title}.
-                </h1>
+                    {/* Divider */}
+                    <div className="section-divider mb-10">✦</div>
 
-                {/* Meta row */}
-                <div className="flex items-center gap-3 text-sm font-sans text-[var(--text)]/50 mb-10">
-                    <time dateTime={blog.date.toISOString()}>
-                        {formatDate(blog.date)}
-                    </time>
-                    <span aria-hidden="true">·</span>
-                    <span>{readingTime} min read</span>
+                    {/* Content */}
+                    <div className="blog-content">
+                        <Markdown>{blog.content}</Markdown>
+                    </div>
+                    <SelectionShare
+                        title={blog.title}
+                        url={`https://justfahad.me/blog/${slug}`}
+                    />
+                </article>
+                <div className="my-16">
+                    <Giscus
+                        id="comments"
+                        repo="FahadLive/Personal-Website"
+                        repoId="R_kgDOKyqUtA"
+                        category="General"
+                        categoryId="DIC_kwDOKyqUtM4DAFgN"
+                        mapping="pathname"
+                        strict="0"
+                        reactionsEnabled="1"
+                        emitMetadata="0"
+                        inputPosition="top"
+                        theme="catppuccin_latte"
+                        lang="en"
+                        loading="lazy"
+                    />
                 </div>
-
-                {/* Divider */}
-                <div className="section-divider mb-10">✦</div>
-
-                {/* Content */}
-                <div className="blog-content">
-                    <Markdown>{blog.content}</Markdown>
-                </div>
-                <SelectionShare
-                    title={blog.title}
-                    url={`https://justfahad.me/blog/${slug}`}
-                />
-            </article>
+            </div>
         </>
     );
 };
