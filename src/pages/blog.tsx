@@ -1,11 +1,12 @@
 import "./page.css";
 
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { getBlogData } from "../utils/markdownParser";
 
 import MetaComponent from "../components/meta";
 import Markdown from "react-markdown";
+import SelectionShare from "../components/selectionShare";
 
 interface ProjectsDataType {
     slug: string;
@@ -119,6 +120,10 @@ const BlogPage: React.FC = () => {
                 <div className="blog-content">
                     <Markdown>{blog.content}</Markdown>
                 </div>
+                <SelectionShare
+                    title={blog.title}
+                    url={`https://justfahad.me/blog/${slug}`}
+                />
             </article>
         </>
     );
