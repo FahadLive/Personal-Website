@@ -17,6 +17,7 @@ function SelectionShare({ title, url }: SelectionShareProps) {
     const [show, setShow] = useState(false);
     const [pos, setPos] = useState({ x: 0, y: 0 });
     const [copied, setCopied] = useState(false);
+    const [isTouch] = useState(() => matchMedia("(pointer: coarse)").matches);
     const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
     const btnRef = useRef<HTMLDivElement>(null);
     const selectionRef = useRef<string>("");
@@ -86,7 +87,7 @@ function SelectionShare({ title, url }: SelectionShareProps) {
         if (!text) return;
 
         const cleanTitle = stripEmojis(title);
-        const message = `"${text}"\n\n— from ${cleanTitle}\n${url}`;
+        const message = `"${text}"\n\n\u2014 from ${cleanTitle}\n${url}`;
 
         if (navigator.share) {
             try {
@@ -115,13 +116,40 @@ function SelectionShare({ title, url }: SelectionShareProps) {
 
         const cleanTitle = stripEmojis(title);
         await navigator.clipboard.writeText(
-            `"${text}"\n\n— from ${cleanTitle}\n${url}`,
+            `"${text}"\n\n\u2014 from ${cleanTitle}\n${url}`,
         );
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     }, [title, url]);
 
     if (!show) return null;
+
+    if (isTouch) {
+        return (
+            <div className="fixed bottom-6 right-6 z-50">
+                <div
+                    ref={btnRef}
+                    className="flex items-center gap-1 p-1 bg-[var(--tertiary)] rounded-lg shadow-lg"
+                >
+                    <button
+                        onClick={handleShare}
+                        className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-white rounded-md active:scale-95"
+                    >
+                        <IconShare2 size={18} />
+                        Share
+                    </button>
+                    <div className="w-px h-5 bg-white/20" />
+                    <button
+                        onClick={handleCopy}
+                        className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-white rounded-md active:scale-95"
+                    >
+                        {copied ? <IconCheck size={18} /> : <IconCopy size={18} />}
+                        {copied ? "Copied!" : "Copy"}
+                    </button>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div
@@ -140,7 +168,7 @@ function SelectionShare({ title, url }: SelectionShareProps) {
                     onClick={handleShare}
                     className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-white rounded-md hover:brightness-90 transition-all active:scale-95"
                 >
-                    <IconShare2 />
+                    <IconShare2 size={16} />
                     Share
                 </button>
                 <div className="w-px h-5 bg-white/20" />
@@ -148,12 +176,11 @@ function SelectionShare({ title, url }: SelectionShareProps) {
                     onClick={handleCopy}
                     className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-white rounded-md hover:brightness-90 transition-all active:scale-95"
                 >
-                    {copied ? <IconCheck /> : <IconCopy />}
+                    {copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
                     {copied ? "Copied!" : "Copy"}
                 </button>
             </div>
 
-            {/* arrow */}
             <div className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 bg-[var(--tertiary)] rotate-45 rounded-sm" />
         </div>
     );
