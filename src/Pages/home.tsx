@@ -98,6 +98,11 @@ function HomePage() {
                         />
                         <NavLinks indexNum="02" text="Blogs" link="/blogs" />
                         <NavLinks indexNum="03" text="About" link="/about" />
+                        <NavLinks
+                            indexNum="04"
+                            text="Scratchpad"
+                            link="/scratchpad"
+                        />
                     </motion.div>
 
                     <div className="flex justify-center pt-8 pb-4 mt-auto">
@@ -200,6 +205,11 @@ function HomePage() {
                                 indexNum="03"
                                 text="About"
                                 link="/about"
+                            />
+                            <NavLinks
+                                indexNum="04"
+                                text="Scratchpad"
+                                link="/scratchpad"
                             />
                         </div>
                         <a

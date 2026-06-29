@@ -356,3 +356,34 @@
         font-size: 1.2em;
     }
 }
+
+/* ── Chaya cup steam ── */
+@keyframes steam {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.6;
+    }
+    70% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-8px) scaleX(1.3);
+        opacity: 0;
+    }
+}
+
+.steam-path {
+    transform-origin: center bottom;
+    animation: steam 2s ease-in-out infinite;
+}
+
+.steam-path-1 {
+    animation-delay: 0s;
+}
+
+.steam-path-2 {
+    animation-delay: 0.8s;
+}

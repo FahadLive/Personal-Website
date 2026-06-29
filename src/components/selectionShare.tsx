@@ -143,7 +143,11 @@ function SelectionShare({ title, url }: SelectionShareProps) {
                         onClick={handleCopy}
                         className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-white rounded-md active:scale-95"
                     >
-                        {copied ? <IconCheck size={18} /> : <IconCopy size={18} />}
+                        {copied ? (
+                            <IconCheck size={18} />
+                        ) : (
+                            <IconCopy size={18} />
+                        )}
                         {copied ? "Copied!" : "Copy"}
                     </button>
                 </div>
