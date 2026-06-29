@@ -82,6 +82,7 @@ const ScratchpadPage: React.FC = () => {
                                     note={item.entry.note}
                                     tags={item.entry.tags}
                                     added={item.entry.added}
+                                    image={item.entry.image}
                                     index={globalIndex}
                                 />
                             </motion.div>

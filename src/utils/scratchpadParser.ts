@@ -5,6 +5,7 @@ export interface ScratchpadEntry {
     note: string;
     tags: string[];
     added: string;
+    image?: string | null;
 }
 
 export interface ScratchpadGroup {
