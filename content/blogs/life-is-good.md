@@ -69,4 +69,6 @@ As a summary, my one year as a campus lead wasn't smooth and it definitely wasn'
 
 **PS:** I couldn't resist my urge to write this blog - because these are things that hold a special value for me. And I wish everyone get to experience something similar.
 
-_Cover image credits: Athul & Jual_
+_Blog title and cover image courtesy of Athul, Jual, Ali & Ishaal._
+
+[![Life is Good](../images/blogs/life-is-good/life-is-good.jpg)](https://www.youtube.com/watch?v=_jqjVuFXdM8&t=475s)
