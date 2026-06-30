@@ -1,7 +1,20 @@
-- date: 2026-06-14
+- date: 2026-06-30
+  project: "Scratchpad"
+  summary: "Today, I built scratchpad - basically a bookmarking page with short notes more like 'margined notebook made public.'
+
+'Why?' - you might ask, because I love finding new stuff and have always wanted to see others has to offer too... So, see it as a test for something that can be expanded. Will it get expanded/adopted by others? most probably no. But I love the idea :D
+
+For this I had to setup another system. A telegram-github webhook system. All of whose code is made public in: https://github.com/FahadLive/Personal-Website (See charlie-worker)
+
+PS: Telegram & Cloudflare are so cool - There is always something in store with them"
+  mood: 📈
+  images:
+    - /public/content/log-assets/2026-06-30-32z1-1.webp
+    - /public/content/log-assets/2026-06-30-32z1-2.webp
+  til: ["Cloudflare workers", "New functionalities of Github API", "Wrangler (tool)"]- date: 2026-06-14
   project: BlastOff
   summary: Wired up the heatmap component today. Took longer than expected because of timezone bugs in the date grouping.
-  mood: 🔥
+  mood: ð¥
   images:
       - /content/log-assets/2026-06-14-1.webp
       - /content/log-assets/2026-06-14-2.webp
@@ -14,7 +27,7 @@
 - date: 2026-06-12
   project: justfahad.me
   summary: Started sketching the build-in-public page. Stealing the layout bones from scratchpad, changing the soul.
-  mood: ✏️
+  mood: âï¸
   images:
       - /content/log-assets/2026-06-12-1.webp
   til: []
