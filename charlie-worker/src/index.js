@@ -370,7 +370,7 @@ async function commitLogEntry(env, chatId, session) {
 		headers: githubHeaders(env),
 		body: JSON.stringify({
 			message: `log: add entry ${today}`,
-			content: utf8ToBase64(newEntry + existingContent),
+			content: utf8ToBase64(newEntry + '\n' + existingContent),
 			...(fileSha ? { sha: fileSha } : {}),
 		}),
 	});
@@ -449,7 +449,7 @@ async function commitScratchpadEntry(env, chatId, session) {
 		headers: githubHeaders(env),
 		body: JSON.stringify({
 			message: `scratchpad: add entry ${today}`,
-			content: utf8ToBase64(newEntry + existingContent),
+			content: utf8ToBase64(newEntry + '\n' + existingContent),
 			...(fileSha ? { sha: fileSha } : {}),
 		}),
 	});
