@@ -35,12 +35,15 @@ importers:
       react:
         specifier: ^19.0.0
         version: 19.2.7
+      react-activity-calendar:
+        specifier: ^3.2.0
+        version: 3.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-dom:
         specifier: ^19.0.0
         version: 19.2.7(react@19.2.7)
       react-helmet-async:
-        specifier: ^2.0.5
-        version: 2.0.5(react@19.2.7)
+        specifier: ^3.0.0
+        version: 3.0.0(react@19.2.7)
       react-markdown:
         specifier: ^10.1.0
         version: 10.1.0(@types/react@19.2.17)(react@19.2.7)
@@ -375,6 +378,27 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@floating-ui/core@1.7.5':
+    resolution: {integrity: sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ==}
+
+  '@floating-ui/dom@1.7.6':
+    resolution: {integrity: sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==}
+
+  '@floating-ui/react-dom@2.1.8':
+    resolution: {integrity: sha512-cC52bHwM/n/CxS87FH0yWdngEZrjdtLW/qVruo68qg+prK7ZQ4YGdut2GyDVpoGeAYe/h899rVeOVm6Oi40k2A==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/react@0.27.19':
+    resolution: {integrity: sha512-31B8h5mm8YxotlE7/AU/PhNAl8eWxAmjL/v2QOxroDNkTFLk3Uu82u63N3b6TXa4EGJeeZLVcd/9AlNlVqzeog==}
+    peerDependencies:
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
+
+  '@floating-ui/utils@0.2.11':
+    resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
 
   '@giscus/react@3.1.0':
     resolution: {integrity: sha512-0TCO2TvL43+oOdyVVGHDItwxD1UMKP2ZYpT6gXmhFOqfAJtZxTzJ9hkn34iAF/b6YzyJ4Um89QIt9z/ajmAEeg==}
@@ -886,6 +910,9 @@ packages:
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
+
+  date-fns@4.4.0:
+    resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -1484,6 +1511,11 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  react-activity-calendar@3.2.0:
+    resolution: {integrity: sha512-v+ZD61h7RB76YMDh1aGAZuoXsSymSixKMOMusMoYWxhDXkFUX6hiftHin/tWqIS9zSNA/NN+vzYDK4hPF0wuxQ==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+
   react-dom@19.2.7:
     resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
     peerDependencies:
@@ -1492,10 +1524,10 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
-  react-helmet-async@2.0.5:
-    resolution: {integrity: sha512-rYUYHeus+i27MvFE+Jaa4WsyBKGkL6qVgbJvSBoX8mbsWoABJXdEO0bZyi0F6i+4f0NuIb8AvqPMj3iXFHkMwg==}
+  react-helmet-async@3.0.0:
+    resolution: {integrity: sha512-nA3IEZfXiclgrz4KLxAhqJqIfFDuvzQwlKwpdmzZIuC1KNSghDEIXmyU0TKtbM+NafnkICcwx8CECFrZ/sL/1w==}
     peerDependencies:
-      react: ^16.6.0 || ^17.0.0 || ^18.0.0
+      react: ^16.6.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-markdown@10.1.0:
     resolution: {integrity: sha512-qKxVopLT/TyA6BX3Ue5NwabOsAzm0Q7kAPwq6L+wWDwisYs7R8vZ0nRXqq6rkueboxpkjvLGU9fWifiX/ZZFxQ==}
@@ -1615,6 +1647,9 @@ packages:
   swiper@14.0.0:
     resolution: {integrity: sha512-F6DXjC+GKt8WGvutu+35FIZO9iZkde+XxDwFqfw0tlFijDwfG7DikHYUiFQKqIYEp25q8TQSqI3Nh2+bHxs2uA==}
     engines: {node: '>= 4.7.0'}
+
+  tabbable@6.5.0:
+    resolution: {integrity: sha512-wieBHXygIm7OyQOu5hQlkk62/WyCFYGlWg7L6/ZCUZwx0o398Zkn4pVmMyfYhfMG8kGrj/Krt8eIk6UKC6VzwA==}
 
   tailwindcss@4.3.1:
     resolution: {integrity: sha512-hk+TB1m+K8CYNrP6rjQaq/Y+4Zylwpa87mLYBKCunwnnQ9p+fHb7kmSfGqyEJoxF/O6CDyABWVFEafNSYKll+Q==}
@@ -1987,6 +2022,31 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@floating-ui/core@1.7.5':
+    dependencies:
+      '@floating-ui/utils': 0.2.11
+
+  '@floating-ui/dom@1.7.6':
+    dependencies:
+      '@floating-ui/core': 1.7.5
+      '@floating-ui/utils': 0.2.11
+
+  '@floating-ui/react-dom@2.1.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      '@floating-ui/dom': 1.7.6
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+
+  '@floating-ui/react@0.27.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@floating-ui/utils': 0.2.11
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+      tabbable: 6.5.0
+
+  '@floating-ui/utils@0.2.11': {}
 
   '@giscus/react@3.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
@@ -2455,6 +2515,8 @@ snapshots:
       which: 2.0.2
 
   csstype@3.2.3: {}
+
+  date-fns@4.4.0: {}
 
   debug@4.4.3:
     dependencies:
@@ -3163,6 +3225,14 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  react-activity-calendar@3.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+    dependencies:
+      '@floating-ui/react': 0.27.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      date-fns: 4.4.0
+      react: 19.2.7
+    transitivePeerDependencies:
+      - react-dom
+
   react-dom@19.2.7(react@19.2.7):
     dependencies:
       react: 19.2.7
@@ -3170,7 +3240,7 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
-  react-helmet-async@2.0.5(react@19.2.7):
+  react-helmet-async@3.0.0(react@19.2.7):
     dependencies:
       invariant: 2.2.4
       react: 19.2.7
@@ -3319,6 +3389,8 @@ snapshots:
       has-flag: 4.0.0
 
   swiper@14.0.0: {}
+
+  tabbable@6.5.0: {}
 
   tailwindcss@4.3.1: {}
 

@@ -81,6 +81,7 @@ const Header: React.FC = () => {
                     <div className="page-directs hidden md:flex h-max items-center gap-16">
                         <Link className="nav-bar-item" to="/blogs">blogs</Link>
                         <Link className="nav-bar-item" to="/scratchpad">scratchpad</Link>
+                        <Link className="nav-bar-item" to="/build">build</Link>
                         <a
                             className="nav-bar-item"
                             target="_blank"

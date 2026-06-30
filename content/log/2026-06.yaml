@@ -1,0 +1,20 @@
+- date: 2026-06-14
+  project: BlastOff
+  summary: Wired up the heatmap component today. Took longer than expected because of timezone bugs in the date grouping.
+  mood: 🔥
+  images:
+      - /content/log-assets/2026-06-14-1.webp
+      - /content/log-assets/2026-06-14-2.webp
+  til:
+      [
+          animation-timeline hooks straight into scroll position,
+          react-activity-calendar themes via CSS vars,
+      ]
+
+- date: 2026-06-12
+  project: justfahad.me
+  summary: Started sketching the build-in-public page. Stealing the layout bones from scratchpad, changing the soul.
+  mood: ✏️
+  images:
+      - /content/log-assets/2026-06-12-1.webp
+  til: []

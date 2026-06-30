@@ -39,6 +39,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 body {
     min-width: 320px;

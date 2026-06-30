@@ -4,6 +4,7 @@
     height: 100vh;
     height: 100dvh;
     width: 100%;
+    min-width: 0;
 }
 
 .lap-content {

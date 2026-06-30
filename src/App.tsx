@@ -19,6 +19,7 @@ const AboutPage = lazy(() => import("./pages/about"));
 const BlogsListPage = lazy(() => import("./pages/blogsList"));
 const BlogPage = lazy(() => import("./pages/blog"));
 const ScratchpadPage = lazy(() => import("./pages/scratchpad"));
+const BuildPage = lazy(() => import("./pages/build"));
 
 const Loading = () => (
   <div className="loading-container">
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
       <Route path="/blog/:slug" element={<BlogPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/scratchpad" element={<ScratchpadPage />} />
+      <Route path="/build" element={<BuildPage />} />
       <Route path="/downloads" element={<Downloads />} />
     </Route>,
   ),

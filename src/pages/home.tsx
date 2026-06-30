@@ -103,6 +103,11 @@ function HomePage() {
                             text="Scratchpad"
                             link="/scratchpad"
                         />
+                        <NavLinks
+                            indexNum="05"
+                            text="Build"
+                            link="/build"
+                        />
                     </motion.div>
 
                     <div className="flex justify-center pt-8 pb-4 mt-auto">
@@ -210,6 +215,11 @@ function HomePage() {
                                 indexNum="04"
                                 text="Scratchpad"
                                 link="/scratchpad"
+                            />
+                            <NavLinks
+                                indexNum="05"
+                                text="Build"
+                                link="/build"
                             />
                         </div>
                         <a

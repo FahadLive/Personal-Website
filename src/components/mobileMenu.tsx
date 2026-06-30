@@ -82,6 +82,12 @@ const MobileMenu: React.FC = () => {
                                 link="/scratchpad"
                                 onClick={handleLinkClick}
                             />
+                            <NavLinks
+                                indexNum="05"
+                                text="Build"
+                                link="/build"
+                                onClick={handleLinkClick}
+                            />
                         </div>
                         <div className="flex flex-col gap-6">
                             <div className="page-directs flex justify-between items-center">
