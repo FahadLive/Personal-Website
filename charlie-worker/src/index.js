@@ -335,7 +335,9 @@ async function commitLogEntry(env, chatId, session) {
 	let fileSha = null;
 	if (getRes.ok) {
 		const data = await getRes.json();
-		existingContent = atob(data.content.replace(/\n/g, ''));
+		const binary = atob(data.content.replace(/\n/g, ''));
+
+		existingContent = new TextDecoder().decode(Uint8Array.from(binary, (c) => c.charCodeAt(0)));
 		fileSha = data.sha;
 	}
 
@@ -368,7 +370,7 @@ async function commitLogEntry(env, chatId, session) {
 		headers: githubHeaders(env),
 		body: JSON.stringify({
 			message: `log: add entry ${today}`,
-			content: btoa(unescape(encodeURIComponent(newEntry + existingContent))),
+			content: utf8ToBase64(newEntry + existingContent),
 			...(fileSha ? { sha: fileSha } : {}),
 		}),
 	});
@@ -417,7 +419,9 @@ async function commitScratchpadEntry(env, chatId, session) {
 	let fileSha = null;
 	if (getRes.ok) {
 		const data = await getRes.json();
-		existingContent = atob(data.content.replace(/\n/g, ''));
+		const binary = atob(data.content.replace(/\n/g, ''));
+
+		existingContent = new TextDecoder().decode(Uint8Array.from(binary, (c) => c.charCodeAt(0)));
 		fileSha = data.sha;
 	}
 
@@ -445,7 +449,7 @@ async function commitScratchpadEntry(env, chatId, session) {
 		headers: githubHeaders(env),
 		body: JSON.stringify({
 			message: `scratchpad: add entry ${today}`,
-			content: btoa(unescape(encodeURIComponent(newEntry + existingContent))),
+			content: utf8ToBase64(newEntry + existingContent),
 			...(fileSha ? { sha: fileSha } : {}),
 		}),
 	});
@@ -466,6 +470,19 @@ function arrayBufferToBase64(bytes) {
 	for (let i = 0; i < bytes.length; i += chunkSize) {
 		binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize));
 	}
+	return btoa(binary);
+}
+
+function utf8ToBase64(str) {
+	const bytes = new TextEncoder().encode(str);
+
+	let binary = '';
+	const chunk = 0x8000;
+
+	for (let i = 0; i < bytes.length; i += chunk) {
+		binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+	}
+
 	return btoa(binary);
 }
 

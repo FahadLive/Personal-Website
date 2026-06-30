@@ -1,20 +1,23 @@
 - date: 2026-06-30
   project: "Build In Public"
-  summary: "I built the basics of #BuildInPublic - a web page to publicly track my building activities. Just like yesterday's scratch these too features, a telegram to github integration using cloudflare workers.
+  summary: |
+      I built the basics of #BuildInPublic - a web page to publicly track my building activities. Just like yesterday's scratch these too features, a telegram to github integration using cloudflare workers.
 
-Additionally, I add streaks and heatmap to make the whole page engaging. I expect the users who visit to get somewhat inspired and try doing for themselves, for which a CTA has been placed as a footer :)
+      Additionally, I add streaks and heatmap to make the whole page engaging. I expect the users who visit to get somewhat inspired and try doing for themselves, for which a CTA has been placed as a footer :)
 
-Thanks to the folks at https://wsrv.nl/, I was able to handle image compression (my main worry) easily. 
+      Thanks to the folks at https://wsrv.nl/, I was able to handle image compression (my main worry) easily.
 
-These tiny builds are always fun 😌"
+      These tiny builds are always fun 😌
   mood: 😮‍💨
   images:
-    - /public/content/log-assets/2026-06-30-4tll-1.webp
-    - /public/content/log-assets/2026-06-30-4tll-2.webp
-  til: ["https://wsrv.nl", "Wrangler keyspace", "React heatmap"]- date: 2026-06-29
-  project: Scratchpad
+      - /content/log-assets/2026-06-30-4tll-1.webp
+      - /content/log-assets/2026-06-30-4tll-2.webp
+  til: ["https://wsrv.nl", "Wrangler keyspace", "React heatmap"]
+
+- date: 2026-06-29
+  project: "Scratchpad"
   summary: |
-      Today, I built Scratchpad â basically a bookmarking page with short notes, more like a "margined notebook made public."
+      Today, I built Scratchpad - basically a bookmarking page with short notes, more like a "margined notebook made public."
 
       "Why?" you might ask.
 
@@ -22,12 +25,12 @@ These tiny builds are always fun 😌"
 
       Will it get expanded or adopted by others? Most probably not. But I love the idea :D
 
-      For this, I had to set up another system: a Telegram â GitHub webhook. All of its code is public at:
+      For this, I had to set up another system: a Telegram ↔ GitHub webhook. All of its code is public at:
       https://github.com/FahadLive/Personal-Website
       (See `charlie-worker`.)
 
       PS: Telegram and Cloudflare are so cool. There's always something new to discover with them.
-  mood: ð
+  mood: 📈
   images:
       - /content/log-assets/2026-06-30-32z1-1.webp
       - /content/log-assets/2026-06-30-32z1-2.webp
