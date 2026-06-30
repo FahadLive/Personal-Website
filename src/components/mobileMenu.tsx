@@ -84,7 +84,7 @@ const MobileMenu: React.FC = () => {
                             />
                             <NavLinks
                                 indexNum="05"
-                                text="Build"
+                                text="Build in Public"
                                 link="/build"
                                 onClick={handleLinkClick}
                             />

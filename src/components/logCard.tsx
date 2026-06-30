@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { LogEntry } from "../utils/buildLogParser";
 import "./components.css";
+import Linkify from "linkify-react";
 
 const MONTHS = [
     "Jan",
@@ -85,10 +86,19 @@ export default function LogCard({
 
                 {/* Summary */}
                 <p
-                    className="font-sans text-ink leading-snug "
+                    className="font-sans text-ink leading-snug whitespace-pre-wrap"
                     style={{ fontSize: "14px" }}
                 >
-                    {entry.summary}
+                    <Linkify
+                        options={{
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className:
+                                "underline decoration-dotted hover:decoration-solid",
+                        }}
+                    >
+                        {entry.summary}
+                    </Linkify>
                 </p>
 
                 {/* Images row */}

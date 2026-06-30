@@ -1,6 +1,6 @@
 const GITHUB_REPO = 'FahadLive/Personal-Website';
 const LOG_PATH = 'content/log';
-const ASSETS_PATH = 'public/content/log-assets';
+const ASSETS_PATH = 'content/log-assets';
 const SCRATCHPAD_PATH = 'content/scratchpad';
 const MAX_IMAGES = 3;
 
@@ -10,8 +10,17 @@ const RESIZE_PROXY = (url) => `https://wsrv.nl/?url=${encodeURIComponent(url)}&w
 // Crude but effective enough for personal use — first http(s) URL in the message.
 const URL_RE = /(https?:\/\/[^\s]+)/i;
 
-// In-memory session store (lives as long as the worker instance)
-const sessions = new Map();
+// KV session helpers
+async function getSession(env, chatId) {
+	const data = await env.SESSIONS.get(String(chatId), 'json');
+	return data ?? { step: 'idle' };
+}
+async function setSession(env, chatId, session) {
+	await env.SESSIONS.put(String(chatId), JSON.stringify(session));
+}
+async function deleteSession(env, chatId) {
+	await env.SESSIONS.delete(String(chatId));
+}
 
 export default {
 	async fetch(request, env) {
@@ -34,30 +43,30 @@ export default {
 
 		const chatId = message.chat.id;
 		const text = (message.text ?? '').trim();
-		const session = sessions.get(chatId) ?? { step: 'idle' };
+		const session = await getSession(env, chatId);
 
 		// ── Global commands, work from any state ──
 
 		if (text === '/cancel') {
-			sessions.delete(chatId);
+			await deleteSession(env, chatId);
 			await sendTelegram(env, chatId, 'Cancelled.');
 			return new Response('ok');
 		}
 
 		if (text === '/menu' || text === '/start') {
-			sessions.delete(chatId);
+			await deleteSession(env, chatId);
 			await showMenu(env, chatId);
 			return new Response('ok');
 		}
 
 		if (text === '/log') {
-			sessions.set(chatId, { step: 'project' });
+			await setSession(env, chatId, { step: 'project' });
 			await sendTelegram(env, chatId, 'What are you building? (project name) 🛠️');
 			return new Response('ok');
 		}
 
 		if (text === '/add') {
-			sessions.set(chatId, { step: 'url' });
+			await setSession(env, chatId, { step: 'url' });
 			await sendTelegram(env, chatId, "What's the link? 🔗");
 			return new Response('ok');
 		}
@@ -68,7 +77,7 @@ export default {
 		if (session.step === 'idle') {
 			const match = text.match(URL_RE);
 			if (match) {
-				sessions.set(chatId, { step: 'confirm_link', url: match[1] });
+				await setSession(env, chatId, { step: 'confirm_link', url: match[1] });
 				await sendTelegram(env, chatId, `Looks like a link:\n${match[1]}\n\nWhat's this for?`, {
 					reply_markup: {
 						inline_keyboard: [
@@ -88,13 +97,13 @@ export default {
 		// ── Build log flow ──
 
 		if (session.step === 'project') {
-			sessions.set(chatId, { step: 'summary', project: text });
+			await setSession(env, chatId, { step: 'summary', project: text });
 			await sendTelegram(env, chatId, "What'd you do today? ✏️");
 			return new Response('ok');
 		}
 
 		if (session.step === 'summary') {
-			sessions.set(chatId, { ...session, step: 'mood', summary: text });
+			await setSession(env, chatId, { ...session, step: 'mood', summary: text });
 			await sendTelegram(env, chatId, "How'd it feel? (one emoji, or tap skip)", {
 				reply_markup: { inline_keyboard: [[{ text: 'skip →', callback_data: 'skip_mood' }]] },
 			});
@@ -110,7 +119,7 @@ export default {
 			if (message.photo?.length) {
 				const largest = message.photo[message.photo.length - 1];
 				const images = [...(session.images ?? []), largest.file_id];
-				sessions.set(chatId, { ...session, images });
+				await setSession(env, chatId, { ...session, images });
 
 				if (images.length >= MAX_IMAGES) {
 					await advanceToTil(env, chatId, { ...session, images });
@@ -131,20 +140,20 @@ export default {
 				.map((t) => t.trim())
 				.filter(Boolean);
 			await commitLogEntry(env, chatId, { ...session, til });
-			sessions.delete(chatId);
+			await deleteSession(env, chatId);
 			return new Response('ok');
 		}
 
 		// ── Scratchpad flow ──
 
 		if (session.step === 'url') {
-			sessions.set(chatId, { step: 'note', url: text });
+			await setSession(env, chatId, { step: 'note', url: text });
 			await sendTelegram(env, chatId, "Got it. What's your note? ✏️");
 			return new Response('ok');
 		}
 
 		if (session.step === 'note') {
-			sessions.set(chatId, { ...session, step: 'tags', note: text });
+			await setSession(env, chatId, { ...session, step: 'tags', note: text });
 			await sendTelegram(env, chatId, 'Any tags? (comma separated, or tap skip)', {
 				reply_markup: { inline_keyboard: [[{ text: 'skip →', callback_data: 'skip_tags' }]] },
 			});
@@ -157,7 +166,7 @@ export default {
 				.map((t) => t.trim())
 				.filter(Boolean);
 			await commitScratchpadEntry(env, chatId, { ...session, tags });
-			sessions.delete(chatId);
+			await deleteSession(env, chatId);
 			return new Response('ok');
 		}
 
@@ -183,12 +192,12 @@ async function showMenu(env, chatId) {
 }
 
 async function advanceToImages(env, chatId, session) {
-	sessions.set(chatId, { ...session, step: 'images', images: [] });
+	await setSession(env, chatId, { ...session, step: 'images', images: [] });
 	await sendTelegram(env, chatId, `Send 1–${MAX_IMAGES} photos from today 📸 (required — send at least one)`);
 }
 
 async function advanceToTil(env, chatId, session) {
-	sessions.set(chatId, { ...session, step: 'til' });
+	await setSession(env, chatId, { ...session, step: 'til' });
 	await sendTelegram(env, chatId, 'Learn anything? (comma separated, short — or tap skip)', {
 		reply_markup: { inline_keyboard: [[{ text: 'skip →', callback_data: 'skip_til' }]] },
 	});
@@ -198,22 +207,22 @@ async function advanceToTil(env, chatId, session) {
 async function handleCallback(body, env) {
 	const query = body.callback_query;
 	const chatId = query.message.chat.id;
-	const session = sessions.get(chatId) ?? { step: 'idle' };
+	const session = await getSession(env, chatId);
 
 	switch (query.data) {
 		case 'menu_log':
-			sessions.set(chatId, { step: 'project' });
+			await setSession(env, chatId, { step: 'project' });
 			await sendTelegram(env, chatId, 'What are you building? (project name) 🛠️');
 			break;
 
 		case 'menu_scratchpad':
-			sessions.set(chatId, { step: 'url' });
+			await setSession(env, chatId, { step: 'url' });
 			await sendTelegram(env, chatId, "What's the link? 🔗");
 			break;
 
 		case 'link_scratchpad':
 			if (session.step === 'confirm_link') {
-				sessions.set(chatId, { step: 'note', url: session.url });
+				await setSession(env, chatId, { step: 'note', url: session.url });
 				await sendTelegram(env, chatId, "Got it. What's your note? ✏️");
 			}
 			break;
@@ -222,13 +231,13 @@ async function handleCallback(body, env) {
 			if (session.step === 'confirm_link') {
 				// They had typed a link but actually meant to start a build log —
 				// don't try to guess the project name from the URL, just start clean.
-				sessions.set(chatId, { step: 'project' });
+				await setSession(env, chatId, { step: 'project' });
 				await sendTelegram(env, chatId, 'No problem — what are you building? (project name) 🛠️');
 			}
 			break;
 
 		case 'link_cancel':
-			sessions.delete(chatId);
+			await deleteSession(env, chatId);
 			await sendTelegram(env, chatId, 'Cancelled.');
 			break;
 
@@ -249,14 +258,14 @@ async function handleCallback(body, env) {
 		case 'skip_til':
 			if (session.step === 'til') {
 				await commitLogEntry(env, chatId, { ...session, til: [] });
-				sessions.delete(chatId);
+				await deleteSession(env, chatId);
 			}
 			break;
 
 		case 'skip_tags':
 			if (session.step === 'tags') {
 				await commitScratchpadEntry(env, chatId, { ...session, tags: [] });
-				sessions.delete(chatId);
+				await deleteSession(env, chatId);
 			}
 			break;
 	}
@@ -333,10 +342,18 @@ async function commitLogEntry(env, chatId, session) {
 	const imagesYaml = imagePaths.map((p) => `    - ${p}`).join('\n');
 	const tilYaml = til.length ? `[${til.map((t) => `"${t.replace(/"/g, '\\"')}"`).join(', ')}]` : '[]';
 
+	const summaryYaml = [
+		`  summary: |`,
+		...summary
+			.replace(/\r\n/g, '\n')
+			.split('\n')
+			.map((line) => `    ${line}`),
+	];
+
 	const newEntry = [
 		`- date: ${today}`,
 		`  project: "${project.replace(/"/g, '\\"')}"`,
-		`  summary: "${summary.replace(/"/g, '\\"')}"`,
+		...summaryYaml,
 		mood ? `  mood: ${mood}` : null,
 		`  images:`,
 		imagesYaml,
@@ -404,10 +421,18 @@ async function commitScratchpadEntry(env, chatId, session) {
 		fileSha = data.sha;
 	}
 
+	const noteYaml = [
+		`  note: |`,
+		...note
+			.replace(/\r\n/g, '\n')
+			.split('\n')
+			.map((line) => `    ${line}`),
+	];
+
 	const newEntry = [
 		`- url: ${url}`,
-		`  note: "${note.replace(/"/g, '\\"')}"`,
-		tags.length ? `  tags: [${tags.join(', ')}]` : `  tags: []`,
+		...noteYaml,
+		tags.length ? `  tags: [${tags.map((t) => `"${t.replace(/"/g, '\\"')}"`).join(', ')}]` : `  tags: []`,
 		`  added: ${today}`,
 		ogImage ? `  image: ${ogImage}` : null,
 		'',

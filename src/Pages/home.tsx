@@ -105,7 +105,7 @@ function HomePage() {
                         />
                         <NavLinks
                             indexNum="05"
-                            text="Build"
+                            text="Build in Public"
                             link="/build"
                         />
                     </motion.div>

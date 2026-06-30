@@ -17,6 +17,8 @@
     "buffer": "^6.0.3",
     "gray-matter": "^4.0.3",
     "js-yaml": "^5.2.0",
+    "linkify-react": "^4.3.3",
+    "linkifyjs": "^4.3.3",
     "motion": "^12.9.2",
     "react": "^19.0.0",
     "react-activity-calendar": "^3.2.0",

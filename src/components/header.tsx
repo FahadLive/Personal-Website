@@ -65,7 +65,10 @@ const Header: React.FC = () => {
 
                     <div
                         className="flex hover:cursor-pointer items-center p-2"
-                        onClick={() => { handleLogoClick(); navigate("/"); }}
+                        onClick={() => {
+                            handleLogoClick();
+                            navigate("/");
+                        }}
                     >
                         <img
                             src="/logo.svg"
@@ -79,9 +82,10 @@ const Header: React.FC = () => {
                     </div>
 
                     <div className="page-directs hidden md:flex h-max items-center gap-16">
-                        <Link className="nav-bar-item" to="/blogs">blogs</Link>
-                        <Link className="nav-bar-item" to="/scratchpad">scratchpad</Link>
-                        <Link className="nav-bar-item" to="/build">build</Link>
+                        <Link className="nav-bar-item" to="/blogs">
+                            blogs
+                        </Link>
+
                         <a
                             className="nav-bar-item"
                             target="_blank"
