@@ -1,9 +1,9 @@
 - date: 2026-06-30
   project: "Build In Public"
   summary: |
-      I built the basics of #BuildInPublic - a web page to publicly track my building activities. Just like yesterday's scratch these too features, a telegram to github integration using cloudflare workers.
+      I built the basics of #BuildInPublic - a web page to publicly track my building activities. Just like yesterday's Scratchpad, this too features a Telegram-to-GitHub integration using Cloudflare Workers.
 
-      Additionally, I add streaks and heatmap to make the whole page engaging. I expect the users who visit to get somewhat inspired and try doing for themselves, for which a CTA has been placed as a footer :)
+      Additionally, I added streaks and a heatmap to make the whole page more engaging. I expect users who visit to feel somewhat inspired and try building something themselves, for which a CTA has been placed in the footer. :)
 
       Thanks to the folks at https://wsrv.nl/, I was able to handle image compression (my main worry) easily.
 
