@@ -1,4 +1,18 @@
 - date: 2026-06-30
+  project: "Thirai"
+  summary: |
+    Thirai is RAG applications made for KTU students. Basically, I wanted a LLM that could answer any college/university related questions.
+    
+    Today, I built its v1 - dumped 14 documents from KTU site (https://ktu.edu.in), indexed it using Qwen2.5:3B and nomic-embed-text models (took 20 mins) and... the output was not that good - I suspect it is due to the formatting/styling of the PDF
+    
+    Anyway, I used https://gradio.app/ to quickly setup an UI
+  mood: 🌊
+  images:
+    - /content/log-assets/2026-06-30-3gps-1.webp
+    - /content/log-assets/2026-06-30-3gps-2.webp
+    - /content/log-assets/2026-06-30-3gps-3.webp
+  til: ["Ollama", "Gradio", "Embeddings", "RAG"]
+- date: 2026-06-30
   project: "Build In Public"
   summary: |
       I built the basics of #BuildInPublic - a web page to publicly track my building activities. Just like yesterday's Scratchpad, this too features a Telegram-to-GitHub integration using Cloudflare Workers.
