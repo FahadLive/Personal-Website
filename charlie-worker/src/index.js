@@ -1,6 +1,6 @@
 const GITHUB_REPO = 'FahadLive/Personal-Website';
 const LOG_PATH = 'content/log';
-const ASSETS_PATH = 'content/log-assets';
+const ASSETS_PATH = 'public/content/log-assets';
 const SCRATCHPAD_PATH = 'content/scratchpad';
 const MAX_IMAGES = 3;
 
