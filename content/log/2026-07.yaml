@@ -1,0 +1,13 @@
+- date: 2026-07-01
+  project: "Thirai"
+  summary: |
+    Yesterday, the output from LLM wasn't great most of them was like - I don't know what you are talking. I suspected the issue was with how tables/diagrams from the PDF was extracted/interpreted. So, I moved to use "pymupdf4llm" - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm/index.html
+    
+    And it worked fairly well! And the indexing/embedding time was cut down from 20 mins to 2 mins!! (Thats a win-win if you ask me)
+    
+    Next up - I need add more data, polish the UI and publish it
+  mood: 🍾
+  images:
+    - /public/content/log-assets/2026-07-01-b98p-1.webp
+    - /public/content/log-assets/2026-07-01-b98p-2.webp
+  til: ["pymupdf", "dayflow"]
