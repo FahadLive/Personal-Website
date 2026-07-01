@@ -98,7 +98,7 @@ export default function BuildPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
-                    className="mt-8 min-w-0 mx-auto max-w-[calc(100vw-3rem)]"
+                    className="mt-8 min-w-0 max-w-[calc(100vw-3rem)]"
                 >
                     <BuildHeatmap data={heatmapData} />
                 </motion.div>

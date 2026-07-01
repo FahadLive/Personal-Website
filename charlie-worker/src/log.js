@@ -62,7 +62,7 @@ async function commitLogEntry(env, chatId, session) {
 				console.error('image upload failed', await putRes.text());
 				continue;
 			}
-			imagePaths.push(`/${assetPath}`);
+			imagePaths.push(`/${assetPath.replace(/^public\//, '')}`);
 		} catch (err) {
 			console.error('image upload failed', err);
 		}
