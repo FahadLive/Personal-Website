@@ -86,7 +86,7 @@ export default function LogCard({
 
                 {/* Summary */}
                 <p
-                    className="font-sans text-ink leading-snug whitespace-pre-wrap"
+                    className="font-sans text-ink leading-snug whitespace-pre-wrap break-words"
                     style={{ fontSize: "14px" }}
                 >
                     <Linkify
@@ -133,7 +133,7 @@ export default function LogCard({
                 {/* TIL chips */}
                 {entry.til.length > 0 && (
                     <div
-                        className="mt-2.5 font-sans text-ink/50 leading-relaxed"
+                        className="mt-2.5 font-sans text-ink/50 leading-relaxed break-words"
                         style={{ fontSize: "11px" }}
                     >
                         <span className="font-medium">TIL: </span>
