@@ -1,3 +1,11 @@
+- date: 2026-07-05
+  project: "NSS GECP"
+  summary: |
+    Started adding attendance tracking - in the meantime, i fumbled and is having to change already existing events to listing (rename). Which broke every system in place and im currently with -ve progress today
+  mood: 🫤
+  images:
+    - /content/log-assets/2026-07-05-nta9-1.webp
+  til: []
 - date: 2026-07-02
   project: "NSS GECP"
   summary: |
