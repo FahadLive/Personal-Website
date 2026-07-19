@@ -3,9 +3,6 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "engines": {
-        "node": ">=22"
-    },
     "scripts": {
         "dev": "vite",
         "build": "vite build && node scripts/prerender.mjs",
@@ -48,18 +45,5 @@
         "typescript-eslint": "^8.24.1",
         "vite": "^6.2.0"
     },
-    "packageManager": "pnpm@10.10.0",
-    "pnpm": {
-        "neverBuiltDependencies": [],
-        "supportedArchitectures": {
-            "os": [
-                "darwin",
-                "linux"
-            ],
-            "cpu": [
-                "x64",
-                "arm64"
-            ]
-        }
-    }
+    "packageManager": "pnpm@11.15.0"
 }
