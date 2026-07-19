@@ -1,3 +1,16 @@
+- date: 2026-07-19
+  project: "Aashaan"
+  summary: |
+    Aashaan (Kanakk aashaan) is a web app built to simplify biriyani challenge hosted by NSS Unit 185 - GEC Palakkad
+    
+    It focuses on simplifying biriyani ordering (Marking count and location), and later delivery too.
+    
+    The UX isnt fully flushed out, but it is showing potential
+  mood: 😶‍🌫️
+  images:
+    - /content/log-assets/2026-07-19-r9z6-1.webp
+    - /content/log-assets/2026-07-19-r9z6-2.webp
+  til: []
 - date: 2026-07-05
   project: "NSS GECP"
   summary: |
