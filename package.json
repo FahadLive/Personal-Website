@@ -1,49 +1,61 @@
 {
-  "name": "personal-website",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/prerender.mjs",
-    "lint": "eslint .",
-    "start": "vite preview --host 0.0.0.0"
-  },
-  "dependencies": {
-    "@giscus/react": "^3.1.0",
-    "@tabler/icons-react": "^3.31.0",
-    "@tailwindcss/vite": "^4.1.3",
-    "@types/js-yaml": "^4.0.9",
-    "buffer": "^6.0.3",
-    "gray-matter": "^4.0.3",
-    "js-yaml": "^5.2.0",
-    "linkify-react": "^4.3.3",
-    "linkifyjs": "^4.3.3",
-    "motion": "^12.9.2",
-    "react": "^19.0.0",
-    "react-activity-calendar": "^3.2.0",
-    "react-dom": "^19.0.0",
-    "react-helmet-async": "^3.0.0",
-    "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.5.2",
-    "spinners-react": "^1.0.11",
-    "swiper": "^14.0.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.3",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
-  },
-  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
+    "name": "personal-website",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build && node scripts/prerender.mjs",
+        "lint": "eslint .",
+        "start": "vite preview --host 0.0.0.0"
+    },
+    "dependencies": {
+        "@giscus/react": "^3.1.0",
+        "@tabler/icons-react": "^3.31.0",
+        "@tailwindcss/vite": "^4.1.3",
+        "@types/js-yaml": "^4.0.9",
+        "buffer": "^6.0.3",
+        "gray-matter": "^4.0.3",
+        "js-yaml": "^5.2.0",
+        "linkify-react": "^4.3.3",
+        "linkifyjs": "^4.3.3",
+        "motion": "^12.9.2",
+        "react": "^19.0.0",
+        "react-activity-calendar": "^3.2.0",
+        "react-dom": "^19.0.0",
+        "react-helmet-async": "^3.0.0",
+        "react-markdown": "^10.1.0",
+        "react-router-dom": "^7.5.2",
+        "spinners-react": "^1.0.11",
+        "swiper": "^14.0.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.21.0",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
+        "autoprefixer": "^10.4.21",
+        "eslint": "^9.21.0",
+        "eslint-plugin-react-hooks": "^5.1.0",
+        "eslint-plugin-react-refresh": "^0.4.19",
+        "globals": "^15.15.0",
+        "postcss": "^8.5.3",
+        "tailwindcss": "^4.1.3",
+        "typescript": "~5.7.2",
+        "typescript-eslint": "^8.24.1",
+        "vite": "^6.2.0"
+    },
+    "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
+    "pnpm": {
+        "supportedArchitectures": {
+            "os": [
+                "darwin",
+                "linux"
+            ],
+            "cpu": [
+                "x64",
+                "arm64"
+            ]
+        }
+    }
 }
