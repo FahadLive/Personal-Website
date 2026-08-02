@@ -120,7 +120,7 @@ export default function BuildPage() {
                 )}
 
                 {/* Log list — masonry */}
-                <div className="columns-1 md:columns-2 gap-4 md:gap-6 space-y-4 md:space-y-6 mt-6 [&>*]:break-inside-avoid">
+                <div className="columns-1 md:columns-2 gap-6 mt-6 [&>*]:break-inside-avoid [&>*:not(:last-child)]:mb-6">
                     {items.map((item) => {
                         if (item.type === "divider") {
                             return (

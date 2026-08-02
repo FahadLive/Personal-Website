@@ -86,7 +86,7 @@ export default function LogCard({
 
                 {/* Summary */}
                 <p
-                    className="font-sans text-ink leading-snug whitespace-pre-wrap break-words"
+                    className="font-sans text-ink leading-snug whitespace-pre-wrap max-w-xs md:max-w-none break-words overflow-hidden"
                     style={{ fontSize: "14px" }}
                 >
                     <Linkify
@@ -94,7 +94,7 @@ export default function LogCard({
                             target: "_blank",
                             rel: "noopener noreferrer",
                             className:
-                                "underline decoration-dotted hover:decoration-solid",
+                                "underline decoration-dotted hover:decoration-solid break-all [overflow-wrap:anywhere]",
                         }}
                     >
                         {entry.summary}

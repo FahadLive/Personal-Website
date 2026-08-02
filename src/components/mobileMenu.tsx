@@ -60,30 +60,36 @@ const MobileMenu: React.FC = () => {
                         <div className="text-center space-y-6 py-6">
                             <NavLinks
                                 indexNum="01"
+                                text="Home"
+                                link="/"
+                                onClick={handleLinkClick}
+                            />
+                            <NavLinks
+                                indexNum="02"
                                 text="About"
                                 link="/about"
                                 onClick={handleLinkClick}
                             />
                             <NavLinks
-                                indexNum="02"
+                                indexNum="03"
                                 text="Projects"
                                 link="/projects"
                                 onClick={handleLinkClick}
                             />
                             <NavLinks
-                                indexNum="03"
+                                indexNum="04"
                                 text="Blogs"
                                 link="/blogs"
                                 onClick={handleLinkClick}
                             />
                             <NavLinks
-                                indexNum="04"
+                                indexNum="05"
                                 text="Scratchpad"
                                 link="/scratchpad"
                                 onClick={handleLinkClick}
                             />
                             <NavLinks
-                                indexNum="05"
+                                indexNum="06"
                                 text="Build in Public"
                                 link="/build"
                                 onClick={handleLinkClick}

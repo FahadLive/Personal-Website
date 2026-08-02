@@ -16,7 +16,7 @@ function HomePage() {
             <div className="relative flex flex-col min-h-dvh p-8 pt-28">
                 <Bird
                     className="absolute"
-                    style={{ top: "12px", right: "12px" }}
+                    style={{ top: "120px", right: "24px" }}
                 />
 
                 {/* ── Mobile Layout ── */}
@@ -59,10 +59,10 @@ function HomePage() {
 
                     {/* Portrait */}
                     <motion.div
-                        className="flex justify-center my-8"
+                        className="flex justify-center my-6"
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.55, duration: 0.5 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
                     >
                         <img
                             src="/fahads-photo.jpg"
@@ -84,33 +84,7 @@ function HomePage() {
                         that quietly solves problems.
                     </motion.div>
 
-                    {/* Nav links */}
-                    <motion.div
-                        className="flex flex-col gap-2 mt-8"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 0.4 }}
-                    >
-                        <NavLinks
-                            indexNum="01"
-                            text="Projects"
-                            link="/projects"
-                        />
-                        <NavLinks indexNum="02" text="Blogs" link="/blogs" />
-                        <NavLinks indexNum="03" text="About" link="/about" />
-                        <NavLinks
-                            indexNum="04"
-                            text="Scratchpad"
-                            link="/scratchpad"
-                        />
-                        <NavLinks
-                            indexNum="05"
-                            text="Build in Public"
-                            link="/build"
-                        />
-                    </motion.div>
-
-                    <div className="flex justify-center pt-8 pb-4 mt-auto">
+                    <div className="flex justify-center pt-6 mt-auto">
                         <a
                             href="https://github.com/FahadLive/personal-website"
                             className="text-xs font-light opacity-50"
