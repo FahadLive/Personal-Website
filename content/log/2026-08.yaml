@@ -1,0 +1,8 @@
+- date: 2026-08-03
+  project: "CSE Department Website"
+  summary: |
+    I revamped admin dashboard UI and integrated some part of it to the actual site data. It needs more work - but I really liked the minimalist (yet stock) look
+  mood: 😎
+  images:
+    - /content/log-assets/2026-08-03-2y9i-1.webp
+  til: ["prompt engineering"]
