@@ -62,7 +62,7 @@ export default function BuildPage() {
                 pageTitle="Build Log"
                 pageDescription="What Fahad is building, documented as it happens."
             />
-            <div className="min-h-dvh p-6 pt-28 max-w-3xl mx-auto overflow-x-hidden">
+            <div className="min-h-dvh p-6 pt-28 mx-auto overflow-x-hidden">
                 {/* Heading */}
                 <div className="flex items-center gap-3 flex-wrap">
                     <div className="flex-1 min-w-0">
@@ -87,7 +87,7 @@ export default function BuildPage() {
                                     backgroundColor: "rgba(217,164,65,0.15)",
                                 }}
                             >
-                                streak: {streak}🔥
+                                Streak: {streak}🔥
                             </span>
                         )}
                     </div>
@@ -120,7 +120,7 @@ export default function BuildPage() {
                 )}
 
                 {/* Log list — masonry */}
-                <div className="columns-1 md:columns-2 gap-6 mt-6 [&>*]:break-inside-avoid [&>*:not(:last-child)]:mb-6">
+                <div className="columns-1 md:columns-2 xl:columns-3 gap-6 mt-6 [&>*]:break-inside-avoid [&>*:not(:last-child)]:mb-6">
                     {items.map((item) => {
                         if (item.type === "divider") {
                             return (

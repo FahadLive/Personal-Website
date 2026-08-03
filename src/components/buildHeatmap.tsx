@@ -31,12 +31,15 @@ export default function BuildHeatmap({ data }: BuildHeatmapProps) {
 
         // Catch the case where it's already correctly sized
         scrollToEnd();
+    }, [data]);
 
-        // Catch later reflows (web fonts loading, etc.) without guessing a timeout
-        const observer = new ResizeObserver(() => scrollToEnd());
-        observer.observe(contentRef.current);
+    useEffect(() => {
+        if (!scrollRef.current) return;
 
-        return () => observer.disconnect();
+        requestAnimationFrame(() => {
+            scrollRef.current!.scrollLeft =
+                scrollRef.current!.scrollWidth - scrollRef.current!.clientWidth;
+        });
     }, [data]);
 
     if (data.length === 0) {
@@ -63,7 +66,7 @@ export default function BuildHeatmap({ data }: BuildHeatmapProps) {
                 <ActivityCalendar
                     data={data}
                     colorScheme="light"
-                    blockSize={12}
+                    blockSize={16}
                     blockMargin={3}
                     blockRadius={2}
                     fontSize={12}
