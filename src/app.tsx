@@ -1,9 +1,9 @@
 import "./app.css";
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+    RouterProvider,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
@@ -22,35 +22,35 @@ const ScratchpadPage = lazy(() => import("./pages/scratchpad"));
 const BuildPage = lazy(() => import("./pages/build"));
 
 const Loading = () => (
-  <div className="loading-container">
-    <SpinnerDiamond color="#D42537" size={100} />
-  </div>
+    <div className="loading-container">
+        <SpinnerDiamond color="#D42537" size={100} />
+    </div>
 );
 
 const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route element={<Layout />}>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/projects" element={<ProjectsListPage />} />
-      <Route path="/project/:slug" element={<ProjectPage />} />
-      <Route path="/blogs" element={<BlogsListPage />} />
-      <Route path="/blog/:slug" element={<BlogPage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/scratchpad" element={<ScratchpadPage />} />
-      <Route path="/build" element={<BuildPage />} />
-      <Route path="/downloads" element={<Downloads />} />
-    </Route>,
-  ),
+    createRoutesFromElements(
+        <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectsListPage />} />
+            <Route path="/project/:slug" element={<ProjectPage />} />
+            <Route path="/blogs" element={<BlogsListPage />} />
+            <Route path="/blog/:slug" element={<BlogPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/scratchpad" element={<ScratchpadPage />} />
+            <Route path="/build" element={<BuildPage />} />
+            <Route path="/downloads" element={<Downloads />} />
+        </Route>,
+    ),
 );
 
 function App() {
-  return (
-    <HelmetProvider>
-      <Suspense fallback={<Loading />}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </HelmetProvider>
-  );
+    return (
+        <HelmetProvider>
+            <Suspense fallback={<Loading />}>
+                <RouterProvider router={router} />
+            </Suspense>
+        </HelmetProvider>
+    );
 }
 
 export default App;

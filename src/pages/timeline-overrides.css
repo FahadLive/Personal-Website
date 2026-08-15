@@ -1,0 +1,24 @@
+/* Overrides for react-vertical-timeline-component's own stylesheet.
+   These target elements the library doesn't expose via style props. */
+
+.vertical-timeline-element-date {
+    font-family: var(--font-hand);
+    font-size: 1.05rem !important;
+    color: var(--color-ink);
+    opacity: 0.75;
+}
+
+.vertical-timeline::before {
+    width: 2px;
+}
+
+/* keep the tape strip from being clipped on mobile's single-column layout */
+.vertical-timeline-element-content {
+    overflow: visible !important;
+}
+
+@media only screen and (max-width: 1169px) {
+    .vertical-timeline-element-icon {
+        box-shadow: 0 0 0 3px var(--color-surface) !important;
+    }
+}

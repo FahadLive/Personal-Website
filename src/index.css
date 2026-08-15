@@ -1,19 +1,33 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/satoshi/satoshi-400.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/satoshi/satoshi-700.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
 @theme {
     --font-sans: "Satoshi", "IBM Plex Sans", sans-serif;
     --font-serif: "Instrument Serif", Georgia, serif;
     --font-hand: "Caveat", cursive;
 
-    --color-surface: #faf8f3;
+    --color-surface: #faf7f0;
     --color-ink: #111111;
-    --color-accent: #c53b42;
-    --color-green: #2e6b57;
-    --color-blue: #335c81;
-    --color-mustard: #d9a441;
-    --color-purple: #7a5c8f;
-    --color-footer-bg: #f0ede6;
-    --color-bg-shade: rgba(250, 248, 243, 0.9);
+    --color-accent: #b5544a;
+    --color-green: #6b8256;
+    --color-blue: #6c8ba3;
+    --color-mustard: #cd9c4f;
+    --color-purple: #8c7291;
+    --color-footer-bg: #efe9dd;
+    --color-bg-shade: rgba(250, 247, 240, 0.9);
 }
 
 @custom-media --tablet (min-width: 768px);
@@ -21,11 +35,11 @@
 @custom-media --wide (min-width: 1280px);
 
 :root {
-    --main: #faf8f3;
+    --main: #faf7f0;
     --text: #111111;
     --tertiary: #c53b42;
-    --bg-shade: rgba(250, 248, 243, 0.9);
-    --blue: #335c81;
+    --bg-shade: rgba(250, 247, 240, 0.9);
+    --blue: #6c8ba3;
 
     font-family: var(--font-sans);
     font-weight: 400;
