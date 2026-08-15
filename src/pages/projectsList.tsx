@@ -40,15 +40,16 @@ const ProjectsListPage: React.FC = () => {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.slug}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{
-                                duration: 0.5,
+                                duration: 0.4,
+                                delay: Math.min(index * 0.025, 0.15),
                                 ease: "easeOut",
-                                delay: index * 0.05,
                             }}
+                            className="mb-6 md:mb-8 break-inside-avoid"
                             style={{
-                                transform: `rotate(${rotations[index % rotations.length]}deg)`,
+                                rotate: rotations[index % rotations.length],
                             }}
                         >
                             <ProjectItem
