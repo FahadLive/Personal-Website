@@ -1,3 +1,9 @@
+- url: https://neolabs.fyi/?view=geography
+  note: |
+    Cool overview of all AI companies
+  tags: ["ux", "ai", "companies", "global"]
+  added: 2026-08-15
+  image: https://neolabs.fyi/og/cover.png
 - url: https://rallly.co
   note: |
       Scheduling made easy - create a poll, let them all pick suitable free time
