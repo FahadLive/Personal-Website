@@ -1,3 +1,9 @@
+- url: https://synclass.netlify.app/
+  note: |
+    A simple website to keep the audience engaged - ask questions, know their state (confused or not), share resources, make polls and more... Developed by my friend Shad ❤️‍🔥
+  tags: ["sessions", "class", "helpful", "simple", "web app"]
+  added: 2026-08-15
+  image: https://synclass.netlify.app/opengraph.jpg
 - url: https://neolabs.fyi/?view=geography
   note: |
     Cool overview of all AI companies
