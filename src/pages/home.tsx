@@ -2,9 +2,19 @@ import "./page.css";
 
 import { motion } from "motion/react";
 import NavLinks from "../components/navLinks";
-import TextTransition from "../components/transitionText";
 import MetaComponent from "../components/meta";
 import Bird from "../components/creatures/bird";
+import { HeroName, HeroPortrait } from "../components/home/heroComponents";
+
+const NAV_ITEMS = [
+    { indexNum: "01", text: "Projects", link: "/projects" },
+    { indexNum: "02", text: "Blogs", link: "/blogs" },
+    { indexNum: "03", text: "About", link: "/about" },
+    { indexNum: "04", text: "Scratchpad", link: "/scratchpad" },
+    { indexNum: "05", text: "Build", link: "/build" },
+];
+
+const FOOTER_CONTENT = "MADE OPENLY BY FAHAD";
 
 function HomePage() {
     return (
@@ -22,20 +32,7 @@ function HomePage() {
                 {/* ── Mobile Layout ── */}
                 <div className="flex h-full flex-col md:hidden">
                     {/* Name */}
-                    <div>
-                        <TextTransition
-                            styleName="hero-name"
-                            text="MOHAMMED"
-                            characterCycleSpeed={6}
-                            revealSpeed={4}
-                        />
-                        <TextTransition
-                            styleName="hero-name"
-                            text="FAHAD"
-                            characterCycleSpeed={6}
-                            revealSpeed={4}
-                        />
-                    </div>
+                    <HeroName />
 
                     {/* Serif float */}
                     <motion.div
@@ -58,19 +55,7 @@ function HomePage() {
                     </motion.div>
 
                     {/* Portrait */}
-                    <motion.div
-                        className="flex justify-center my-6"
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                    >
-                        <img
-                            src="/fahads-photo.jpg"
-                            alt="Mohammed Fahad"
-                            className="hero-portrait"
-                            draggable={false}
-                        />
-                    </motion.div>
+                    <HeroPortrait />
 
                     {/* Tagline */}
                     <motion.div
@@ -89,7 +74,7 @@ function HomePage() {
                             href="https://github.com/FahadLive/personal-website"
                             className="text-xs font-light opacity-50"
                         >
-                            MADE OPENLY BY FAHAD
+                            {FOOTER_CONTENT}
                         </a>
                     </div>
                 </div>
@@ -99,20 +84,7 @@ function HomePage() {
                     <div className="flex items-start justify-between gap-12 mt-4">
                         <div className="flex-1 max-w-2xl">
                             {/* Name */}
-                            <div>
-                                <TextTransition
-                                    styleName="hero-name"
-                                    text="MOHAMMED"
-                                    characterCycleSpeed={6}
-                                    revealSpeed={4}
-                                />
-                                <TextTransition
-                                    styleName="hero-name"
-                                    text="FAHAD"
-                                    characterCycleSpeed={6}
-                                    revealSpeed={4}
-                                />
-                            </div>
+                            <HeroName />
 
                             {/* Serif float */}
                             <motion.div
@@ -148,59 +120,21 @@ function HomePage() {
                         </div>
 
                         {/* Portrait */}
-                        <motion.div
-                            className="flex-shrink-0 mt-4"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.45, duration: 0.6 }}
-                        >
-                            <img
-                                src="/fahads-photo.jpg"
-                                alt="Mohammed Fahad"
-                                className="hero-portrait"
-                                style={{
-                                    maxWidth: "320px",
-                                    width: "100%",
-                                }}
-                                draggable={false}
-                            />
-                        </motion.div>
+                        <HeroPortrait maxWidth="320px" />
                     </div>
 
                     {/* Nav + footer */}
                     <div className="flex items-end justify-between mt-12 pb-8">
                         <div className="flex gap-8">
-                            <NavLinks
-                                indexNum="01"
-                                text="Projects"
-                                link="/projects"
-                            />
-                            <NavLinks
-                                indexNum="02"
-                                text="Blogs"
-                                link="/blogs"
-                            />
-                            <NavLinks
-                                indexNum="03"
-                                text="About"
-                                link="/about"
-                            />
-                            <NavLinks
-                                indexNum="04"
-                                text="Scratchpad"
-                                link="/scratchpad"
-                            />
-                            <NavLinks
-                                indexNum="05"
-                                text="Build"
-                                link="/build"
-                            />
+                            {NAV_ITEMS.map((item) => (
+                                <NavLinks key={item.link} {...item} />
+                            ))}
                         </div>
                         <a
                             href="https://github.com/FahadLive/personal-website"
                             className="text-xs font-light opacity-50"
                         >
-                            MADE OPENLY BY FAHAD
+                            {FOOTER_CONTENT}
                         </a>
                     </div>
                 </div>

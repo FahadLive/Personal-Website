@@ -11,8 +11,8 @@ import Layout from "./components/layout";
 import { SpinnerDiamond } from "spinners-react";
 import { HelmetProvider } from "react-helmet-async";
 import Downloads from "./pages/downloads";
+import HomePage from "./pages/home";
 
-const HomePage = lazy(() => import("./pages/home"));
 const ProjectsListPage = lazy(() => import("./pages/projectsList"));
 const ProjectPage = lazy(() => import("./pages/project"));
 const AboutPage = lazy(() => import("./pages/about"));

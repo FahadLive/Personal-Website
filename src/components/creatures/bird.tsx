@@ -36,10 +36,10 @@ function Bird({ className, style }: CreatureProps) {
             <motion.img
                 src={
                     interacting
-                        ? "/doodles/birb-shy.png"
-                        : "/doodles/birb-chill.png"
+                        ? "/doodles/birb-shy.webp"
+                        : "/doodles/birb-chill.webp"
                 }
-                alt=""
+                alt="Bird chilling"
                 aria-hidden="true"
                 draggable={false}
                 className="w-14 h-auto"
