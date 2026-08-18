@@ -1,3 +1,9 @@
+- url: https://snips.sh/
+  note: |
+    Easily share snippets from terminal itself (with web UI)
+  tags: ["terminal", "opensource", "snippet", "web"]
+  added: 2026-08-17
+  image: https://snips.sh/og.png
 - url: https://synclass.netlify.app/
   note: |
     A simple website to keep the audience engaged - ask questions, know their state (confused or not), share resources, make polls and more... Developed by my friend Shad ❤️‍🔥
