@@ -36,33 +36,36 @@ const ProjectsListPage: React.FC = () => {
                 pageDescription="List of projects made by Fahad"
             />
             <div className="relative min-h-dvh p-8 pt-28">
-                <div className="columns-1 md:columns-2 xl:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8 [&>*]:break-inside-avoid">
+                <div className="columns-1 md:columns-2 xl:columns-3 gap-4 md:gap-6">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <div
                             key={project.slug}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{
-                                duration: 0.4,
-                                delay: Math.min(index * 0.025, 0.15),
-                                ease: "easeOut",
-                            }}
                             className="mb-6 md:mb-8 break-inside-avoid"
-                            style={{
-                                rotate: rotations[index % rotations.length],
-                            }}
                         >
-                            <ProjectItem
-                                indexNum={(index + 1)
-                                    .toString()
-                                    .padStart(2, "0")}
-                                projectTags={project.tags}
-                                projectName={project.title}
-                                slug={project.slug}
-                                coverImage={project.coverImage}
-                                summary={project.summary}
-                            />
-                        </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{
+                                    duration: 0.4,
+                                    delay: Math.min(index * 0.025, 0.15),
+                                    ease: "easeOut",
+                                }}
+                                style={{
+                                    rotate: rotations[index % rotations.length],
+                                }}
+                            >
+                                <ProjectItem
+                                    indexNum={(index + 1)
+                                        .toString()
+                                        .padStart(2, "0")}
+                                    projectTags={project.tags}
+                                    projectName={project.title}
+                                    slug={project.slug}
+                                    coverImage={project.coverImage}
+                                    summary={project.summary}
+                                />
+                            </motion.div>
+                        </div>
                     ))}
                 </div>
 
