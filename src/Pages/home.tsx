@@ -59,7 +59,7 @@ function HomePage() {
 
                     {/* Tagline */}
                     <motion.div
-                        className="hero-tagline"
+                        className="hero-tagline pt-10"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.7, duration: 0.4 }}
