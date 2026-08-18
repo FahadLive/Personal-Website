@@ -6,11 +6,33 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 
+import "./components.css";
+
 const Header: React.FC = () => {
     const [isHomePage, setIsHomePage] = useState<boolean>(true);
     const [isScrolled, setIsScrolled] = useState(false);
     const tapCount = useRef(0);
-    const tapTimer = useRef<ReturnType<typeof setTimeout>>();
+    const tapTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
+        undefined,
+    );
+    useEffect(() => {
+        const onScroll = () => {
+            const scrollTop =
+                window.scrollY ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            setIsScrolled(scrollTop > 10);
+        };
+
+        onScroll();
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        };
+    }, []);
 
     const handleLogoClick = () => {
         tapCount.current++;
@@ -26,15 +48,6 @@ const Header: React.FC = () => {
         }, 800);
     };
 
-    useEffect(() => {
-        const onScroll = () => {
-            setIsScrolled(window.scrollY > 0);
-        };
-
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
-
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -44,8 +57,10 @@ const Header: React.FC = () => {
 
     return (
         <div
-            className={`fixed flex w-full p-6 z-[50] overflow-hidden ${!isHomePage && isScrolled && "bg-[var(--main)]"} rounded-lg transition`}
+            className={`fixed top-0 left-0 flex w-full p-6 z-[50] ${!isHomePage && isScrolled && "header-scrolled"}`}
         >
+            <div className={`header-gradient`} />
+
             <AnimatePresence mode="wait">
                 <motion.div
                     key={isHomePage.toString()}

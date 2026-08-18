@@ -1,0 +1,48 @@
+# Fahad's Portfolio
+
+> The personal website of Mohammed Fahad — a B.Tech CSE student at GEC Palakkad, Kerala, India. A developer's sketchbook showcasing projects, blog posts, a scratchpad of shared links, and a build-in-public log.
+
+Important notes:
+
+- All project source code is open source on GitHub unless marked private
+- Blog posts are written in markdown with YAML frontmatter
+- The site is built with React, TypeScript, Vite, and Tailwind CSS
+- Design inspired by wandixu.com and scalzodesign.be
+
+## Projects
+
+- [StockFlow](https://justfahad.me/project/stockflow): Real-time B2B order management platform for apparel and textile businesses — Next.js + Django
+- [Mudra](https://justfahad.me/project/mudra): Next-generation human-computer interaction through biophysical intelligence — Make-A-Ton 8.0 submission
+- [NSS App](https://justfahad.me/project/nss-app): Comprehensive web app to simplify NSS operations — Next.js + TypeScript
+- [Enigma](https://justfahad.me/project/enigma): One question per day — compete for fastest completion time on a daily leaderboard — React + TypeScript
+- [BlastOff](https://justfahad.me/project/blastoff): Casual endless runner game with vector graphics — Godot. [Source](https://github.com/FahadLive/BlastOff)
+- [DocuFlow](https://justfahad.me/project/docuflow): Reducing the hassle of applying for documents — Next.js + Node.js
+- [FOSS GEC Palakkad](https://justfahad.me/project/foss-site): Official site of FOSS Cell GECSKP — Vue.js. [Source](https://github.com/FOSS-Cell-GECPKD/Website/)
+- [FieldWatch](https://justfahad.me/project/fieldwatch): TinyML project for field monitoring — C. [Source](https://github.com/FahadLive/FieldWatch)
+- [Light 'Em Up](https://justfahad.me/project/light-em-up): Recreation of Whack-A-Mole using LEDs and push buttons — hardware game. [Source](https://github.com/FahadLive/light-em-up)
+- [Off Topic](https://justfahad.me/project/off-topic): Community intro website for GEC Palakkad's tech community — React + TypeScript
+
+## Blog
+
+- [Life is Good](https://justfahad.me/blog/life-is-good): Finding my people through community — TinkerHub, NSS, and Hack Club
+- [How Would I Start Researching](https://justfahad.me/blog/how-would-i-start-researching): A beginner's guide to starting research as a B.Tech student
+- [Meeting My GitHub Feed In-Person](https://justfahad.me/blog/meeting-my-github-feed-in-person): Experience at IndiaFOSS 2025 — first event outside Kerala
+- [Projects I Made as a Programmer](https://justfahad.me/blog/projects-I-made-as-a-programmer): Overview of the project-building journey
+- [Thoughts Behind BlastOff](https://justfahad.me/blog/thoughts-behind-blastoff): Why and how the BlastOff game was built
+- [At Least I Tried](https://justfahad.me/blog/atleast-i-tried): Expectation vs reality — college life and finding direction
+- [Why READMEs are Important](https://justfahad.me/blog/why-readmes-are-important): The case for better documentation in projects
+- [Dethroning Google](https://justfahad.me/blog/dethroning-google): Exploring alternatives to Google services
+
+## About & Contact
+
+- [About Fahad](https://justfahad.me/about): Bio, milestones timeline, and contact information
+- [GitHub](https://github.com/FahadLive): Open source projects and contributions
+- [LinkedIn](https://linkedin.com/in/just-fahad/): Professional profile
+- Email: hi@justfahad.me
+
+## Optional
+
+- [Scratchpad](https://justfahad.me/scratchpad): Monthly curated links and notes — tools, articles, and interesting finds
+- [Build Log](https://justfahad.me/build): Build-in-public log with GitHub-style heatmap and streak tracking
+- [Downloads](https://justfahad.me/downloads): Free assets including Dino Game sprite assets
+- [Site Source](https://github.com/FahadLive/Personal-Website): Full source code for this website — React + Vite + Tailwind

@@ -423,3 +423,29 @@
 .steam-path-2 {
     animation-delay: 0.8s;
 }
+
+.header-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    z-index: -10;
+
+    background: linear-gradient(
+        to bottom,
+        var(--main) 0px,
+        var(--main) 96px,
+        rgba(250, 247, 240, 0.85) 120px,
+        rgba(250, 247, 240, 0.4) 145px,
+        transparent 180px
+    );
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.header-scrolled .header-gradient {
+    opacity: 1;
+}
