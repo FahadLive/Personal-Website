@@ -55,7 +55,7 @@ function HomePage() {
                     </motion.div>
 
                     {/* Portrait */}
-                    <HeroPortrait />
+                    <HeroPortrait maxWidth="260px" />
 
                     {/* Tagline */}
                     <motion.div
@@ -69,7 +69,8 @@ function HomePage() {
                         that quietly solves problems.
                     </motion.div>
 
-                    <div className="flex justify-center pt-6 mt-auto">
+                    {/* Nav + footer, pinned to bottom */}
+                    <div className="flex flex-col items-center gap-4 mt-auto pt-6">
                         <a
                             href="https://github.com/FahadLive/personal-website"
                             className="text-xs font-light opacity-50"
@@ -120,11 +121,11 @@ function HomePage() {
                         </div>
 
                         {/* Portrait */}
-                        <HeroPortrait maxWidth="320px" />
+                        <HeroPortrait />
                     </div>
 
-                    {/* Nav + footer */}
-                    <div className="flex items-end justify-between mt-12 pb-8">
+                    {/* Nav + footer, pinned to bottom */}
+                    <div className="flex items-end justify-between mt-auto pb-8">
                         <div className="flex gap-8">
                             {NAV_ITEMS.map((item) => (
                                 <NavLinks key={item.link} {...item} />

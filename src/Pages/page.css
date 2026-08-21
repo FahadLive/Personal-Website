@@ -62,14 +62,6 @@
     }
 }
 
-.hero-portrait {
-    max-width: 260px;
-    max-width: 200px;
-    filter: contrast(1.05) brightness(0.98);
-    border-radius: 100% 80% 90% 70% / 80% 90% 70% 90%;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-}
-
 /* ── Section Dividers ── */
 
 .section-divider {

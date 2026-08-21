@@ -25,7 +25,7 @@ export function HeroName() {
 export function HeroPortrait({ maxWidth }: { maxWidth?: string }) {
     return (
         <motion.div
-            className="flex w-full justify-center md:justify-end"
+            className="flex w-full justify-center md:justify-end p-5"
             initial={{ opacity: 0.5, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
