@@ -1,4 +1,14 @@
 - date: 2026-08-22
+  project: "NSS App"
+  summary: |
+    Moved to cloudflare - bye bye supabase. Used D1 db, R2 bucket and workers to achieve the full capability. Resurfaced hidden attendance feature too. attendance tracking is still sketchy - will sit on it.
+  mood: 🥳
+  images:
+    - /content/log-assets/2026-08-22-7qna-1.webp
+    - /content/log-assets/2026-08-22-7qna-2.webp
+    - /content/log-assets/2026-08-22-7qna-3.webp
+  til: ["D1 Sqlit DB", "R2 Bucket", "Hono", "Zod"]
+- date: 2026-08-22
   project: "Personal Site"
   summary: |
     Was feeling a bit creative and decided to make a scrapbook style wallpaper. While creating the wallpaper, I saw a stamp-like potrait and made my own. At last decided to make it the hero potrait, really really happy with the result
