@@ -1,3 +1,12 @@
+- date: 2026-08-22
+  project: "Personal Site"
+  summary: |
+    Was feeling a bit creative and decided to make a scrapbook style wallpaper. While creating the wallpaper, I saw a stamp-like potrait and made my own. At last decided to make it the hero potrait, really really happy with the result
+  mood: 🤩
+  images:
+    - /content/log-assets/2026-08-22-e5un-1.webp
+    - /content/log-assets/2026-08-22-e5un-2.webp
+  til: ["Design", "scrapbook"]
 - date: 2026-08-15
   project: "SynClass"
   summary: |
