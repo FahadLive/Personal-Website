@@ -1,3 +1,8 @@
+- url: https://wsrv.nl/
+  note: |
+    Simple yet image cache & resize service, I use it to compress the images
+  tags: ["Image"]
+  added: 2026-08-22
 - url: https://snips.sh/
   note: |
     Easily share snippets from terminal itself (with web UI)
