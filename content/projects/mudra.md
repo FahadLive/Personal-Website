@@ -5,6 +5,8 @@ summary: "👌 Next-generation human-computer interaction through biophysical in
 author: Fahad
 tags: ["Hardware", "Python", "Next.js"]
 githubLink: https://github.com/FahadLive/Mudra
+cover:
+    image: "images/projects/mudra.webp"
 ---
 
 **Mudra** (Malayalam: മുദ്ര) is a multi-purpose wearable input device that combines **EMG** (muscle activity) and **IMU** (motion) signals to recognize gestures in real time. By fusing these data streams it achieves more robust and accurate gesture recognition than traditional camera-based systems, which are limited by line-of-sight and lighting. Predictions are streamed instantly to a live, reactive interface via **WebSockets**.

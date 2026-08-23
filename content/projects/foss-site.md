@@ -6,4 +6,6 @@ author: Fahad
 tags: ["Vue", "Website"]
 githubLink: https://github.com/FOSS-Cell-GECPKD/Website/
 imagesFolder: /images/projects/foss-site/
+cover:
+    image: "images/projects/foss.webp"
 ---

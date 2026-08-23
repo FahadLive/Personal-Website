@@ -5,6 +5,8 @@ summary: "🎮 Real-time multiplayer Bingo game with photo-based challenges — 
 author: Fahad
 tags: ["App", "Flutter", "Django"]
 githubLink: https://github.com/FahadLive/Zooma
+cover:
+    image: "images/projects/zooma.webp"
 ---
 
 **Zooma** is a modern, real-time multiplayer game where players complete photo-based tasks in teams, with mentors reviewing submissions and managing leaderboards. Built with **Flutter & Django** — perfect for ice breaking, team building, and interactive activities. This is a fork of [Muflih-uk/Zooma](https://github.com/Muflih-uk/Zooma).

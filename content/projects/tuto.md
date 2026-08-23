@@ -5,6 +5,8 @@ summary: "👨‍💻 Teach coding interactively"
 author: Fahad
 tags: ["Web App", "React", "Node.js"]
 githubLink: https://github.com/FahadLive/TuTo
+cover:
+    image: "images/projects/tuto.webp"
 ---
 
 **TuTo** is a full-stack web application for interactive coding mentorship, built with **React** and **Node.js**.

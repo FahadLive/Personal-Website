@@ -236,7 +236,7 @@ const ProjectPage: React.FC = () => {
                             </div>
                         </motion.div>
                     )}
-                    {project.content && (
+                    {project.images && imagesLoaded && project.content && (
                         <div className="section-divider pt-4">
                             <span>▼</span>
                         </div>

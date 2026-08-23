@@ -7,7 +7,7 @@ author: Fahad
 githubLink: https://github.com/FahadLive/light-em-up
 imagesFolder: /images/projects/light-em-up/
 cover:
-  image: "images/projects/light-em-up-logo.svg"
+    image: "images/projects/light-em-up-box.webp"
 ---
 
 A chaotic, LED-smashing whack-a-mole game powered by NodeMCU—because sometimes you just need to hit things with lights.

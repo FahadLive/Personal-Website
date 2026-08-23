@@ -5,9 +5,11 @@ summary: "🌝 A community intro website for GEC Palakkad's tech community, with
 author: Fahad
 tags: ["Website", "React", "TypeScript"]
 githubLink: https://github.com/FahadLive/off-topic
+cover:
+    image: "images/projects/off-topic.webp"
 ---
 
-# #off-topic is a member directory for GEC Palakkad's tech community. It features a beautiful card-based UI with interactive features like shuffling, filtering, and smooth animations.
+#off-topic is a member directory for GEC Palakkad's tech community. It features a beautiful card-based UI with interactive features like shuffling, filtering, and smooth animations.
 
 ## ✨ Features
 

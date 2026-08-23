@@ -5,6 +5,8 @@ summary: "🦖 A demo game for conducting a workshop @ FOSS Fest 25 (CE KNPY)"
 author: Fahad
 tags: ["Game", "Godot"]
 githubLink: https://github.com/FahadLive/simple-dino-game
+cover:
+    image: "images/projects/dino-game.webp"
 ---
 
 A **Dino Jump** clone — a simple game where a dinosaur avoids cacti — made with **Godot Engine** to run as a demo during a workshop at **FOSS Fest 25 (CE KNPY)**.

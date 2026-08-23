@@ -5,6 +5,8 @@ summary: "📑 An app aimed at reducing the hassle of applying for a document"
 author: Fahad
 tags: ["Web App", "Next.js", "Node.js"]
 githubLink: https://github.com/FahadLive/DocuFlow
+cover:
+    image: "images/projects/docuflow.webp"
 ---
 
 **DocuFlow** aims to reduce the hassle of applying for a document. It tells the user all the documents required for an application, so nothing gets missed.

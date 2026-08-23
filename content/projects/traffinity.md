@@ -5,6 +5,8 @@ summary: "🚦 Removing the congestion through tech — submission for Kotech Ha
 author: Fahad
 tags: ["App", "Flutter", "Hackathon"]
 githubLink: https://github.com/FahadLive/traffinity
+cover:
+    image: "images/projects/traffinity-banner.webp"
 ---
 
 **Traffinity** is a mobile-first digital solution to traffic stress, providing real-time congestion, accident & emergency alerts that help both the common people and emergency service providers. It was our submission for the **Kotech Hackathon**.
@@ -12,12 +14,14 @@ githubLink: https://github.com/FahadLive/traffinity
 ## ✨ Features
 
 **Normal user:**
+
 - View real-time alerts (accidents, congestion, potholes)
 - Report new alerts with type & location
 - Edit / mark alerts as resolved
 - Smart route suggestions (coming soon)
 
 **Emergency service (ambulance):**
+
 - View all alerts with high-priority tags
 - Use the Emergency button to trigger "🚨 Make Way" alerts for others
 

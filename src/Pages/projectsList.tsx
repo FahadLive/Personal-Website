@@ -16,7 +16,7 @@ interface ProjectsDataType {
     coverImage: string | null;
 }
 
-const rotations = [-0.8, 0.8, -0.5, 0.5, -0.8, 0.8];
+const rotations = [-0.1, 0.1, -0.2, 0.2, -0.1, 0.1];
 
 const ProjectsListPage: React.FC = () => {
     const [projects, setProjects] = useState<ProjectsDataType[]>([]);

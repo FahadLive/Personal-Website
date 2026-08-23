@@ -5,6 +5,8 @@ summary: "🐦 Project for TinyML"
 author: Fahad
 tags: ["Hardware", "C", "TinyML"]
 githubLink: https://github.com/FahadLive/FieldWatch
+cover:
+    image: "images/projects/fieldwatch.webp"
 ---
 
 **FieldWatch** is a **TinyML** project built by **Team Neuronauts**.

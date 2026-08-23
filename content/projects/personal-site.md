@@ -6,6 +6,8 @@ author: Fahad
 tags: ["React", "Website"]
 githubLink: https://github.com/FahadLive/Personal-Website
 imagesFolder: /images/projects/personal-site/
+cover:
+    image: "images/projects/personal-website-hero.webp"
 ---
 
 This personal portfolio website is a modern, minimalist showcase of my work as a developer, built with **Vite, React, and TypeScript**.

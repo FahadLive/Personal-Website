@@ -5,6 +5,8 @@ summary: "🏠 Mobile-first digital solution to streamline hostel-related operat
 author: Fahad
 tags: ["App", "Flutter", "Hostel"]
 githubLink: https://github.com/FahadLive/Roost
+cover:
+    image: "images/projects/roost-mockups.webp"
 ---
 
 **Roost** is a mobile-first digital solution that streamlines hostel-related operations such as student registration, attendance, and food scheduling. It offers a centralized platform for both students and administrators to interact seamlessly and manage hostel life efficiently. Made with **Flutter**. This is a fork of [Muflih-uk/Roost](https://github.com/Muflih-uk/Roost).

@@ -30,7 +30,7 @@ function MaskingTape() {
     );
 }
 
-const bgColors = ["#FFFFFF", "#FFF9F0"];
+const bgColors = ["#FFFFFF", "#FFFFFF"];
 
 const polaroidVariants = [
     { rotate: -2.5, x: 0, y: -12 },

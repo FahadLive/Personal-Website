@@ -5,6 +5,8 @@ summary: "🧩 One question per day — compete for the fastest completion time 
 author: Fahad
 tags: ["Web App", "React", "TypeScript"]
 githubLink: https://github.com/FahadLive/enigma
+cover:
+    image: "images/projects/engima.webp"
 ---
 
 A full-stack web app built with **React**, **Express.js**, and **Firebase**. One question a day, race to answer it the fastest, and climb the daily leaderboard.

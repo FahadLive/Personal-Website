@@ -5,6 +5,8 @@ summary: "🗑️ a smart waste management platform"
 author: Fahad
 tags: ["Web App", "React", "TypeScript", "Backend", "Java", "Spring Boot"]
 githubLink: https://github.com/FahadLive/clevo-frontend
+cover:
+    image: "images/projects/clevo.webp"
 ---
 
 The frontend of **Clevo**, the smart waste management platform. It pairs with the [Clevo Backend](/projects/clevo-backend) to let citizens book waste pickups, recyclers manage slots, and authorities monitor the whole system.
