@@ -1,33 +1,13 @@
-import { useEffect, useState } from "react";
 import ProjectItem from "../components/projectItem";
 import { getProjectList } from "../utils/markdownParser";
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
 import Cat from "../components/creatures/cat";
 
-interface ProjectsDataType {
-    slug: string;
-    title: string;
-    date: string;
-    summary: string;
-    tags: string[];
-    githubLink: string | null;
-    externalLink: string | null;
-    coverImage: string | null;
-}
-
 const rotations = [-0.1, 0.1, -0.2, 0.2, -0.1, 0.1];
 
 const ProjectsListPage: React.FC = () => {
-    const [projects, setProjects] = useState<ProjectsDataType[]>([]);
-
-    const processProjectsData = async () => {
-        setProjects(await getProjectList());
-    };
-
-    useEffect(() => {
-        processProjectsData();
-    }, []);
+    const projects = getProjectList();
 
     return (
         <>
@@ -63,6 +43,7 @@ const ProjectsListPage: React.FC = () => {
                                     slug={project.slug}
                                     coverImage={project.coverImage}
                                     summary={project.summary}
+                                    priority={index < 4}
                                 />
                             </motion.div>
                         </div>

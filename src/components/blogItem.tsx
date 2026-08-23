@@ -10,6 +10,7 @@ interface BlogItemProps {
     slug?: string;
     coverImage?: string | null;
     summary?: string | null;
+    priority?: boolean;
 }
 
 const polaroidVariants = [
@@ -28,6 +29,7 @@ const BlogItem: React.FC<BlogItemProps> = ({
     slug,
     coverImage,
     summary,
+    priority = false,
 }) => {
     const tagCount = blogTags?.length;
     const [wiggling, setWiggling] = useState(false);
@@ -75,7 +77,9 @@ const BlogItem: React.FC<BlogItemProps> = ({
                             src={`/${coverImage}`}
                             alt={`Cover for ${blogTitle}`}
                             className="card-image"
-                            loading="lazy"
+                            loading={priority ? "eager" : "lazy"}
+                            decoding="async"
+                            fetchPriority={priority ? "high" : undefined}
                             onError={() => setImgError(true)}
                         />
                     </div>

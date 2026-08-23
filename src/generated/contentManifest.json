@@ -1,0 +1,468 @@
+{
+  "projects": [
+    {
+      "slug": "stockflow",
+      "title": "StockFlow",
+      "date": "2026-06-27T10:34:00.000Z",
+      "summary": "📦 StockFlow is a real-time B2B order management platform for apparel and textile businesses",
+      "tags": [
+        "Web App",
+        "Next.js",
+        "Django"
+      ],
+      "githubLink": null,
+      "externalLink": "https://drapelive.in/projects/stockflow",
+      "coverImage": "images/projects/stockflow.jpg"
+    },
+    {
+      "slug": "nss-app",
+      "title": "NSS App",
+      "date": "2026-06-13T16:22:05.000Z",
+      "summary": "📋 A comprehensive web app designed to simplify NSS operations",
+      "tags": [
+        "Web App",
+        "Next.js",
+        "TypeScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/nss-app",
+      "externalLink": null,
+      "coverImage": "images/projects/nss-app.webp"
+    },
+    {
+      "slug": "koottam-exporter",
+      "title": "Koottam Exporter",
+      "date": "2026-04-21T15:22:11.000Z",
+      "summary": "📊 Unofficial scraper to export event data from koottam.tinkerhub.org",
+      "tags": [
+        "Python",
+        "Scraper"
+      ],
+      "githubLink": "https://github.com/FahadLive/koottam-exporter",
+      "externalLink": null,
+      "coverImage": null
+    },
+    {
+      "slug": "off-topic",
+      "title": "Off Topic",
+      "date": "2026-03-30T14:15:00.000Z",
+      "summary": "🌝 A community intro website for GEC Palakkad's tech community, with some Tinder-like features",
+      "tags": [
+        "Website",
+        "React",
+        "TypeScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/off-topic",
+      "externalLink": null,
+      "coverImage": "images/projects/off-topic.webp"
+    },
+    {
+      "slug": "mudra",
+      "title": "Mudra",
+      "date": "2026-02-21T20:34:45.000Z",
+      "summary": "👌 Next-generation human-computer interaction through biophysical intelligence — our Make-A-Ton 8.0 submission",
+      "tags": [
+        "Hardware",
+        "Python",
+        "Next.js"
+      ],
+      "githubLink": "https://github.com/FahadLive/Mudra",
+      "externalLink": null,
+      "coverImage": "images/projects/mudra.webp"
+    },
+    {
+      "slug": "simple-dino-game",
+      "title": "Simple Dino Game",
+      "date": "2025-10-11T02:59:20.000Z",
+      "summary": "🦖 A demo game for conducting a workshop @ FOSS Fest 25 (CE KNPY)",
+      "tags": [
+        "Game",
+        "Godot"
+      ],
+      "githubLink": "https://github.com/FahadLive/simple-dino-game",
+      "externalLink": null,
+      "coverImage": "images/projects/dino-game.webp"
+    },
+    {
+      "slug": "zooma",
+      "title": "Zooma",
+      "date": "2025-09-29T06:30:23.000Z",
+      "summary": "🎮 Real-time multiplayer Bingo game with photo-based challenges — fork of Muflih-uk/Zooma",
+      "tags": [
+        "App",
+        "Flutter",
+        "Django"
+      ],
+      "githubLink": "https://github.com/FahadLive/Zooma",
+      "externalLink": null,
+      "coverImage": "images/projects/zooma.webp"
+    },
+    {
+      "slug": "enigma",
+      "title": "Enigma",
+      "date": "2025-09-12T14:58:58.000Z",
+      "summary": "🧩 One question per day — compete for the fastest completion time and climb the daily leaderboard",
+      "tags": [
+        "Web App",
+        "React",
+        "TypeScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/enigma",
+      "externalLink": null,
+      "coverImage": "images/projects/engima.webp"
+    },
+    {
+      "slug": "clevo",
+      "title": "Clevo",
+      "date": "2025-09-04T17:05:45.000Z",
+      "summary": "🗑️ a smart waste management platform",
+      "tags": [
+        "Web App",
+        "React",
+        "TypeScript",
+        "Backend",
+        "Java",
+        "Spring Boot"
+      ],
+      "githubLink": "https://github.com/FahadLive/clevo-frontend",
+      "externalLink": null,
+      "coverImage": "images/projects/clevo.webp"
+    },
+    {
+      "slug": "tuto",
+      "title": "TuTo",
+      "date": "2025-08-31T12:04:30.000Z",
+      "summary": "👨‍💻 Teach coding interactively",
+      "tags": [
+        "Web App",
+        "React",
+        "Node.js"
+      ],
+      "githubLink": "https://github.com/FahadLive/TuTo",
+      "externalLink": null,
+      "coverImage": "images/projects/tuto.webp"
+    },
+    {
+      "slug": "api-hunt",
+      "title": "API Hunt",
+      "date": "2025-08-16T14:20:00.000Z",
+      "summary": "🏆 Treasure Hunt but with FastAPI",
+      "tags": [
+        "Game",
+        "Python",
+        "FastAPI"
+      ],
+      "githubLink": "https://github.com/FahadLive/API-Hunt",
+      "externalLink": null,
+      "coverImage": null
+    },
+    {
+      "slug": "traffinity",
+      "title": "Traffinity",
+      "date": "2025-07-26T00:50:10.000Z",
+      "summary": "🚦 Removing the congestion through tech — submission for Kotech Hackathon",
+      "tags": [
+        "App",
+        "Flutter",
+        "Hackathon"
+      ],
+      "githubLink": "https://github.com/FahadLive/traffinity",
+      "externalLink": null,
+      "coverImage": "images/projects/traffinity-banner.webp"
+    },
+    {
+      "slug": "cse-site",
+      "title": "CSE Site",
+      "date": "2025-07-03T02:09:44.000Z",
+      "summary": "🏛️ The student-run website of the CSE Department at GEC Sreekrishnapuram",
+      "tags": [
+        "Website",
+        "Next.js",
+        "JavaScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/cse_site",
+      "externalLink": null,
+      "coverImage": "images/projects/cse-site.webp"
+    },
+    {
+      "slug": "kalam",
+      "title": "Kalam",
+      "date": "2025-06-29T07:20:03.000Z",
+      "summary": "📋 കളം — a web app for managing checklists directly from Google Sheets",
+      "tags": [
+        "Web App",
+        "React",
+        "TypeScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/kalam",
+      "externalLink": null,
+      "coverImage": null
+    },
+    {
+      "slug": "roost",
+      "title": "Roost",
+      "date": "2025-06-03T15:29:53.000Z",
+      "summary": "🏠 Mobile-first digital solution to streamline hostel-related operations — fork of Muflih-uk/Roost",
+      "tags": [
+        "App",
+        "Flutter",
+        "Hostel"
+      ],
+      "githubLink": "https://github.com/FahadLive/Roost",
+      "externalLink": null,
+      "coverImage": "images/projects/roost-mockups.webp"
+    },
+    {
+      "slug": "sessions",
+      "title": "Sessions",
+      "date": "2025-06-03T00:50:52.000Z",
+      "summary": "📚 A documentation hub of hands-on sessions and beginner-friendly tutorials",
+      "tags": [
+        "Docs",
+        "Eleventy",
+        "Website"
+      ],
+      "githubLink": "https://github.com/FahadLive/sessions",
+      "externalLink": null,
+      "coverImage": "images/projects/sessions-website.webp"
+    },
+    {
+      "slug": "foss-site",
+      "title": "FOSS GEC Palakkad",
+      "date": "2025-05-09T11:02:00.000Z",
+      "summary": "💎 Official site of FOSS Cell GECSKP, Made using Vue.js ",
+      "tags": [
+        "Vue",
+        "Website"
+      ],
+      "githubLink": "https://github.com/FOSS-Cell-GECPKD/Website/",
+      "externalLink": null,
+      "coverImage": "images/projects/foss.webp"
+    },
+    {
+      "slug": "personal-site",
+      "title": "Personal Site",
+      "date": "2025-05-09T11:00:00.000Z",
+      "summary": "🏕 Personal website made with React JS! (vite) ",
+      "tags": [
+        "React",
+        "Website"
+      ],
+      "githubLink": "https://github.com/FahadLive/Personal-Website",
+      "externalLink": null,
+      "coverImage": "images/projects/personal-website-hero.webp"
+    },
+    {
+      "slug": "study-spear",
+      "title": "Study Spear",
+      "date": "2025-03-22T11:52:47.000Z",
+      "summary": "🎯 An adaptive learning based personal web app focused on productivity & education",
+      "tags": [
+        "Web App",
+        "React",
+        "Node.js"
+      ],
+      "githubLink": "https://github.com/FahadLive/study-spear",
+      "externalLink": null,
+      "coverImage": null
+    },
+    {
+      "slug": "saylo",
+      "title": "Saylo",
+      "date": "2025-03-09T15:48:48.000Z",
+      "summary": "📦 A web app to promote reselling items among students within a campus",
+      "tags": [
+        "Web App",
+        "React",
+        "JavaScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/saylo",
+      "externalLink": null,
+      "coverImage": null
+    },
+    {
+      "slug": "docuflow",
+      "title": "DocuFlow",
+      "date": "2025-01-25T09:25:06.000Z",
+      "summary": "📑 An app aimed at reducing the hassle of applying for a document",
+      "tags": [
+        "Web App",
+        "Next.js",
+        "Node.js"
+      ],
+      "githubLink": "https://github.com/FahadLive/DocuFlow",
+      "externalLink": null,
+      "coverImage": "images/projects/docuflow.webp"
+    },
+    {
+      "slug": "fieldwatch",
+      "title": "FieldWatch",
+      "date": "2024-12-21T10:44:29.000Z",
+      "summary": "🐦 Project for TinyML",
+      "tags": [
+        "Hardware",
+        "C",
+        "TinyML"
+      ],
+      "githubLink": "https://github.com/FahadLive/FieldWatch",
+      "externalLink": null,
+      "coverImage": "images/projects/fieldwatch.webp"
+    },
+    {
+      "slug": "gemini-resume-analyzer",
+      "title": "Gemini Resume Analyzer",
+      "date": "2024-11-20T01:41:10.000Z",
+      "summary": "📝 A project built using Vite and the Gemini API to parse a resume PDF and give feedback on it",
+      "tags": [
+        "Web App",
+        "AI",
+        "JavaScript"
+      ],
+      "githubLink": "https://github.com/FahadLive/gemini-resume-analyzer",
+      "externalLink": null,
+      "coverImage": null
+    },
+    {
+      "slug": "light-em-up",
+      "title": "Light 'Em Up",
+      "date": "2024-11-19T02:20:00.000Z",
+      "summary": "🎰 It is a recreation of the classic arcade game: Whack-A-Mole, using LEDs & Push buttons. Its been made as a 1v1 - First to 10 points game. The LEDs are lit randomly",
+      "tags": [
+        "game",
+        "hardware"
+      ],
+      "githubLink": "https://github.com/FahadLive/light-em-up",
+      "externalLink": null,
+      "coverImage": "images/projects/light-em-up-box.webp"
+    },
+    {
+      "slug": "thaapasakhi",
+      "title": "ThaapaSakhi",
+      "date": "2024-11-19T02:20:00.000Z",
+      "summary": "🌡️  താപസഖി: Temperature based music player. Made using NodeMCU & Node.js",
+      "tags": [
+        "Music",
+        "Hardware"
+      ],
+      "githubLink": "https://github.com/FahadLive/ThaapaSakhi",
+      "externalLink": null,
+      "coverImage": "images/projects/thaapasakhi-logo.svg"
+    },
+    {
+      "slug": "blastoff",
+      "title": "BlastOff",
+      "date": "2024-09-03T04:11:00.000Z",
+      "summary": "🚀 BlastOff is a casual endless runner game featuring vector graphics",
+      "tags": [
+        "Game",
+        "Godot"
+      ],
+      "githubLink": "https://github.com/FahadLive/BlastOff",
+      "externalLink": null,
+      "coverImage": "images/projects/blastoff-banner.png"
+    },
+    {
+      "slug": "page-reader",
+      "title": "Page Reader",
+      "date": "2022-04-30T16:48:33.000Z",
+      "summary": "📄 Simple python script to extract texts from images and PDFs using Tesseract-OCR",
+      "tags": [
+        "Python",
+        "CLI",
+        "OCR"
+      ],
+      "githubLink": "https://github.com/FahadLive/page-reader",
+      "externalLink": null,
+      "coverImage": null
+    }
+  ],
+  "blogs": [
+    {
+      "slug": "life-is-good",
+      "title": "🌱 Life is Good",
+      "date": "2026-06-28T15:44:00.000Z",
+      "summary": "Finding My People Through Community.",
+      "tags": [],
+      "coverImage": "images/blogs/life-is-good/builder-believer-enabler.webp"
+    },
+    {
+      "slug": "how-would-i-start-researching",
+      "title": "🔍 How would I start researching as a B. Tech student in Kerala?",
+      "date": "2026-03-31T10:47:00.000Z",
+      "summary": "A beginner's guide to start researching",
+      "tags": [],
+      "coverImage": "images/blogs/guide-to-research.jpg"
+    },
+    {
+      "slug": "meeting-my-github-feed-in-person",
+      "title": "😅 Meeting my GitHub feed in-person @ IndiaFOSS 2025",
+      "date": "2025-09-28T09:20:00.000Z",
+      "summary": "Sharing my experience at IndiaFOSS 2025 - My very first event outside my home state.",
+      "tags": [],
+      "coverImage": "images/blogs/tinkerhub-indiafoss-25.webp"
+    },
+    {
+      "slug": "atleast-i-tried",
+      "title": "🙂 Atleast I Tried...",
+      "date": "2024-11-20T15:56:59.000Z",
+      "summary": "A story of expectation vs reality - What I thought about college vs what actually happened",
+      "tags": [],
+      "coverImage": "images/blogs/i-tried.svg"
+    },
+    {
+      "slug": "why-readmes-are-important",
+      "title": "📖 Why don't they include a README?",
+      "date": "2024-09-16T07:38:06.000Z",
+      "summary": "Why should people include README?",
+      "tags": [],
+      "coverImage": "images/blogs/why_readmes_are_important.png"
+    },
+    {
+      "slug": "projects-I-made-as-a-programmer",
+      "title": "🍳 Projects I Made as a Programmer",
+      "date": "2024-09-03T04:14:52.000Z",
+      "summary": "My project building journey till now",
+      "tags": [],
+      "coverImage": null
+    },
+    {
+      "slug": "thoughts-behind-blastoff",
+      "title": "💭 Thoughts behind BlastOff",
+      "date": "2024-06-04T13:10:15.000Z",
+      "summary": "Why did I build my own game? How I feel about it now?",
+      "tags": [],
+      "coverImage": "images/blogs/thoughts_behind_blastoff.png"
+    },
+    {
+      "slug": "dethroning-google",
+      "title": "👑 Dethroning Google: Exploring Fresh Horizons",
+      "date": "2023-12-24T10:50:45.000Z",
+      "summary": "How I recommend others to enter into a degoogled life",
+      "tags": [],
+      "coverImage": "images/blogs/dethroning_google.png"
+    },
+    {
+      "slug": "addressing-environmental-neglect",
+      "title": "🚯 Addressing Environmental Neglect: A Roadside Tale",
+      "date": "2023-12-16T06:25:10.000Z",
+      "summary": "A rant about people's perspective toward cleanliness",
+      "tags": [],
+      "coverImage": "images/blogs/environmental_neglect.png"
+    },
+    {
+      "slug": "unmasking-the-secrets-of-online-privacy",
+      "title": "🕵🏻 Unmasking the Secrets of Online Privacy",
+      "date": "2023-12-06T07:43:30.000Z",
+      "summary": "Why I chose to do things the way I'm doing it right now.",
+      "tags": [],
+      "coverImage": "images/blogs/unmasking_privacy.png"
+    },
+    {
+      "slug": "whats-breakthrough",
+      "title": "🤔 What's Breakthrough?",
+      "date": "2023-11-24T15:18:14.000Z",
+      "summary": "(Outdated) **TLDR**; A space where I can write down my thoughts!",
+      "tags": [],
+      "coverImage": null
+    }
+  ]
+}

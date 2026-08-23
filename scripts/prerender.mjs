@@ -1,7 +1,6 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
-import { readdirSync, statSync } from "fs";
-import { join, dirname, extname } from "path";
-import matter from "gray-matter";
+import { join, dirname } from "path";
+import { walkDir, parseFrontmatter, slugFromPath } from "./lib/content.mjs";
 
 const BASE_URL = "https://justfahad.me";
 const BLOG_DIR = "content/blogs";
@@ -9,19 +8,6 @@ const PROJECT_DIR = "content/projects";
 const DIST_DIR = "dist";
 
 const SITE_NAME = "Fahad";
-
-function walkDir(dir) {
-  const files = [];
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry);
-    if (statSync(full).isDirectory()) {
-      files.push(...walkDir(full));
-    } else if (extname(full) === ".md") {
-      files.push(full);
-    }
-  }
-  return files;
-}
 
 function stripTitleEmoji(title) {
   return title.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}\u{2700}-\u{27BF}]/gu, "").trim();
@@ -33,10 +19,10 @@ const pages = [];
 
 // Blogs
 for (const file of walkDir(BLOG_DIR)) {
-  const { data } = matter(readFileSync(file, "utf-8"));
+  const { data } = parseFrontmatter(file);
   if (data.draft || data.isPrivate) continue;
 
-  const slug = file.split("/").pop().replace(/\.md$/, "");
+  const slug = slugFromPath(file);
   const title = data.title;
   const description = data.summary?.replace(/[*_`#\[\]]/g, "") || "";
   const coverPath = data.cover?.image || null;
@@ -53,10 +39,10 @@ for (const file of walkDir(BLOG_DIR)) {
 
 // Projects
 for (const file of walkDir(PROJECT_DIR)) {
-  const { data } = matter(readFileSync(file, "utf-8"));
+  const { data } = parseFrontmatter(file);
   if (data.isPrivate) continue;
 
-  const slug = file.split("/").pop().replace(/\.md$/, "");
+  const slug = slugFromPath(file);
   const title = data.title;
   const description = data.summary?.replace(/[*_`#\[\]]/g, "") || "";
   const coverPath = data.cover?.image || null;

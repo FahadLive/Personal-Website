@@ -4,8 +4,10 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
+        "predev": "node scripts/generate-manifest.mjs",
         "dev": "vite",
-        "build": "vite build && node scripts/prerender.mjs",
+        "build": "node scripts/generate-manifest.mjs && vite build && node scripts/prerender.mjs",
+        "generate:manifest": "node scripts/generate-manifest.mjs",
         "lint": "eslint .",
         "start": "vite preview --host 0.0.0.0"
     },

@@ -10,6 +10,7 @@ interface ProjectItemProps {
     slug?: string;
     coverImage?: string | null;
     summary?: string | null;
+    priority?: boolean;
 }
 
 function MaskingTape() {
@@ -48,6 +49,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     slug,
     coverImage,
     summary,
+    priority = false,
 }) => {
     const tagCount = projectTags?.length;
     const [imgError, setImgError] = useState(false);
@@ -85,7 +87,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
                             src={`/${coverImage}`}
                             alt={`Cover for ${projectName}`}
                             className="card-image"
-                            loading="lazy"
+                            loading={priority ? "eager" : "lazy"}
+                            decoding="async"
+                            fetchPriority={priority ? "high" : undefined}
                             onError={() => setImgError(true)}
                         />
                     </div>

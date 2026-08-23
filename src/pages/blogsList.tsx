@@ -1,31 +1,13 @@
-import { useEffect, useState } from "react";
 import { getBlogList } from "../utils/markdownParser";
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
 import BlogItem from "../components/blogItem";
 import Snail from "../components/creatures/snail";
 
-interface BlogsDataType {
-    slug: string;
-    title: string;
-    date: string;
-    summary: string;
-    tags: string[];
-    coverImage: string | null;
-}
-
 const rotations = [0.2, -0.4, 0.6, -0.1, 0.5, -0.5];
 
 const BlogsListPage: React.FC = () => {
-    const [blogs, setBlogs] = useState<BlogsDataType[]>([]);
-
-    const processBlogssData = async () => {
-        setBlogs(await getBlogList());
-    };
-
-    useEffect(() => {
-        processBlogssData();
-    }, []);
+    const blogs = getBlogList();
 
     return (
         <>
@@ -58,6 +40,7 @@ const BlogsListPage: React.FC = () => {
                                 slug={blog.slug}
                                 coverImage={blog.coverImage}
                                 summary={blog.summary}
+                                priority={index < 4}
                             />
                         </motion.div>
                     ))}
