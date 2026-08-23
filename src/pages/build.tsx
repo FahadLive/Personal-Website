@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
 import BuildHeatmap from "../components/buildHeatmap";
@@ -8,27 +8,13 @@ import {
     getBuildLogGroups,
     getHeatmapData,
     getStreak,
-    HeatmapDay,
-    LogGroup,
 } from "../utils/buildLogParser";
 
 export default function BuildPage() {
-    const [groups, setGroups] = useState<LogGroup[]>([]);
-    const [heatmapData, setHeatmapData] = useState<HeatmapDay[]>([]);
-    const [streak, setStreak] = useState(0);
+    const groups = getBuildLogGroups();
+    const heatmapData = getHeatmapData();
+    const streak = getStreak(heatmapData);
     const [filter, setFilter] = useState<string | null>(null);
-
-    useEffect(() => {
-        Promise.all([getBuildLogGroups(), getHeatmapData()])
-            .then(([g, h]) => {
-                setGroups(g);
-                setHeatmapData(h);
-                setStreak(getStreak(h));
-            })
-            .catch((err) => {
-                console.error("build log load failed:", err);
-            });
-    }, []);
 
     // Collect unique project names for filter debugging
     const projects = new Set<string>();

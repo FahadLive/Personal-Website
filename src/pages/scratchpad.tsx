@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import MetaComponent from "../components/meta";
 import ScratchpadCard from "../components/scratchpadCard";
 import ChayaCup from "../components/creatures/chayaCup";
-import {
-    getScratchpadGroups,
-    ScratchpadGroup,
-} from "../utils/scratchpadParser";
+import { getScratchpadGroups } from "../utils/scratchpadParser";
 
 const rotations = [-0.5, 0.3, -0.2, 0.6, -0.4, 0.2];
 
 const ScratchpadPage: React.FC = () => {
-    const [groups, setGroups] = useState<ScratchpadGroup[]>([]);
-
-    useEffect(() => {
-        getScratchpadGroups().then(setGroups);
-    }, []);
+    const groups = getScratchpadGroups();
 
     // Flatten groups into a renderable list of dividers + entries
     const items = groups.flatMap((group) => [

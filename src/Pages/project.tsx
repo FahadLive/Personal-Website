@@ -2,7 +2,7 @@ import "./page.css";
 
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { getProjectData } from "../utils/markdownParser";
+import { getProjectData, type ProjectDetail } from "../utils/markdownParser";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,27 +13,13 @@ import TextTransition from "../components/transitionText";
 
 import { AnimatePresence, motion } from "motion/react";
 import { IconBrandGithub, IconLink } from "@tabler/icons-react";
-import Markdown from "react-markdown";
 import MetaComponent from "../components/meta";
-
-interface ProjectsDataType {
-    slug: string;
-    title: string;
-    date: string;
-    summary: string;
-    tags: string[];
-    content: string;
-    githubLink: string | null;
-    externalLink: string | null;
-    coverImage: string | null;
-    images: string[] | null;
-}
 
 const ProjectPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const path = useLocation();
     const navigate = useNavigate();
-    const [project, setProject] = useState<ProjectsDataType | null>(null);
+    const [project, setProject] = useState<ProjectDetail | null>(null);
     const [loading, setLoading] = useState(true);
     const [imagesLoaded, setImagesLoaded] = useState(false);
 
@@ -236,13 +222,13 @@ const ProjectPage: React.FC = () => {
                             </div>
                         </motion.div>
                     )}
-                    {project.images && imagesLoaded && project.content && (
+                    {project.images && imagesLoaded && project.html && (
                         <div className="section-divider pt-4">
                             <span>▼</span>
                         </div>
                     )}
                     <AnimatePresence>
-                        {project.content && (
+                        {project.html && (
                             <motion.div
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto" }}
@@ -257,9 +243,10 @@ const ProjectPage: React.FC = () => {
                                 <div
                                     id="learn-more"
                                     className="project-info flex flex-col gap-1 md:max-w-6xl justify-center p-4"
-                                >
-                                    <Markdown>{project.content}</Markdown>
-                                </div>
+                                    dangerouslySetInnerHTML={{
+                                        __html: project.html,
+                                    }}
+                                />
                             </motion.div>
                         )}
                     </AnimatePresence>

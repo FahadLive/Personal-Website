@@ -2,28 +2,10 @@ import "./page.css";
 
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { getBlogData } from "../utils/markdownParser";
-
+import { getBlogData, type BlogDetail } from "../utils/markdownParser";
 import MetaComponent from "../components/meta";
-import Markdown from "react-markdown";
 import SelectionShare from "../components/selectionShare";
 import Giscus from "@giscus/react";
-
-interface ProjectsDataType {
-    slug: string;
-    title: string;
-    date: Date;
-    summary: string;
-    tags: string[];
-    content: string;
-    coverImage: string | null;
-}
-
-function estimateReadingTime(text: string): number {
-    const plain = text.replace(/[#*`\[\]]/g, " ");
-    const words = plain.trim().split(/\s+/).length;
-    return Math.max(1, Math.ceil(words / 200));
-}
 
 function formatDate(d: Date): string {
     return d.toLocaleDateString("en-US", {
@@ -37,7 +19,7 @@ const BlogPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const path = useLocation();
     const navigate = useNavigate();
-    const [blog, setBlog] = useState<ProjectsDataType | null>(null);
+    const [blog, setBlog] = useState<BlogDetail | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -78,7 +60,7 @@ const BlogPage: React.FC = () => {
         return <div>Blog not found</div>;
     }
 
-    const readingTime = estimateReadingTime(blog.content);
+    const readingTime = blog.readingTime;
 
     return (
         <>
@@ -108,8 +90,8 @@ const BlogPage: React.FC = () => {
 
                     {/* Meta row */}
                     <div className="flex items-center gap-3 text-sm font-sans text-[var(--text)]/50 mb-10">
-                        <time dateTime={blog.date.toISOString()}>
-                            {formatDate(blog.date)}
+                        <time dateTime={new Date(blog.date).toISOString()}>
+                            {formatDate(new Date(blog.date))}
                         </time>
                         <span aria-hidden="true">·</span>
                         <span>{readingTime} min read</span>
@@ -119,9 +101,10 @@ const BlogPage: React.FC = () => {
                     <div className="section-divider mb-10">✦</div>
 
                     {/* Content */}
-                    <div className="blog-content">
-                        <Markdown>{blog.content}</Markdown>
-                    </div>
+                    <div
+                        className="blog-content"
+                        dangerouslySetInnerHTML={{ __html: blog.html }}
+                    />
                     <SelectionShare
                         title={blog.title}
                         url={`https://justfahad.me/blog/${slug}`}

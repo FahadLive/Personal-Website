@@ -1,4 +1,4 @@
-import { load } from "js-yaml";
+import manifest from "../generated/contentManifest.json";
 import { groupAndSort, GroupedEntry } from "./groupByMonth";
 
 export interface LogEntry {
@@ -24,34 +24,9 @@ export interface TilItem {
     text: string;
 }
 
-export async function getBuildLogGroups(): Promise<LogGroup[]> {
-    const files = import.meta.glob("/content/log/*.yaml", {
-        query: "?raw",
-        import: "default",
-    });
-    const allEntries: LogEntry[] = [];
-    for (const [path, loadFile] of Object.entries(files)) {
-        const raw = (await loadFile()) as string;
-        if (!raw?.trim()) continue; // empty file → skip, don't throw
-
-        const parsed = load(raw);
-        if (!Array.isArray(parsed)) {
-            console.warn(
-                `buildLogParser: ${path} did not parse to an array, skipping`,
-            );
-            continue;
-        }
-        allEntries.push(
-            ...(parsed as LogEntry[]).map((e) => ({
-                ...e,
-                date:
-                    e.date instanceof Date
-                        ? e.date.toISOString().slice(0, 10)
-                        : String(e.date),
-            })),
-        );
-    }
-    return groupAndSort(allEntries, "date");
+export function getBuildLogGroups(): LogGroup[] {
+    const entries = manifest.log as LogEntry[];
+    return groupAndSort(entries, "date");
 }
 
 function fillDateRange(dayCount: Map<string, number>): HeatmapDay[] {
@@ -90,8 +65,8 @@ function fillDateRange(dayCount: Map<string, number>): HeatmapDay[] {
     return result;
 }
 
-export async function getHeatmapData(): Promise<HeatmapDay[]> {
-    const groups = await getBuildLogGroups();
+export function getHeatmapData(): HeatmapDay[] {
+    const groups = getBuildLogGroups();
     const dayCount = new Map<string, number>();
 
     for (const group of groups) {
@@ -125,11 +100,11 @@ export function getStreak(data: HeatmapDay[]): number {
     }
 
     let streak = 0;
-    const current = new Date(startDate);
+    let current = new Date(startDate);
 
     while (activeDates.has(current.toISOString().slice(0, 10))) {
         streak++;
-        current.setDate(current.getDate() - 1);
+        current = new Date(current.setDate(current.getDate() - 1));
     }
 
     return streak;

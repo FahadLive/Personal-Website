@@ -12,7 +12,8 @@
       ],
       "githubLink": null,
       "externalLink": "https://drapelive.in/projects/stockflow",
-      "coverImage": "images/projects/stockflow.jpg"
+      "coverImage": "images/projects/stockflow.jpg",
+      "imagesFolder": "/images/projects/stockflow/"
     },
     {
       "slug": "nss-app",
@@ -26,7 +27,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/nss-app",
       "externalLink": null,
-      "coverImage": "images/projects/nss-app.webp"
+      "coverImage": "images/projects/nss-app.webp",
+      "imagesFolder": null
     },
     {
       "slug": "koottam-exporter",
@@ -39,7 +41,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/koottam-exporter",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     },
     {
       "slug": "off-topic",
@@ -53,7 +56,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/off-topic",
       "externalLink": null,
-      "coverImage": "images/projects/off-topic.webp"
+      "coverImage": "images/projects/off-topic.webp",
+      "imagesFolder": null
     },
     {
       "slug": "mudra",
@@ -67,7 +71,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/Mudra",
       "externalLink": null,
-      "coverImage": "images/projects/mudra.webp"
+      "coverImage": "images/projects/mudra.webp",
+      "imagesFolder": null
     },
     {
       "slug": "simple-dino-game",
@@ -80,7 +85,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/simple-dino-game",
       "externalLink": null,
-      "coverImage": "images/projects/dino-game.webp"
+      "coverImage": "images/projects/dino-game.webp",
+      "imagesFolder": null
     },
     {
       "slug": "zooma",
@@ -94,7 +100,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/Zooma",
       "externalLink": null,
-      "coverImage": "images/projects/zooma.webp"
+      "coverImage": "images/projects/zooma.webp",
+      "imagesFolder": null
     },
     {
       "slug": "enigma",
@@ -108,7 +115,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/enigma",
       "externalLink": null,
-      "coverImage": "images/projects/engima.webp"
+      "coverImage": "images/projects/engima.webp",
+      "imagesFolder": null
     },
     {
       "slug": "clevo",
@@ -125,7 +133,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/clevo-frontend",
       "externalLink": null,
-      "coverImage": "images/projects/clevo.webp"
+      "coverImage": "images/projects/clevo.webp",
+      "imagesFolder": null
     },
     {
       "slug": "tuto",
@@ -139,7 +148,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/TuTo",
       "externalLink": null,
-      "coverImage": "images/projects/tuto.webp"
+      "coverImage": "images/projects/tuto.webp",
+      "imagesFolder": null
     },
     {
       "slug": "api-hunt",
@@ -153,7 +163,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/API-Hunt",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     },
     {
       "slug": "traffinity",
@@ -167,7 +178,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/traffinity",
       "externalLink": null,
-      "coverImage": "images/projects/traffinity-banner.webp"
+      "coverImage": "images/projects/traffinity-banner.webp",
+      "imagesFolder": null
     },
     {
       "slug": "cse-site",
@@ -181,7 +193,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/cse_site",
       "externalLink": null,
-      "coverImage": "images/projects/cse-site.webp"
+      "coverImage": "images/projects/cse-site.webp",
+      "imagesFolder": null
     },
     {
       "slug": "kalam",
@@ -195,7 +208,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/kalam",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     },
     {
       "slug": "roost",
@@ -209,7 +223,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/Roost",
       "externalLink": null,
-      "coverImage": "images/projects/roost-mockups.webp"
+      "coverImage": "images/projects/roost-mockups.webp",
+      "imagesFolder": null
     },
     {
       "slug": "sessions",
@@ -223,7 +238,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/sessions",
       "externalLink": null,
-      "coverImage": "images/projects/sessions-website.webp"
+      "coverImage": "images/projects/sessions-website.webp",
+      "imagesFolder": null
     },
     {
       "slug": "foss-site",
@@ -236,7 +252,8 @@
       ],
       "githubLink": "https://github.com/FOSS-Cell-GECPKD/Website/",
       "externalLink": null,
-      "coverImage": "images/projects/foss.webp"
+      "coverImage": "images/projects/foss.webp",
+      "imagesFolder": "/images/projects/foss-site/"
     },
     {
       "slug": "personal-site",
@@ -249,7 +266,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/Personal-Website",
       "externalLink": null,
-      "coverImage": "images/projects/personal-website-hero.webp"
+      "coverImage": "images/projects/personal-website-hero.webp",
+      "imagesFolder": "/images/projects/personal-site/"
     },
     {
       "slug": "study-spear",
@@ -263,7 +281,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/study-spear",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     },
     {
       "slug": "saylo",
@@ -277,7 +296,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/saylo",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     },
     {
       "slug": "docuflow",
@@ -291,7 +311,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/DocuFlow",
       "externalLink": null,
-      "coverImage": "images/projects/docuflow.webp"
+      "coverImage": "images/projects/docuflow.webp",
+      "imagesFolder": null
     },
     {
       "slug": "fieldwatch",
@@ -305,7 +326,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/FieldWatch",
       "externalLink": null,
-      "coverImage": "images/projects/fieldwatch.webp"
+      "coverImage": "images/projects/fieldwatch.webp",
+      "imagesFolder": null
     },
     {
       "slug": "gemini-resume-analyzer",
@@ -319,7 +341,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/gemini-resume-analyzer",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     },
     {
       "slug": "light-em-up",
@@ -332,7 +355,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/light-em-up",
       "externalLink": null,
-      "coverImage": "images/projects/light-em-up-box.webp"
+      "coverImage": "images/projects/light-em-up-box.webp",
+      "imagesFolder": "/images/projects/light-em-up/"
     },
     {
       "slug": "thaapasakhi",
@@ -345,7 +369,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/ThaapaSakhi",
       "externalLink": null,
-      "coverImage": "images/projects/thaapasakhi-logo.svg"
+      "coverImage": "images/projects/thaapasakhi-logo.svg",
+      "imagesFolder": "/images/projects/thaapasakhi/"
     },
     {
       "slug": "blastoff",
@@ -358,7 +383,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/BlastOff",
       "externalLink": null,
-      "coverImage": "images/projects/blastoff-banner.png"
+      "coverImage": "images/projects/blastoff-banner.png",
+      "imagesFolder": "/images/projects/blastoff/"
     },
     {
       "slug": "page-reader",
@@ -372,7 +398,8 @@
       ],
       "githubLink": "https://github.com/FahadLive/page-reader",
       "externalLink": null,
-      "coverImage": null
+      "coverImage": null,
+      "imagesFolder": null
     }
   ],
   "blogs": [
@@ -382,7 +409,8 @@
       "date": "2026-06-28T15:44:00.000Z",
       "summary": "Finding My People Through Community.",
       "tags": [],
-      "coverImage": "images/blogs/life-is-good/builder-believer-enabler.webp"
+      "coverImage": "images/blogs/life-is-good/builder-believer-enabler.webp",
+      "readingTime": 9
     },
     {
       "slug": "how-would-i-start-researching",
@@ -390,7 +418,8 @@
       "date": "2026-03-31T10:47:00.000Z",
       "summary": "A beginner's guide to start researching",
       "tags": [],
-      "coverImage": "images/blogs/guide-to-research.jpg"
+      "coverImage": "images/blogs/guide-to-research.jpg",
+      "readingTime": 2
     },
     {
       "slug": "meeting-my-github-feed-in-person",
@@ -398,7 +427,8 @@
       "date": "2025-09-28T09:20:00.000Z",
       "summary": "Sharing my experience at IndiaFOSS 2025 - My very first event outside my home state.",
       "tags": [],
-      "coverImage": "images/blogs/tinkerhub-indiafoss-25.webp"
+      "coverImage": "images/blogs/tinkerhub-indiafoss-25.webp",
+      "readingTime": 2
     },
     {
       "slug": "atleast-i-tried",
@@ -406,7 +436,8 @@
       "date": "2024-11-20T15:56:59.000Z",
       "summary": "A story of expectation vs reality - What I thought about college vs what actually happened",
       "tags": [],
-      "coverImage": "images/blogs/i-tried.svg"
+      "coverImage": "images/blogs/i-tried.svg",
+      "readingTime": 2
     },
     {
       "slug": "why-readmes-are-important",
@@ -414,7 +445,8 @@
       "date": "2024-09-16T07:38:06.000Z",
       "summary": "Why should people include README?",
       "tags": [],
-      "coverImage": "images/blogs/why_readmes_are_important.png"
+      "coverImage": "images/blogs/why_readmes_are_important.png",
+      "readingTime": 1
     },
     {
       "slug": "projects-I-made-as-a-programmer",
@@ -422,7 +454,8 @@
       "date": "2024-09-03T04:14:52.000Z",
       "summary": "My project building journey till now",
       "tags": [],
-      "coverImage": null
+      "coverImage": null,
+      "readingTime": 1
     },
     {
       "slug": "thoughts-behind-blastoff",
@@ -430,7 +463,8 @@
       "date": "2024-06-04T13:10:15.000Z",
       "summary": "Why did I build my own game? How I feel about it now?",
       "tags": [],
-      "coverImage": "images/blogs/thoughts_behind_blastoff.png"
+      "coverImage": "images/blogs/thoughts_behind_blastoff.png",
+      "readingTime": 2
     },
     {
       "slug": "dethroning-google",
@@ -438,7 +472,8 @@
       "date": "2023-12-24T10:50:45.000Z",
       "summary": "How I recommend others to enter into a degoogled life",
       "tags": [],
-      "coverImage": "images/blogs/dethroning_google.png"
+      "coverImage": "images/blogs/dethroning_google.png",
+      "readingTime": 2
     },
     {
       "slug": "addressing-environmental-neglect",
@@ -446,7 +481,8 @@
       "date": "2023-12-16T06:25:10.000Z",
       "summary": "A rant about people's perspective toward cleanliness",
       "tags": [],
-      "coverImage": "images/blogs/environmental_neglect.png"
+      "coverImage": "images/blogs/environmental_neglect.png",
+      "readingTime": 2
     },
     {
       "slug": "unmasking-the-secrets-of-online-privacy",
@@ -454,7 +490,8 @@
       "date": "2023-12-06T07:43:30.000Z",
       "summary": "Why I chose to do things the way I'm doing it right now.",
       "tags": [],
-      "coverImage": "images/blogs/unmasking_privacy.png"
+      "coverImage": "images/blogs/unmasking_privacy.png",
+      "readingTime": 2
     },
     {
       "slug": "whats-breakthrough",
@@ -462,7 +499,274 @@
       "date": "2023-11-24T15:18:14.000Z",
       "summary": "(Outdated) **TLDR**; A space where I can write down my thoughts!",
       "tags": [],
-      "coverImage": null
+      "coverImage": null,
+      "readingTime": 1
+    }
+  ],
+  "scratchpad": [
+    {
+      "url": "https://squoosh.app/",
+      "note": "One of my most used tools - an image compressor! fun fact: Almost all images in the website have gone through it ;p\n",
+      "tags": [
+        "Tool",
+        "Easy",
+        "Compression",
+        "Image"
+      ],
+      "added": "2026-06-30",
+      "image": "https://squoosh.app/c/icon-large-maskable-c2078ced.png"
+    },
+    {
+      "url": "https://www.thiings.co/things",
+      "note": "Really really cute 3D models, gives off a cozy vibe. And there are lots of them! 😄\n",
+      "tags": [
+        "Assets",
+        "Cute",
+        "3D"
+      ],
+      "added": "2026-06-30",
+      "image": "https://www.thiings.co/meta-new.png"
+    },
+    {
+      "url": "http://keralam.co",
+      "note": "Beautiful websites listing curated list of web apps made to solve kerala-centric problems",
+      "tags": [
+        "Kerala",
+        "Local",
+        "Tools",
+        "Aesthetic"
+      ],
+      "added": "2026-06-29",
+      "image": null
+    },
+    {
+      "url": "https://http.cat/",
+      "note": "Random cats to see when your site/app inevitably fail to load or something. Its cute.",
+      "tags": [
+        "Cats",
+        "Website",
+        "Tool"
+      ],
+      "added": "2026-06-29",
+      "image": "https://http.cat/100.jpg"
+    },
+    {
+      "url": "https://henry.codes/writing/a-website-to-destroy-all-websites/",
+      "note": "One of the best sites I have ever seen",
+      "tags": [
+        "Website",
+        "Inspiration",
+        "Cool"
+      ],
+      "added": "2026-06-29",
+      "image": "https://henry.codes/img/og/og-a-website-to-destroy-all-websites.png"
+    },
+    {
+      "url": "https://wsrv.nl/",
+      "note": "Simple yet image cache & resize service, I use it to compress the images\n",
+      "tags": [
+        "Image"
+      ],
+      "added": "2026-08-22",
+      "image": null
+    },
+    {
+      "url": "https://snips.sh/",
+      "note": "Easily share snippets from terminal itself (with web UI)\n",
+      "tags": [
+        "terminal",
+        "opensource",
+        "snippet",
+        "web"
+      ],
+      "added": "2026-08-17",
+      "image": "https://snips.sh/og.png"
+    },
+    {
+      "url": "https://synclass.netlify.app/",
+      "note": "A simple website to keep the audience engaged - ask questions, know their state (confused or not), share resources, make polls and more... Developed by my friend Shad ❤️‍🔥\n",
+      "tags": [
+        "sessions",
+        "class",
+        "helpful",
+        "simple",
+        "web app"
+      ],
+      "added": "2026-08-15",
+      "image": "https://synclass.netlify.app/opengraph.jpg"
+    },
+    {
+      "url": "https://neolabs.fyi/?view=geography",
+      "note": "Cool overview of all AI companies\n",
+      "tags": [
+        "ux",
+        "ai",
+        "companies",
+        "global"
+      ],
+      "added": "2026-08-15",
+      "image": "https://neolabs.fyi/og/cover.png"
+    },
+    {
+      "url": "https://rallly.co",
+      "note": "Scheduling made easy - create a poll, let them all pick suitable free time\n",
+      "tags": [
+        "open-source",
+        "minimalist",
+        "group"
+      ],
+      "added": "2026-08-03",
+      "image": null
+    }
+  ],
+  "log": [
+    {
+      "date": "2026-06-30",
+      "project": "Thirai",
+      "summary": "Thirai is RAG applications made for KTU students. Basically, I wanted a LLM that could answer any college/university related questions.\n\nToday, I built its v1 - dumped 14 documents from KTU site (https://ktu.edu.in), indexed it using Qwen2.5:3B and nomic-embed-text models (took 20 mins) and... the output was not that good - I suspect it is due to the formatting/styling of the PDF\n\nAnyway, I used https://gradio.app/ to quickly setup an UI\n",
+      "mood": "🌊",
+      "images": [
+        "/content/log-assets/2026-06-30-3gps-1.webp",
+        "/content/log-assets/2026-06-30-3gps-2.webp",
+        "/content/log-assets/2026-06-30-3gps-3.webp"
+      ],
+      "til": [
+        "Ollama",
+        "Gradio",
+        "Embeddings",
+        "RAG"
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "project": "Build In Public",
+      "summary": "I built the basics of #BuildInPublic - a web page to publicly track my building activities. Just like yesterday's Scratchpad, this too features a Telegram-to-GitHub integration using Cloudflare Workers.\n\nAdditionally, I added streaks and a heatmap to make the whole page more engaging. I expect users who visit to feel somewhat inspired and try building something themselves, for which a CTA has been placed in the footer. :)\n\nThanks to the folks at https://wsrv.nl/, I was able to handle image compression (my main worry) easily.\n\nThese tiny builds are always fun 😌\n",
+      "mood": "😮‍💨",
+      "images": [
+        "/content/log-assets/2026-06-30-4tll-1.webp",
+        "/content/log-assets/2026-06-30-4tll-2.webp"
+      ],
+      "til": [
+        "https://wsrv.nl",
+        "Wrangler keyspace",
+        "React heatmap"
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "project": "Scratchpad",
+      "summary": "Today, I built Scratchpad - basically a bookmarking page with short notes, more like a \"margined notebook made public.\"\n\n\"Why?\" you might ask.\n\nBecause I love finding new stuff and have always wanted to see what others have to offer too. See it as a test for something that can be expanded.\n\nWill it get expanded or adopted by others? Most probably not. But I love the idea :D\n\nFor this, I had to set up another system: a Telegram ↔ GitHub webhook. All of its code is public at:\nhttps://github.com/FahadLive/Personal-Website\n(See `charlie-worker`.)\n\nPS: Telegram and Cloudflare are so cool. There's always something new to discover with them.\n",
+      "mood": "📈",
+      "images": [
+        "/content/log-assets/2026-06-30-32z1-1.webp",
+        "/content/log-assets/2026-06-30-32z1-2.webp"
+      ],
+      "til": [
+        "Cloudflare Workers",
+        "New functionalities of the GitHub API",
+        "Wrangler"
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "project": "Aashaan",
+      "summary": "Aashaan (Kanakk aashaan) is a web app built to simplify biriyani challenge hosted by NSS Unit 185 - GEC Palakkad\n\nIt focuses on simplifying biriyani ordering (Marking count and location), and later delivery too.\n\nThe UX isnt fully flushed out, but it is showing potential\n",
+      "mood": "😶‍🌫️",
+      "images": [
+        "/content/log-assets/2026-07-19-r9z6-1.webp",
+        "/content/log-assets/2026-07-19-r9z6-2.webp"
+      ],
+      "til": []
+    },
+    {
+      "date": "2026-07-05",
+      "project": "NSS GECP",
+      "summary": "Started adding attendance tracking - in the meantime, i fumbled and is having to change already existing events to listing (rename). Which broke every system in place and im currently with -ve progress today\n",
+      "mood": "🫤",
+      "images": [
+        "/content/log-assets/2026-07-05-nta9-1.webp"
+      ],
+      "til": []
+    },
+    {
+      "date": "2026-07-02",
+      "project": "NSS GECP",
+      "summary": "I made the app more responsive - made it faster and improved its UX. I also revamped its UI - Not perfect but its a good start. Notifications, and real time updates are still a work in progress\n",
+      "mood": "🫨",
+      "images": [
+        "/content/log-assets/2026-07-02-f2gn-1.webp",
+        "/content/log-assets/2026-07-02-f2gn-2.webp"
+      ],
+      "til": [
+        "Cache component"
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "project": "Thirai",
+      "summary": "Yesterday, the output from LLM wasn't great most of them was like - I don't know what you are talking. I suspected the issue was with how tables/diagrams from the PDF was extracted/interpreted. So, I moved to use \"pymupdf4llm\" - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm/index.html\n\nAnd it worked fairly well! And the indexing/embedding time was cut down from 20 mins to 2 mins!! (Thats a win-win if you ask me)\n\nNext up - I need add more data, polish the UI and publish it\n",
+      "mood": "🍾",
+      "images": [
+        "/content/log-assets/2026-07-01-b98p-1.webp",
+        "/content/log-assets/2026-07-01-b98p-2.webp"
+      ],
+      "til": [
+        "pymupdf",
+        "dayflow"
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "project": "NSS App",
+      "summary": "Moved to cloudflare - bye bye supabase. Used D1 db, R2 bucket and workers to achieve the full capability. Resurfaced hidden attendance feature too. attendance tracking is still sketchy - will sit on it.\n",
+      "mood": "🥳",
+      "images": [
+        "/content/log-assets/2026-08-22-7qna-1.webp",
+        "/content/log-assets/2026-08-22-7qna-2.webp",
+        "/content/log-assets/2026-08-22-7qna-3.webp"
+      ],
+      "til": [
+        "D1 Sqlit DB",
+        "R2 Bucket",
+        "Hono",
+        "Zod"
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "project": "Personal Site",
+      "summary": "Was feeling a bit creative and decided to make a scrapbook style wallpaper. While creating the wallpaper, I saw a stamp-like potrait and made my own. At last decided to make it the hero potrait, really really happy with the result\n",
+      "mood": "🤩",
+      "images": [
+        "/content/log-assets/2026-08-22-e5un-1.webp",
+        "/content/log-assets/2026-08-22-e5un-2.webp"
+      ],
+      "til": [
+        "Design",
+        "scrapbook"
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "project": "SynClass",
+      "summary": "I contributed to the project by adding favicon and opengraph - opengraph is AI agenerated but I really like the project and always love to see link previews. So this made me happy 🙂\n",
+      "mood": "😌",
+      "images": [
+        "/content/log-assets/2026-08-15-dzxa-1.webp"
+      ],
+      "til": []
+    },
+    {
+      "date": "2026-08-03",
+      "project": "CSE Department Website",
+      "summary": "I revamped admin dashboard UI and integrated some part of it to the actual site data. It needs more work - but I really liked the minimalist (yet stock) look\n",
+      "mood": "😎",
+      "images": [
+        "/content/log-assets/2026-08-03-2y9i-1.webp"
+      ],
+      "til": [
+        "prompt engineering"
+      ]
     }
   ]
 }
