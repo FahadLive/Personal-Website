@@ -14,6 +14,7 @@ import TextTransition from "../components/transitionText";
 import { AnimatePresence, motion } from "motion/react";
 import { IconBrandGithub, IconLink } from "@tabler/icons-react";
 import MetaComponent from "../components/meta";
+import { Loading } from "../components/loading";
 
 const ProjectPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -61,7 +62,7 @@ const ProjectPage: React.FC = () => {
     if (loading) {
         return (
             <div className="flex min-h-screen w-full justify-center text-center pt-40">
-                <p className="text-[var(--tertiary)]">Loading project...</p>
+                <Loading />
             </div>
         );
     }
