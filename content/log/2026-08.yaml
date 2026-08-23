@@ -1,3 +1,13 @@
+- date: 2026-08-23
+  project: "Personal Site"
+  summary: |
+    I made the site very snappy and fast by reducing client-side content parsing, and by modularising the bundle - Reducing the loading time at each endpoint. Moreover I added pics for many of the projects too - Not complete by any means but its a good start
+  mood: 🏎
+  images:
+    - /content/log-assets/2026-08-23-5kbk-1.webp
+    - /content/log-assets/2026-08-23-5kbk-2.webp
+    - /content/log-assets/2026-08-23-5kbk-3.webp
+  til: ["Manifest generation", "Bundle size"]
 - date: 2026-08-22
   project: "NSS App"
   summary: |
