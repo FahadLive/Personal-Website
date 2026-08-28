@@ -1,3 +1,12 @@
+- date: 2026-08-28
+  project: "Guide"
+  summary: |
+    I refactored the theme to match the current theme of my personal site and added docs for the next session: Vibecoding. I also added home page - Needs improvement though
+  mood: 💅
+  images:
+    - /content/log-assets/2026-08-28-spnn-1.webp
+    - /content/log-assets/2026-08-28-spnn-2.webp
+  til: ["Libdoc"]
 - date: 2026-08-23
   project: "Personal Site"
   summary: |
