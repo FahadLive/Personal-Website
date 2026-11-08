@@ -1,3 +1,9 @@
+- url: https://robotips.app/en
+  note: |
+    Learn about robotics interactively :D
+  tags: ["kearning", "robotics", "hardware"]
+  added: 2026-11-08
+  image: https://robotips.app/og/robotips.jpg
 - url: https://embedded.fm/blog/ese101
   note: |
     Learn more about embedded systems!
