@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import NavLinks from "../components/navLinks";
 import MetaComponent from "../components/meta";
 import Bird from "../components/creatures/bird";
+import PullToNavigate from "../components/pullToNavigate";
+import { Link } from "react-router-dom";
 import { HeroName, HeroPortrait } from "../components/home/heroComponents";
 
 const NAV_ITEMS = [
@@ -23,7 +25,10 @@ function HomePage() {
                 pageTitle="Home"
                 pageDescription="Hi, I'm Mohammed Fahad, a passionate student who loves turning ideas into impactful digital experiences."
             />
-            <div className="relative flex flex-col min-h-dvh p-8 pt-28">
+            <PullToNavigate
+                to="/projects"
+                className="relative flex flex-col min-h-dvh p-8 pt-28"
+            >
                 <Bird
                     className="absolute"
                     style={{ top: "120px", right: "24px" }}
@@ -139,7 +144,7 @@ function HomePage() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </PullToNavigate>
         </>
     );
 }
