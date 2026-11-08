@@ -5,7 +5,6 @@ import NavLinks from "../components/navLinks";
 import MetaComponent from "../components/meta";
 import Bird from "../components/creatures/bird";
 import PullToNavigate from "../components/pullToNavigate";
-import { Link } from "react-router-dom";
 import { HeroName, HeroPortrait } from "../components/home/heroComponents";
 
 const NAV_ITEMS = [
