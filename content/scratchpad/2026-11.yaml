@@ -1,3 +1,9 @@
+- url: https://embedded.fm/blog/ese101
+  note: |
+    Learn more about embedded systems!
+  tags: ["learning", "embedded", "microcontrollers"]
+  added: 2026-11-08
+  image: http://static1.squarespace.com/static/50834ba9c4aa1a31c651078b/56b7cf7420c647fc9f834320/56dcc35a3c44d8dcc852db06/1558023283303/?format=1500w
 - url: https://protocol-explorer-alpha.vercel.app/
   note: |
     Helpful while learning computer networks
