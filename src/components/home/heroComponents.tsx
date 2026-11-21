@@ -5,20 +5,22 @@ import TextTransition from "../transitionText";
 
 export function HeroName() {
     return (
-        <div>
+        <h1>
             <TextTransition
+                as="span"
                 styleName="hero-name"
                 text="MOHAMMED"
                 characterCycleSpeed={6}
                 revealSpeed={4}
             />
             <TextTransition
+                as="span"
                 styleName="hero-name"
                 text="FAHAD"
                 characterCycleSpeed={6}
                 revealSpeed={4}
             />
-        </div>
+        </h1>
     );
 }
 

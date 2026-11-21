@@ -1,6 +1,6 @@
 import { IconArrowDownRight } from "@tabler/icons-react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./components.css";
 
 interface NavLinksProp {
@@ -17,19 +17,26 @@ const NavLinks: React.FC<NavLinksProp> = ({
     onClick,
 }) => {
     return (
-        <Link
+        <NavLink
             className="navlinks group hover:translate-x-4 flex gap-2 xl:gap-3 text-center items-center transition"
             to={link}
+            end={link === "/"}
             onClick={onClick}
         >
-            <span className="text-[var(--tertiary)] font-bold text-xl xl:text-2xl">
+            <span
+                aria-hidden="true"
+                className="text-[var(--tertiary)] font-bold text-xl xl:text-2xl"
+            >
                 {indexNum}
             </span>
             <span className="nav-underline text-[var(--text)] font-bold transition text-xl xl:text-2xl">
                 {text}
             </span>
-            <IconArrowDownRight className="font-bold group-hover:-rotate-45 group-hover:bg-[var(--tertiary))] group-hover:text-[var(--main))] rounded-4xl transition" />
-        </Link>
+            <IconArrowDownRight
+                aria-hidden="true"
+                className="font-bold group-hover:-rotate-45 group-hover:bg-[var(--tertiary)] group-hover:text-[var(--main)] rounded-4xl transition"
+            />
+        </NavLink>
     );
 };
 

@@ -77,7 +77,7 @@ function HomePage() {
                     <div className="flex flex-col items-center gap-4 mt-auto pt-6">
                         <a
                             href="https://github.com/FahadLive/personal-website"
-                            className="text-xs font-light opacity-50"
+                            className="text-xs font-light opacity-75"
                         >
                             {FOOTER_CONTENT}
                         </a>
@@ -137,7 +137,7 @@ function HomePage() {
                         </div>
                         <a
                             href="https://github.com/FahadLive/personal-website"
-                            className="text-xs font-light opacity-50"
+                            className="text-xs font-light opacity-75"
                         >
                             {FOOTER_CONTENT}
                         </a>

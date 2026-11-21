@@ -7,9 +7,10 @@ const NotFoundPage: React.FC = () => {
             <MetaComponent
                 pageTitle="404 — Not Found"
                 pageDescription="This page doesn't exist."
+                noIndex
             />
             <div className="relative min-h-dvh flex flex-col items-center justify-center gap-4 p-8">
-                <div className="text-6xl font-bold text-[var(--text)]">404</div>
+                <h1 className="text-6xl font-bold text-[var(--text)]">404</h1>
                 <p className="text-[var(--text)]/60">
                     This page doesn't exist, or it wandered off somewhere.
                 </p>

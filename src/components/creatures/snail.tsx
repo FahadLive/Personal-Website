@@ -15,10 +15,7 @@ function Snail({ className, style }: CreatureProps) {
       style={style}
       onTap={() => setCrawling(true)}
       onHoverStart={() => setCrawling(true)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setCrawling(true); }}
-      aria-label="Snail"
+            aria-hidden="true"
     >
       <motion.svg
         width="32"

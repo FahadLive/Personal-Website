@@ -13,12 +13,11 @@ const PageDirectButton: React.FC<PageDirectButtonProp> = ({
     link = "/",
     onClick,
 }) => {
-    return (
-        <Link
-            to={link}
-            onClick={onClick}
-            className="group relative flex flex-row justify-center h-mac p-2 w-fit"
-        >
+    const external = /^https?:\/\//.test(link);
+    const className =
+        "group relative flex flex-row justify-center p-2 w-fit";
+    const content = (
+        <>
             <svg
                 className="absolute inset-0 w-full h-full pointer-events-none"
                 viewBox="0 0 100 40"
@@ -38,8 +37,33 @@ const PageDirectButton: React.FC<PageDirectButtonProp> = ({
             </svg>
             <div className="nav-bar-item px-1 font-black">
                 {text.toLowerCase()}
+                {external && (
+                    <span className="sr-only"> (opens in new tab)</span>
+                )}
             </div>
-            <IconArrowUpRight className="font-semibold group-hover:rotate-45 transition" />
+            <IconArrowUpRight
+                className="font-semibold group-hover:rotate-45 transition"
+                aria-hidden="true"
+            />
+        </>
+    );
+
+    if (external) {
+        return (
+            <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClick}
+                className={className}
+            >
+                {content}
+            </a>
+        );
+    }
+    return (
+        <Link to={link} onClick={onClick} className={className}>
+            {content}
         </Link>
     );
 };

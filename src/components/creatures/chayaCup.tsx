@@ -39,12 +39,7 @@ function ChayaCup({ className, style }: CreatureProps) {
             style={style}
             onTap={handleInteraction}
             onHoverStart={handleInteraction}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") handleInteraction();
-            }}
-            aria-label="Chaya cup — tap or hover to see steam"
+            aria-hidden="true"
         >
             <motion.svg
                 width="28"

@@ -13,9 +13,10 @@ const BlogsListPage: React.FC = () => {
         <>
             <MetaComponent
                 pageTitle="Blogs"
-                pageDescription="List of blogs made by Fahad"
+                pageDescription="Writing by Mohammed Fahad on building software, learning in public and ideas worth sharing."
             />
             <div className="relative min-h-dvh p-8 pt-28">
+                <h1 className="sr-only">Blogs</h1>
                 <div className="columns-1 md:columns-2 xl:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8 [&>*]:break-inside-avoid">
                     {blogs.map((blog, index) => (
                         <motion.div

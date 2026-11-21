@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useReducedMotion } from "motion/react";
 
 interface TextTransitionProps {
     text: string;
@@ -7,6 +8,8 @@ interface TextTransitionProps {
     characterCycleSpeed?: number;
     revealSpeed?: number;
     cycleCharacters?: string;
+    /** Wrapper element, e.g. "h1" or "span" when used as a heading. */
+    as?: "div" | "span" | "h1";
 }
 
 const TextTransition: React.FC<TextTransitionProps> = ({
@@ -16,28 +19,31 @@ const TextTransition: React.FC<TextTransitionProps> = ({
     characterCycleSpeed = 10,
     revealSpeed = 8,
     cycleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    as: Wrapper = "div",
 }) => {
+    const reduceMotion = useReducedMotion();
     // Start fully populated at the target length so the element
     // never resizes after mount — no layout shift.
     const [displayedChars, setDisplayedChars] = useState<string[]>(() =>
-        Array(text.length).fill("X"),
+        reduceMotion ? text.split("") : Array(text.length).fill("X"),
     );
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(reduceMotion ? text.length : 0);
 
     // Re-seed placeholders if the text prop itself changes length,
     // without ever dropping to an empty/short array.
     useEffect(() => {
-        setDisplayedChars(Array(text.length).fill("X"));
-        setCurrentIndex(0);
-    }, [text]);
+        setDisplayedChars(reduceMotion ? text.split("") : Array(text.length).fill("X"));
+        setCurrentIndex(reduceMotion ? text.length : 0);
+    }, [text, reduceMotion]);
 
     // Start animation after delay
     useEffect(() => {
+        if (reduceMotion) return;
         const timer = setTimeout(() => {
             startAnimation();
         }, delay);
         return () => clearTimeout(timer);
-    }, [delay, text]);
+    }, [delay, text, reduceMotion]);
 
     const getRandomChar = () => {
         return cycleCharacters[
@@ -78,7 +84,10 @@ const TextTransition: React.FC<TextTransitionProps> = ({
     };
 
     return (
-        <div className={`text-transition-wrapper`}>
+        <Wrapper className={`text-transition-wrapper`}>
+            {/* Screen readers get the real text; the scrambling glyphs are decorative. */}
+            <span className="sr-only">{text}</span>
+            <span aria-hidden="true" className="contents">
             {displayedChars.map((char, i) => (
                 <span
                     key={i}
@@ -92,7 +101,8 @@ const TextTransition: React.FC<TextTransitionProps> = ({
                     {char}
                 </span>
             ))}
-        </div>
+            </span>
+        </Wrapper>
     );
 };
 

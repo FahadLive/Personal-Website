@@ -35,10 +35,6 @@
     font-family: inherit;
     font-style: inherit;
 }
-.project-page-name {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 2.3em;
-}
 
 .transition-character {
     display: inline-block;
@@ -76,7 +72,7 @@
     }
     .project-tags,
     .project-num {
-        font-size: 0.8em;
+        font-size: 1em;
     }
     .project-name {
         font-size: 1.8em;
@@ -276,7 +272,7 @@
     font-family: var(--font-sans);
     font-size: 0.8125rem;
     color: var(--text);
-    opacity: 0.55;
+    opacity: 0.9;
     line-height: 1.4;
 }
 
@@ -374,13 +370,9 @@
     }
     .project-tags,
     .project-num {
-        font-size: 0.6em;
+        font-size: 0.9em;
     }
     .project-name {
-        font-size: 1.5em;
-    }
-
-    .project-page-name {
         font-size: 1.5em;
     }
 

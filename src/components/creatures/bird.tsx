@@ -13,24 +13,12 @@ function Bird({ className, style }: CreatureProps) {
         <motion.div
             className={`z-0 cursor-pointer select-none ${className ?? ""}`}
             style={style}
-            role="button"
-            tabIndex={0}
-            aria-label="Tiny bird"
+            aria-hidden="true"
             onHoverStart={() => setInteracting(true)}
             onHoverEnd={() => setInteracting(false)}
             onTapStart={() => setInteracting(true)}
             onTapCancel={() => setInteracting(false)}
             onTap={() => setInteracting(false)}
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    setInteracting(true);
-                }
-            }}
-            onKeyUp={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    setInteracting(false);
-                }
-            }}
             whileTap={{ scale: 0.95 }}
         >
             <motion.img
@@ -39,7 +27,7 @@ function Bird({ className, style }: CreatureProps) {
                         ? "/doodles/birb-shy.webp"
                         : "/doodles/birb-chill.webp"
                 }
-                alt="Bird chilling"
+                alt=""
                 aria-hidden="true"
                 draggable={false}
                 className="w-14 h-auto"

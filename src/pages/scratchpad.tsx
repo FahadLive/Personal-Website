@@ -34,6 +34,7 @@ const ScratchpadPage: React.FC = () => {
                 pageDescription="Links and notes from Fahad's browser tabs."
             />
             <div className="relative min-h-dvh p-8 pt-28">
+                <h1 className="sr-only">Scratchpad</h1>
                 <div className="columns-1 md:columns-2 xl:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6 [&>*]:break-inside-avoid">
                     {items.map((item) => {
                         if (item.type === "divider") {
@@ -45,9 +46,10 @@ const ScratchpadPage: React.FC = () => {
                                     transition={{ duration: 0.3 }}
                                     className="flex items-center gap-3 w-full font-hand text-[15px] text-accent mt-6 mb-1 break-inside-avoid"
                                 >
-                                    <span className="shrink-0">
-                                        ── {item.label}
-                                    </span>
+                                    <h2 className="shrink-0 font-[inherit] font-normal">
+                                        <span aria-hidden="true">── </span>
+                                        {item.label}
+                                    </h2>
                                     <span className="flex-1 border-t border-dashed border-accent/30" />
                                 </motion.div>
                             );

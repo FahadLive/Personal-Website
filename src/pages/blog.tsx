@@ -51,7 +51,7 @@ const BlogPage: React.FC = () => {
     if (loading) {
         return (
             <div className="flex min-h-screen w-full justify-center text-center pt-40">
-                <p className="text-[var(--tertiary)]">Loading blog...</p>
+                <p role="status" className="text-[var(--tertiary)]">Loading blog...</p>
             </div>
         );
     }
@@ -89,7 +89,7 @@ const BlogPage: React.FC = () => {
                     </h1>
 
                     {/* Meta row */}
-                    <div className="flex items-center gap-3 text-sm font-sans text-[var(--text)]/50 mb-10">
+                    <div className="flex items-center gap-3 text-sm font-sans text-[var(--text)]/70 mb-10">
                         <time dateTime={new Date(blog.date).toISOString()}>
                             {formatDate(new Date(blog.date))}
                         </time>

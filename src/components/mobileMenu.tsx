@@ -1,11 +1,36 @@
 import { IconMenu, IconX } from "@tabler/icons-react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavLinks from "./navLinks";
 import PageDirectButton from "./pageDirects";
 
 const MobileMenu: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [windowHeight, setWindowHeight] = useState<number>(0);
+    const openRef = useRef<HTMLButtonElement>(null);
+    const closeRef = useRef<HTMLButtonElement>(null);
+    const wasOpen = useRef(false);
+
+    // Focus management, Escape to close, and scroll lock while open.
+    useEffect(() => {
+        if (isOpen) {
+            wasOpen.current = true;
+            closeRef.current?.focus();
+            const prevOverflow = document.body.style.overflow;
+            document.body.style.overflow = "hidden";
+            const onKey = (e: KeyboardEvent) => {
+                if (e.key === "Escape") setIsOpen(false);
+            };
+            document.addEventListener("keydown", onKey);
+            return () => {
+                document.body.style.overflow = prevOverflow;
+                document.removeEventListener("keydown", onKey);
+            };
+        }
+        if (wasOpen.current) {
+            wasOpen.current = false;
+            openRef.current?.focus();
+        }
+    }, [isOpen]);
 
     useEffect(() => {
         const updateHeight = () => {
@@ -32,14 +57,30 @@ const MobileMenu: React.FC = () => {
 
     return (
         <div className="z-[100] bg-[var(--tertiary)] hover:bg-[var(--text)] p-2 rounded-[50%] transition">
-            <IconMenu
-                className={`md:hidden h-6 w-6 cursor-pointer transition-opacity text-[var(--main)] duration-300 ${
+            <button
+                ref={openRef}
+                type="button"
+                aria-label="Open menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-nav"
+                inert={isOpen}
+                onClick={() => setIsOpen(true)}
+                className={`md:hidden block transition-opacity duration-300 ${
                     isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
-                onClick={() => setIsOpen(true)}
-            />
+            >
+                <IconMenu
+                    className="h-6 w-6 text-[var(--main)]"
+                    aria-hidden="true"
+                />
+            </button>
             {/* Mobile Menu Overlay */}
             <div
+                id="mobile-nav"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu"
+                inert={!isOpen}
                 style={{ height: windowHeight ? `${windowHeight}px` : "100vh" }}
                 className={`fixed top-0 left-0 w-screen bg-[var(--main)] p-6 transition-all duration-300 ease-in-out ${
                     isOpen
@@ -49,15 +90,26 @@ const MobileMenu: React.FC = () => {
             >
                 <div className="flex flex-col h-full p-3">
                     <div className="flex justify-end p-2">
-                        <IconX
-                            className="h-6 w-6 cursor-pointer transition-transform duration-300 hover:rotate-90"
+                        <button
+                            ref={closeRef}
+                            type="button"
+                            aria-label="Close menu"
                             onClick={() => setIsOpen(false)}
-                        />
+                            className="p-1 group"
+                        >
+                            <IconX
+                                className="h-6 w-6 transition-transform duration-300 group-hover:rotate-90"
+                                aria-hidden="true"
+                            />
+                        </button>
                     </div>
 
                     <div className="flex flex-col justify-between h-full">
                         {/* Buttons on the top */}
-                        <div className="text-center space-y-6 py-6">
+                        <nav
+                            aria-label="Primary"
+                            className="text-center space-y-6 py-6"
+                        >
                             <NavLinks
                                 indexNum="01"
                                 text="Home"
@@ -94,22 +146,27 @@ const MobileMenu: React.FC = () => {
                                 link="/build"
                                 onClick={handleLinkClick}
                             />
-                        </div>
+                        </nav>
                         <div className="flex flex-col gap-6">
                             <div className="page-directs flex justify-between items-center">
                                 <a
                                     className="nav-bar-item"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     href="https://linkedin.com/in/just-fahad/"
                                 >
                                     linkedin
+                                    <span className="sr-only">
+                                        {" "}
+                                        (opens in new tab)
+                                    </span>
                                 </a>
                                 <PageDirectButton
                                     text="github"
                                     link="https://github.com/FahadLive"
                                 />
                             </div>
-                            <div className="font-hand text-sm opacity-60">
+                            <div className="font-hand text-sm opacity-75">
                                 # based in Kerala
                             </div>
                         </div>

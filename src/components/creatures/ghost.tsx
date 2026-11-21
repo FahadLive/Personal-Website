@@ -15,10 +15,7 @@ function Ghost({ className, style }: CreatureProps) {
       style={style}
       onTap={() => setWaving(true)}
       onHoverStart={() => setWaving(true)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setWaving(true); }}
-      aria-label="Friendly ghost"
+            aria-hidden="true"
     >
       <motion.svg
         width="24"

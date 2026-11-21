@@ -343,7 +343,7 @@ export default function AboutPage() {
                             <p>Some serious.</p>
                             <p>Some experimental.</p>
                             <p>Some that probably shouldn't exist.</p>
-                            <p className="text-ink/55 pt-1">
+                            <p className="text-ink/70 pt-1">
                                 We'll see where this goes.
                             </p>
                         </div>
@@ -371,7 +371,7 @@ export default function AboutPage() {
                         <br />
                         <span>
                             Or find me on LinkedIn.{" "}
-                            <span className="text-ink/55 text-[13px]">
+                            <span className="text-ink/70 text-[13px]">
                                 (probably the easiest way to find me)
                             </span>
                         </span>
@@ -384,7 +384,7 @@ export default function AboutPage() {
                             >
                                 hi@justfahad.me
                             </a>
-                            <span className="text-ink/55 text-[13px]">
+                            <span className="text-ink/70 text-[13px]">
                                 (this will definitely catch my attention)
                             </span>
                         </span>
@@ -422,7 +422,7 @@ export default function AboutPage() {
                             >
                                 wandixu.com
                             </a>{" "}
-                            <span className="text-ink/55 text-[13px]">
+                            <span className="text-ink/70 text-[13px]">
                                 — genuinely, what a masterpiece.
                             </span>
                             <br />
@@ -434,7 +434,7 @@ export default function AboutPage() {
                             >
                                 scalzodesign.be
                             </a>{" "}
-                            <span className="text-ink/55 text-[13px]">
+                            <span className="text-ink/70 text-[13px]">
                                 — another ridiculously good site.
                             </span>
                         </p>

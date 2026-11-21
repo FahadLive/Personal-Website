@@ -108,7 +108,7 @@ const BlogItem: React.FC<BlogItemProps> = ({
                         </Link>
                     </h2>
                     {summary && (
-                        <div className="card-summary text-sm text-[var(--text)]/55 mt-0.5 line-clamp-2 leading-snug">
+                        <div className="card-summary text-sm text-[var(--text)]/70 mt-0.5 line-clamp-2 leading-snug">
                             {summary}
                         </div>
                     )}

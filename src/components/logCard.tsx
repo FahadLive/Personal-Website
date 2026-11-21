@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { LogEntry } from "../utils/buildLogParser";
 import "./components.css";
@@ -38,7 +38,31 @@ export default function LogCard({
     index,
     onProjectClick,
 }: LogCardProps) {
-    const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+    const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+    const triggerRef = useRef<HTMLElement | null>(null);
+    const closeRef = useRef<HTMLButtonElement>(null);
+
+    const closeLightbox = () => setLightbox(null);
+
+    // Move focus into the dialog, close on Escape, and restore focus afterwards.
+    useEffect(() => {
+        if (!lightbox) return;
+        closeRef.current?.focus();
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setLightbox(null);
+            // The close button is the only focusable control: keep focus trapped on it.
+            if (e.key === "Tab") {
+                e.preventDefault();
+                closeRef.current?.focus();
+            }
+        };
+        document.addEventListener("keydown", onKey);
+        const trigger = triggerRef.current;
+        return () => {
+            document.removeEventListener("keydown", onKey);
+            trigger?.focus();
+        };
+    }, [lightbox]);
     const bg = bgColors[index % bgColors.length];
     const rot = cardRotations[index % cardRotations.length];
 
@@ -72,6 +96,7 @@ export default function LogCard({
                     {entry.mood && (
                         <span
                             className="text-sm leading-none"
+                            role="img"
                             aria-label={`mood: ${entry.mood}`}
                         >
                             {entry.mood}
@@ -80,7 +105,7 @@ export default function LogCard({
                 </div>
 
                 {/* Date */}
-                <span className="font-hand text-mustard text-[12px] block mb-2">
+                <span className="font-hand text-mustard-text text-[12px] block mb-2">
                     {formatDate(entry.date)}
                 </span>
 
@@ -113,15 +138,21 @@ export default function LogCard({
                         {entry.images.map((src, i) => (
                             <button
                                 key={i}
-                                onClick={() => setLightboxSrc(src)}
+                                onClick={(e) => {
+                                    triggerRef.current = e.currentTarget;
+                                    setLightbox({
+                                        src,
+                                        alt: `${entry.project} log image ${i + 1}`,
+                                    });
+                                }}
                                 className="flex-1 aspect-[4/3] overflow-hidden rounded-[4px] bg-ink/5
                                            transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-2
                                            focus-visible:outline-accent"
-                                aria-label="Open image"
+                                aria-label={`Enlarge ${entry.project} log image ${i + 1}`}
                             >
                                 <img
                                     src={src}
-                                    alt={`Log image ${i + 1}`}
+                                    alt={`${entry.project} log image ${i + 1}`}
                                     className="w-full h-full object-cover"
                                     loading="lazy"
                                 />
@@ -133,7 +164,7 @@ export default function LogCard({
                 {/* TIL chips */}
                 {entry.til.length > 0 && (
                     <div
-                        className="mt-2.5 font-sans text-ink/50 leading-relaxed break-words"
+                        className="mt-2.5 font-sans text-ink/70 leading-relaxed break-words"
                         style={{ fontSize: "11px" }}
                     >
                         <span className="font-medium">TIL: </span>
@@ -144,30 +175,35 @@ export default function LogCard({
 
             {/* Lightbox */}
             <AnimatePresence>
-                {lightboxSrc && (
+                {lightbox && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4"
-                        onClick={() => setLightboxSrc(null)}
-                        onKeyDown={(e) => {
-                            if (e.key === "Escape") setLightboxSrc(null);
-                        }}
+                        onClick={closeLightbox}
                         role="dialog"
                         aria-modal="true"
-                        aria-label="Image lightbox"
-                        tabIndex={0}
+                        aria-label="Image viewer"
                     >
+                        <button
+                            ref={closeRef}
+                            type="button"
+                            aria-label="Close image"
+                            onClick={closeLightbox}
+                            className="absolute top-4 right-4 rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                            Close
+                        </button>
                         <motion.img
-                            key={lightboxSrc}
+                            key={lightbox.src}
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            src={lightboxSrc}
-                            alt="Enlarged log image"
+                            src={lightbox.src}
+                            alt={lightbox.alt}
                             className="max-w-full max-h-[90vh] object-contain rounded-[4px]"
                             onClick={(e) => e.stopPropagation()}
                         />

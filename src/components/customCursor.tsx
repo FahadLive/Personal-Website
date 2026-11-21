@@ -26,7 +26,9 @@ function CustomCursor() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const fine = window.matchMedia("(pointer: fine)").matches;
+    const fine =
+      window.matchMedia("(pointer: fine)").matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setIsFinePointer(fine);
     if (!fine) return;
 
@@ -87,6 +89,7 @@ function CustomCursor() {
   return (
     <div
       ref={cursorRef}
+      aria-hidden="true"
       className="fixed top-0 left-0 pointer-events-none z-[10000]"
       style={{
         transform: "translate(0, 0)",

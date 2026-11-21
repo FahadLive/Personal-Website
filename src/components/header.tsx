@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import MobileMenu from "./mobileMenu";
 import { triggerConfetti } from "../lib/confetti";
 import PageDirectButton from "./pageDirects";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -49,15 +49,14 @@ const Header: React.FC = () => {
     };
 
     const location = useLocation();
-    const navigate = useNavigate();
 
     useEffect(() => {
         setIsHomePage(location.pathname === "/");
     }, [location]);
 
     return (
-        <div
-            className={`fixed top-0 left-0 flex w-full p-6 z-[50] ${!isHomePage && isScrolled && "header-scrolled"}`}
+        <header
+            className={`fixed top-0 left-0 flex w-full p-6 z-[50] ${!isHomePage && isScrolled ? "header-scrolled" : ""}`}
         >
             <div className={`header-gradient`} />
 
@@ -72,50 +71,63 @@ const Header: React.FC = () => {
                 >
                     {!isHomePage && (
                         <div className="flex justify-start pt-1">
-                            <Link to={location.state?.from || "/"}>
-                                <IconArrowLeft className="text-[var(--tertiary)] w-10 h-10 group-hover:scale-105" />
+                            <Link to={location.state?.from || "/"} aria-label="Back">
+                                <IconArrowLeft
+                                    className="text-[var(--tertiary)] w-10 h-10 group-hover:scale-105"
+                                    aria-hidden="true"
+                                />
                             </Link>
                         </div>
                     )}
 
-                    <div
+                    <Link
+                        to="/"
+                        aria-label="Fahad, home"
                         className="flex hover:cursor-pointer items-center p-2"
-                        onClick={() => {
-                            handleLogoClick();
-                            navigate("/");
-                        }}
+                        onClick={handleLogoClick}
                     >
                         <img
                             src="/logo.svg"
-                            alt="Logo Icon"
-                            className={`${!isHomePage && "md:absolute md:left-[50%]"} h-11 w-11 md:h-12 md:w-12`}
+                            alt=""
+                            className={`${!isHomePage ? "md:absolute md:left-[50%]" : ""} h-11 w-11 md:h-12 md:w-12`}
                         />
-                    </div>
+                    </Link>
 
                     <div className="md:hidden p-3">
                         <MobileMenu />
                     </div>
 
-                    <div className="page-directs hidden md:flex h-max items-center gap-16">
-                        <Link className="nav-bar-item" to="/blogs">
+                    <nav
+                        aria-label="Primary"
+                        className="page-directs hidden md:flex h-max items-center gap-8 lg:gap-14"
+                    >
+                        <NavLink className="nav-bar-item" to="/projects">
+                            projects
+                        </NavLink>
+                        <NavLink className="nav-bar-item" to="/blogs">
                             blogs
-                        </Link>
+                        </NavLink>
+                        <NavLink className="nav-bar-item" to="/about">
+                            about
+                        </NavLink>
 
                         <a
                             className="nav-bar-item"
                             target="_blank"
+                            rel="noopener noreferrer"
                             href="https://linkedin.com/in/just-fahad/"
                         >
                             linkedin
+                            <span className="sr-only"> (opens in new tab)</span>
                         </a>
                         <PageDirectButton
                             text="github"
                             link="https://github.com/FahadLive"
                         />
-                    </div>
+                    </nav>
                 </motion.div>
             </AnimatePresence>
-        </div>
+        </header>
     );
 };
 

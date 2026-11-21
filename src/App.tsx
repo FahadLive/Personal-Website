@@ -6,6 +6,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { MotionConfig } from "motion/react";
 
 import Layout from "./components/layout";
 import { HelmetProvider } from "react-helmet-async";
@@ -56,9 +57,11 @@ const router = createBrowserRouter(
 function App() {
     return (
         <HelmetProvider>
-            <Suspense fallback={<Loading />}>
-                <RouterProvider router={router} />
-            </Suspense>
+            <MotionConfig reducedMotion="user">
+                <Suspense fallback={<Loading />}>
+                    <RouterProvider router={router} />
+                </Suspense>
+            </MotionConfig>
         </HelmetProvider>
     );
 }

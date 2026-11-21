@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import "./components.css";
 interface ScratchpadCardProps {
     url: string;
@@ -81,21 +81,13 @@ function ScratchpadCard({
 
     const faviconSrc = `https://www.google.com/s2/favicons?domain=${hostname}&sz=32`;
 
-    const handleClick = useCallback(() => {
-        window.open(url, "_blank", "noopener,noreferrer");
-    }, [url]);
-
     return (
-        <div
-            onClick={handleClick}
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") handleClick();
-            }}
-            role="link"
-            tabIndex={0}
-            aria-label={`Link to ${shortUrl}: ${note}`}
-            className="scratchpad-card group relative cursor-pointer rounded-[6px] p-4 transition-all duration-200 ease-out
-                       hover:md:-translate-y-[5px] active:scale-[1.02]"
+        <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="scratchpad-card group relative block cursor-pointer rounded-[6px] p-4 transition-all duration-200 ease-out
+                       hover:md:-translate-y-[5px] active:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             style={{
                 backgroundColor: bg,
                 boxShadow: "2px 4px 12px rgba(0,0,0,0.07)",
@@ -104,7 +96,7 @@ function ScratchpadCard({
         >
             {/* Month stamp */}
             <span
-                className="absolute top-3 right-3 font-hand text-mustard select-none"
+                className="absolute top-3 right-3 font-hand text-mustard-text select-none"
                 style={{ fontSize: "11px", lineHeight: 1 }}
             >
                 {monthStamp}
@@ -135,6 +127,7 @@ function ScratchpadCard({
                 >
                     {shortUrl}
                 </span>
+                <span className="sr-only"> (opens in new tab)</span>
 
                 {/* ↗ arrow */}
                 <svg
@@ -166,12 +159,6 @@ function ScratchpadCard({
                             if (window.matchMedia("(hover: hover)").matches) {
                                 e.currentTarget.style.strokeDashoffset = "12";
                             }
-                        }}
-                        onFocus={(e) => {
-                            e.currentTarget.style.strokeDashoffset = "0";
-                        }}
-                        onBlur={(e) => {
-                            e.currentTarget.style.strokeDashoffset = "12";
                         }}
                     />
                     <path d="M4 2 L10 2 L10 8" />
@@ -215,7 +202,7 @@ function ScratchpadCard({
                     {displayTags.map((tag) => (
                         <span
                             key={tag}
-                            className="font-sans font-medium rounded-full px-2 py-0.5 text-ink/50"
+                            className="font-sans font-medium rounded-full px-2 py-0.5 text-ink/70"
                             style={{
                                 fontSize: "11px",
                                 lineHeight: 1.2,
@@ -227,7 +214,7 @@ function ScratchpadCard({
                     ))}
                 </div>
             )}
-        </div>
+        </a>
     );
 }
 

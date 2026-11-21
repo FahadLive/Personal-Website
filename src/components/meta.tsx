@@ -5,10 +5,12 @@ function MetaComponent({
   pageTitle,
   pageDescription,
   pagePreview,
+  noIndex,
 }: {
   pageTitle: string;
   pageDescription: string;
   pagePreview?: string | null;
+  noIndex?: boolean;
 }) {
   const location = useLocation();
   const baseUrl = "https://justfahad.me";
@@ -22,6 +24,7 @@ function MetaComponent({
     <Helmet>
       <title>{pageTitle ? `${pageTitle} | Fahad` : "Fahad"}</title>
       <meta property="og:type" content="website" />
+      {noIndex && <meta name="robots" content="noindex" />}
 
       <meta name="description" content={pageDescription} />
       <meta

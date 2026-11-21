@@ -25,6 +25,8 @@
     --color-green: #6b8256;
     --color-blue: #6c8ba3;
     --color-mustard: #cd9c4f;
+    /* darker mustard for text: 5.5:1 on cream/white */
+    --color-mustard-text: #8a5a00;
     --color-purple: #8c7291;
     --color-footer-bg: #efe9dd;
     --color-bg-shade: rgba(250, 247, 240, 0.9);
@@ -52,6 +54,10 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+html {
+    /* keep focused elements clear of the fixed header (WCAG 2.4.11) */
+    scroll-padding-top: 8rem;
 }
 html,
 body {

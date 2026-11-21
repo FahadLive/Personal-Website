@@ -61,7 +61,7 @@ export default function BuildPage() {
                         >
                             build in public
                         </h1>
-                        <p className="font-hand text-ink/50 text-[16px] mt-1">
+                        <p className="font-hand text-ink/70 text-[16px] mt-1">
                             documenting what i make, as i make it
                         </p>
                     </div>
@@ -92,7 +92,7 @@ export default function BuildPage() {
                 {/* Filter hint */}
                 {filter && (
                     <div className="mt-6 flex items-center gap-2">
-                        <span className="font-sans text-[13px] text-ink/50">
+                        <span className="font-sans text-[13px] text-ink/70">
                             filtered:{" "}
                             <strong className="text-ink">{filter}</strong>
                         </span>
@@ -117,9 +117,10 @@ export default function BuildPage() {
                                     transition={{ duration: 0.3 }}
                                     className="flex items-center gap-3 w-full font-hand text-[15px] text-accent mt-6 mb-1"
                                 >
-                                    <span className="shrink-0">
-                                        ── {item.label}
-                                    </span>
+                                    <h2 className="shrink-0 font-[inherit] font-normal">
+                                        <span aria-hidden="true">── </span>
+                                        {item.label}
+                                    </h2>
                                     <span className="flex-1 border-t border-dashed border-accent/30" />
                                 </motion.div>
                             );

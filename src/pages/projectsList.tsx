@@ -13,9 +13,10 @@ const ProjectsListPage: React.FC = () => {
         <>
             <MetaComponent
                 pageTitle="Projects"
-                pageDescription="List of projects made by Fahad"
+                pageDescription="Projects built by Mohammed Fahad: web apps, tools and experiments, with write-ups and source links."
             />
             <div className="relative min-h-dvh p-8 pt-28">
+                <h1 className="sr-only">Projects</h1>
                 <div className="columns-1 md:columns-2 xl:columns-3 gap-4 md:gap-6">
                     {projects.map((project, index) => (
                         <div

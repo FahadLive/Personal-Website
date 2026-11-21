@@ -24,9 +24,15 @@ function isTypingTarget(target: EventTarget | null) {
     return el.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName);
 }
 
+function isInteractiveTarget(target: EventTarget | null) {
+    const el = target as HTMLElement | null;
+    if (!el?.closest) return false;
+    return !!el.closest("a, button, summary, [role='button'], [role='link'], [tabindex]:not([tabindex='-1'])");
+}
+
 /**
  * Overscroll navigation: pulling past the bottom of a page that cannot scroll
- * further (wheel, trackpad, touch swipe up, or ArrowDown/PageDown/Space)
+ * further (wheel, trackpad, touch swipe up, or ArrowDown/PageDown while nothing interactive is focused)
  * navigates to `to`. Returns a 0..1 `progress` MotionValue plus `ready` and
  * `leaving` flags for rendering feedback.
  */
@@ -75,6 +81,8 @@ export default function usePullToNavigate({ to, threshold = 100, from = "/" }: O
         };
 
         const onWheel = (e: WheelEvent) => {
+            // Trackpad pinch-zoom arrives as a wheel event with ctrlKey set.
+            if (e.ctrlKey || e.metaKey) return;
             if (triggered.current) return;
             if (e.deltaY < 0) {
                 if (raw > 0) setPull(raw + e.deltaY);
@@ -116,9 +124,9 @@ export default function usePullToNavigate({ to, threshold = 100, from = "/" }: O
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
             if (isTypingTarget(e.target)) return;
-            if (!["ArrowDown", "PageDown", " "].includes(e.key)) return;
-            const el = e.target as HTMLElement;
-            if (e.key === " " && ["BUTTON", "A", "SUMMARY"].includes(el?.tagName)) return;
+            // Space is left alone so it can activate controls and scroll natively.
+            if (!["ArrowDown", "PageDown"].includes(e.key)) return;
+            if (isInteractiveTarget(e.target)) return;
             if (!atScrollBoundary()) return;
             e.preventDefault();
             trigger();
