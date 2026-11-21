@@ -1,7 +1,7 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import "./components.css";
 import React, { useState, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface BlogItemProps {
     indexNum: string;
@@ -39,20 +39,19 @@ const BlogItem: React.FC<BlogItemProps> = ({
     const v = polaroidVariants[cardIndex % polaroidVariants.length];
 
     const path = useLocation();
-    const navigate = useNavigate();
     const showImage = coverImage && !imgError;
 
+    // Wiggle the pin as a flourish; navigation itself is a real <Link>.
     const handleClick = useCallback(() => {
         setWiggling(true);
         setTimeout(() => setWiggling(false), 400);
-        setTimeout(
-            () => navigate("/blog/" + slug, { state: { from: path } }),
-            200,
-        );
-    }, [slug, path, navigate]);
+    }, []);
 
     return (
-        <div onClick={handleClick} className="sticky-note p-5">
+        <article
+            onClick={handleClick}
+            className="sticky-note p-5 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-[var(--tertiary)]"
+        >
             {/* Pin */}
             <div
                 className={`absolute -top-2 -left-2 text-2xl select-none pointer-events-none transition-transform origin-top ${wiggling ? "pin-wiggle" : ""}`}
@@ -99,20 +98,29 @@ const BlogItem: React.FC<BlogItemProps> = ({
                             ))}
                         </div>
                     </div>
-                    <div className="blog-title text-[var(--text)] text-lg">
-                        {blogTitle}.
-                    </div>
+                    <h2 className="blog-title text-[var(--text)] text-lg">
+                        <Link
+                            to={"/blog/" + slug}
+                            state={{ from: path }}
+                            className="outline-none after:absolute after:inset-0 after:content-['']"
+                        >
+                            {blogTitle}.
+                        </Link>
+                    </h2>
                     {summary && (
                         <div className="card-summary text-sm text-[var(--text)]/55 mt-0.5 line-clamp-2 leading-snug">
                             {summary}
                         </div>
                     )}
                     <div className="flex items-center justify-end mt-1">
-                        <IconArrowRight className="text-[var(--tertiary)] w-5 h-5 transition" />
+                        <IconArrowRight
+                            className="text-[var(--tertiary)] w-5 h-5 transition"
+                            aria-hidden="true"
+                        />
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 

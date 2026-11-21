@@ -1,1 +1,9 @@
-/* /index.html 200
+# Prerendered pages (/projects, /blogs, /blog/*, /project/*) are static files and win over rules.
+# Client-rendered routes without a prerendered file need the SPA shell:
+/about       /index.html  200
+/about/      /index.html  200
+/scratchpad  /index.html  200
+/scratchpad/ /index.html  200
+/build       /index.html  200
+/build/      /index.html  200
+# Anything else falls through to dist/404.html with a real 404 status.

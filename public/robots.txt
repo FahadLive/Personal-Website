@@ -1,6 +1,4 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://justfahad.me/sitemap.xml
